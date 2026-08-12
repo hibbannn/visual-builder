@@ -73,6 +73,8 @@
 			: undefined;
 	$: dockRight = docked || resolveNavigatorDockSide() === 'right';
 	$: showResizeAffordance = resolveResizeAffordance();
+	$: dropTargetNodeId = state.ui.dropTarget?.targetNodeId;
+	$: dropPlacement = state.ui.dropTarget?.placement;
 	$: navigatorVirtualizationEnabled = depth === 0 && !dockRight && editor.features.navigatorVirtualization;
 	$: navigatorVirtualRows = navigatorVirtualizationEnabled ? buildNavigatorVirtualRows( currentNodes, 1 ) : [];
 	$: navigatorVirtualRowsHeight = navigatorVirtualRows.reduce( ( total, row ) => total + estimateNavigatorVirtualRowSize( row ), 0 );
@@ -505,6 +507,8 @@
 								documentId={state.activeDocumentId}
 								virtualizer={navigatorVirtualizer}
 								style={getNavigatorVirtualRowStyle( virtualItem.start, virtualItem.size )}
+								{dropTargetNodeId}
+								{dropPlacement}
 							/>
 						{:else if row?.kind === 'slot'}
 							<NavigatorSlotRow
@@ -538,6 +542,8 @@
 			actions={navigatorNodeActions}
 			documentId={state.activeDocumentId}
 			virtualizer={undefined}
+			{dropTargetNodeId}
+			{dropPlacement}
 		>
 			{#if node.children.length}
 				<ul class="navigator__tree">

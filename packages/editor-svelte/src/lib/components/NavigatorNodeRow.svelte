@@ -20,6 +20,8 @@ import {
 	export let documentId = '';
 	export let virtualizer: SvelteVirtualizer<HTMLElement, HTMLLIElement> | undefined = undefined;
 	export let style = '';
+	export let dropTargetNodeId: string | undefined = undefined;
+	export let dropPlacement: 'before' | 'after' | 'into' | 'root' | undefined = undefined;
 
 	let rowElement: HTMLLIElement | null = null;
 	let rowShellElement: HTMLDivElement | null = null;
@@ -27,6 +29,7 @@ import {
 	let nodeSubtitle = '';
 	let nodeIndicators: ReturnType<typeof getNavigatorNodeIndicators> = [];
 	let isSelected = false;
+	let dropClass = '';
 
 	const draggable = createDraggable( {
 		get id() {
@@ -57,6 +60,9 @@ import {
 	$: nodeSubtitle = getNavigatorNodeSubtitle( row.node, componentDocumentTitle );
 	$: nodeIndicators = getNavigatorNodeIndicators( row.node );
 	$: isSelected = selectedNodeIds.includes( row.nodeId );
+	$: dropClass = dropTargetNodeId === row.nodeId
+		? ( dropPlacement === 'into' ? 'drop-into' : dropPlacement === 'before' ? 'drop-before' : dropPlacement === 'after' ? 'drop-after' : '' )
+		: '';
 
 	$: if ( rowElement && virtualizer ) {
 		virtualizer.measureElement( rowElement );
@@ -158,7 +164,7 @@ import {
 
 <li
 	bind:this={rowElement}
-	class="navigator__item"
+	class="navigator__item {dropClass}"
 	style={style}
 	style:--depth={row.depth}
 	data-index={row.rowIndex}
@@ -320,6 +326,41 @@ import {
 		background: rgba(0, 113, 227, 0.10);
 		color: var(--builder-shell-accent-text, #005bb5);
 		box-shadow: inset 0 0 0 1px rgba(0, 113, 227, 0.20);
+	}
+
+	/* Source row during drag — ghosted */
+	.navigator__item:has(.navigator__row-handle.dragging) .navigator__row {
+		opacity: 0.35;
+		background: rgba(0, 113, 227, 0.04);
+	}
+
+	/* Drop target indicator — line before/after */
+	.navigator__item.drop-before > .navigator__row-shell::before,
+	.navigator__item.drop-after > .navigator__row-shell::after {
+		content: '';
+		position: absolute;
+		left: 6px;
+		right: 6px;
+		height: 3px;
+		border-radius: 999px;
+		background: var(--builder-shell-accent, #0071e3);
+		box-shadow: 0 0 8px rgba(0, 113, 227, 0.4);
+		pointer-events: none;
+		z-index: 10;
+	}
+
+	.navigator__item.drop-before > .navigator__row-shell::before {
+		top: -2px;
+	}
+
+	.navigator__item.drop-after > .navigator__row-shell::after {
+		bottom: -2px;
+	}
+
+	/* Drop into container — highlight row */
+	.navigator__item.drop-into > .navigator__row-shell .navigator__row {
+		background: rgba(0, 113, 227, 0.08);
+		box-shadow: inset 0 0 0 2px rgba(0, 113, 227, 0.30);
 	}
 
 	.navigator__row-main {

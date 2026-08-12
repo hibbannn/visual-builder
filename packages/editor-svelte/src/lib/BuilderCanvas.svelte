@@ -2183,12 +2183,12 @@
 		/>
 	{/if}
 	</div>
-	<DragOverlay disabled={false} dropAnimation={null}>
+	<DragOverlay disabled={false} dropAnimation={{ duration: 200, easing: 'cubic-bezier(0.18, 0.89, 0.32, 1.28)' }}>
 		{#snippet children(source)}
 			{@const dragData = isBuilderDndData( source.data ) ? source.data : undefined}
 			{#if dragData}
-				<div class="builder-shell__drag-overlay">
-					<span class="builder-shell__drag-overlay-badge">
+				<div class="builder-shell__drag-overlay" use:squircle={{ radius: 999, n: 5 }}>
+					<span class="builder-shell__drag-overlay-badge" use:squircle={{ radius: 999, n: 5 }}>
 						{dragData.descriptor.kind === 'palette-item' ? 'Add' : 'Move'}
 					</span>
 					<strong>{dragData.label}</strong>
@@ -2999,11 +2999,16 @@
 		align-items: center;
 		gap: 8px;
 		padding: 10px 14px;
+		border: none;
 		border-radius: 999px;
-		background: rgba( 29, 29, 31, 0.94 );
-		border: 1px solid rgba(0, 0, 0, 0.08);
+		background: rgba( 29, 29, 31, 0.96 );
 		color: #ffffff;
-		box-shadow: 0 18px 40px rgba( 0, 0, 0, 0.18 );
+		box-shadow:
+			0 0 0 1px rgba(255, 255, 255, 0.08),
+			0 24px 48px rgba( 0, 0, 0, 0.28 ),
+			0 8px 16px rgba( 0, 0, 0, 0.18 );
+		transform: scale(1.06);
+		cursor: grabbing;
 	}
 
 	.builder-shell__drag-overlay strong {
@@ -3018,8 +3023,10 @@
 		justify-content: center;
 		height: 22px;
 		padding: 0 10px;
+		border: none;
 		border-radius: 999px;
-		background: rgba(0, 0, 0, 0.08);
+		background: var( --builder-shell-accent, #0071e3 );
+		color: #ffffff;
 		font-size: 10px;
 		font-weight: 700;
 		letter-spacing: 0.08em;
