@@ -26,6 +26,7 @@
 		--builder-shell-space-12: 12px;
 		--builder-shell-space-16: 16px;
 		--builder-shell-radius: 6px;
+		--builder-shell-radius-sm: 4px;
 		--builder-shell-radius-lg: 8px;
 		--builder-shell-radius-pill: 999px;
 		--builder-shell-focus-ring: 0 0 0 1px var(--builder-shell-accent), 0 0 0 3px rgba(0, 113, 227, 0.2);

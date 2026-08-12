@@ -677,8 +677,8 @@
 		justify-content: space-between;
 		gap: 0.4rem;
 		padding: 4px 8px 4px 14px;
-		border-top: 1px solid rgba(191, 202, 219, 0.28);
-		background: rgba(247, 249, 252, 0.72);
+		border-top: 1px solid var(--builder-shell-border, rgba(0, 0, 0, 0.08));
+		background: var(--builder-shell-panel-bg-muted, rgba(0, 0, 0, 0.03));
 	}
 
 	.navigator__slot-label {

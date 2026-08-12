@@ -265,7 +265,8 @@ import {
 		display: grid;
 		gap: 0.15rem;
 		padding-left: calc( (var(--depth) - 1) * 0.55rem );
-		border-bottom: 1px solid rgba(191, 202, 219, 0.28);
+		border-bottom: 1px solid var(--builder-shell-border, rgba(0, 0, 0, 0.08));
+		background: rgba(0, 0, 0, calc( var(--depth, 1) * 0.015 ));
 	}
 
 	.navigator__item:last-child {
