@@ -1441,6 +1441,11 @@
 	<div class="builder-shell">
 		<header class="builder-shell__appbar">
 			<div class="builder-shell__appbar-left">
+				<div class="builder-shell__traffic-lights" aria-hidden="true">
+					<span class="builder-shell__traffic-light builder-shell__traffic-light--red"></span>
+					<span class="builder-shell__traffic-light builder-shell__traffic-light--yellow"></span>
+					<span class="builder-shell__traffic-light builder-shell__traffic-light--green"></span>
+				</div>
 				<button type="button" class="builder-shell-icon-button builder-shell-button--dark" aria-label="Toggle panel" title="Toggle panel" use:squircle={{ radius: 8, n: 5 }} onclick={() => editor.toggleShellPanel()}>
 					<EditorShellIcon name="menu" title="Toggle panel" />
 				</button>
@@ -2233,14 +2238,13 @@
 		display: grid;
 		grid-template-columns: minmax( 260px, auto ) minmax( 0, 1fr ) auto;
 		align-items: center;
-		min-height: var( --builder-shell-top-bar-height );
-		padding: 0 10px 0 8px;
-		border-bottom: 1px solid var( --builder-shell-border-dark );
-		background:
-			linear-gradient( 180deg, rgba(0, 0, 0, 0.02), rgba( 255, 255, 255, 0 ) ),
-			var( --builder-shell-toolbar-bg );
+		min-height: 64px;
+		padding: 0 16px;
+		border-bottom: 0.5px solid var( --builder-shell-border );
+		background: var( --builder-shell-toolbar-bg );
+		backdrop-filter: blur(20px) saturate(180%);
+		-webkit-backdrop-filter: blur(20px) saturate(180%);
 		color: var( --builder-shell-toolbar-text );
-		box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.04), 0 1px 0 rgba( 0, 0, 0, 0.2 );
 	}
 
 	.builder-shell__appbar-left,
@@ -2256,6 +2260,25 @@
 		align-items: center;
 		gap: 6px;
 	}
+
+	.builder-shell__traffic-lights {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		padding-right: 8px;
+		flex-shrink: 0;
+	}
+
+	.builder-shell__traffic-light {
+		width: 12px;
+		height: 12px;
+		border-radius: 999px;
+		box-shadow: inset 0 0 0 0.5px rgba(0, 0, 0, 0.15);
+	}
+
+	.builder-shell__traffic-light--red { background: #ff5f57; }
+	.builder-shell__traffic-light--yellow { background: #febc2e; }
+	.builder-shell__traffic-light--green { background: #28c840; }
 
 	.builder-shell__appbar-right {
 		justify-content: flex-end;
@@ -3730,7 +3753,12 @@
 	@media ( max-width: 1240px ) {
 		.builder-shell__appbar {
 			grid-template-columns: 1fr;
-			padding: 6px 10px;
+			padding: 8px 16px;
+			min-height: 56px;
+		}
+
+		.builder-shell__traffic-lights {
+			display: none;
 		}
 
 		.builder-shell__navigator-floating {
