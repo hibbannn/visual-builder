@@ -6,6 +6,7 @@
 
 	import { createBuilderDndData, createBuilderDroppableData } from '../drag-drop';
 	import type { NavigatorNodeRow, NavigatorNodeRowActions } from '../navigator-model';
+	import { squircle } from '../squircle';
 	import EditorShellIcon from './EditorShellIcon.svelte';
 import {
 	getNavigatorNodeIndicators,
@@ -190,6 +191,7 @@ import {
 			type="button"
 			class="navigator__row"
 			class:selected={isSelected}
+			use:squircle={{ radius: 6, n: 5 }}
 			onclick={() => actions.onSelect( row.nodeId )}
 			onkeydown={( event ) => handleNodeKeydown( event, row.node )}
 		>
