@@ -3608,28 +3608,28 @@ function onFieldInput( field: BuilderFieldDefinition, value: string ) {
 		padding: 0;
 		display: grid;
 		gap: 0;
-		background: var( --builder-shell-gray-800 );
-		color: var( --builder-shell-toolbar-text );
-		--builder-shell-text: var( --builder-shell-toolbar-text );
-		--builder-shell-text-muted: var( --builder-shell-toolbar-text-muted );
-		--builder-shell-text-strong: var( --builder-shell-toolbar-text );
-		--builder-shell-heading: #ffffff;
-		--builder-shell-border: rgba(0, 0, 0, 0.08);
-		--builder-shell-border-strong: rgba(0, 0, 0, 0.10);
-		--builder-shell-panel-bg: var( --builder-shell-gray-800 );
-		--builder-shell-panel-bg-muted: var( --builder-shell-gray-750 );
-		--builder-shell-bg-surface: #2d3037;
-		--builder-shell-bg-subtle: #252932;
-		--builder-shell-border-color: rgba(0, 0, 0, 0.08);
-		--builder-shell-border-color-bold: rgba( 255, 255, 255, 0.15 );
-		--builder-shell-accent-soft: rgba(0, 113, 227, 0.12 );
+		background: var( --builder-shell-panel-bg );
+		color: var( --builder-shell-text-strong );
+		--builder-shell-text: var( --builder-shell-text );
+		--builder-shell-text-muted: var( --builder-shell-text-muted );
+		--builder-shell-text-strong: var( --builder-shell-text-strong );
+		--builder-shell-heading: var( --builder-shell-heading );
+		--builder-shell-border: var( --builder-shell-border );
+		--builder-shell-border-strong: var( --builder-shell-border-strong );
+		--builder-shell-panel-bg: var( --builder-shell-panel-bg );
+		--builder-shell-panel-bg-muted: var( --builder-shell-panel-bg-muted );
+		--builder-shell-bg-surface: var( --builder-shell-bg-surface );
+		--builder-shell-bg-subtle: var( --builder-shell-bg-surface-muted );
+		--builder-shell-border-color: var( --builder-shell-border-color );
+		--builder-shell-border-color-bold: var( --builder-shell-border-color-bold );
+		--builder-shell-accent-soft: var( --builder-shell-accent-soft );
 	}
 
 	.inspector__section {
 		padding: 10px 12px 12px;
 		border: 1px solid var( --builder-shell-border );
 		border-radius: 6px;
-		background: rgba( 255, 255, 255, 0.025 );
+		background: var( --builder-shell-panel-bg-muted );
 		display: grid;
 		gap: 8px;
 		min-width: 0;
@@ -3732,7 +3732,7 @@ function onFieldInput( field: BuilderFieldDefinition, value: string ) {
 	}
 
 	.inspector label.inspector__breakpoint-toggle:hover {
-		border-color: rgba( 255, 255, 255, 0.24 );
+		border-color: rgba(0, 0, 0, 0.18);
 		background: rgba(0, 0, 0, 0.06);
 		color: var( --builder-shell-toolbar-text );
 	}
@@ -3798,8 +3798,8 @@ function onFieldInput( field: BuilderFieldDefinition, value: string ) {
 	.inspector textarea:hover,
 	.inspector input:hover,
 	.inspector select:hover {
-		border-color: rgba( 255, 255, 255, 0.24 );
-		background: rgba( 255, 255, 255, 0.075 );
+		border-color: rgba(0, 0, 0, 0.18);
+		background: rgba(0, 0, 0, 0.06);
 	}
 
 	.inspector select option {
@@ -4070,8 +4070,8 @@ function onFieldInput( field: BuilderFieldDefinition, value: string ) {
 		padding: 12px;
 		border-radius: 8px;
 		border: 1px solid rgba(0, 0, 0, 0.08);
-		background: #1f2024;
-		box-shadow: 0 18px 44px rgba( 0, 0, 0, 0.35 );
+		background: var(--builder-shell-panel-bg);
+		box-shadow: var(--builder-shell-shadow-popover);
 	}
 
 	.inspector__popover-header {

@@ -329,7 +329,7 @@
 		min-block-size: 28px;
 		border: 1px solid rgba(0, 0, 0, 0.10);
 		border-radius: var(--builder-shell-radius-lg);
-		background-color: var(--builder-shell-gray-900);
+		background-color: var(--builder-shell-panel-bg);
 		color: var(--builder-shell-toolbar-text);
 		color-scheme: dark;
 	}

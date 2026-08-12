@@ -2202,7 +2202,7 @@
 		height: 100%;
 		min-height: 0;
 		overflow: hidden;
-		background: linear-gradient( 180deg, var( --builder-shell-gray-900 ) 0%, var( --builder-shell-gray-850 ) 100% );
+		background: linear-gradient( 180deg, var(--builder-shell-panel-bg) 0%, var(--builder-shell-panel-bg-muted) 100% );
 		color: var( --builder-shell-text );
 		font: 400 var( --builder-shell-font-size )/1.45 var( --builder-shell-font-family );
 	}
@@ -3074,7 +3074,7 @@
 	}
 
 	.builder-shell__panel-header {
-		background: linear-gradient( 180deg, rgba( 255, 255, 255, 0.025 ), rgba( 255, 255, 255, 0 ) ), var( --builder-shell-gray-900 );
+		background: linear-gradient( 180deg, rgba( 255, 255, 255, 0.025 ), rgba( 255, 255, 255, 0 ) ), var(--builder-shell-panel-bg);
 		color: var( --builder-shell-toolbar-text );
 		border-bottom: 1px solid var( --builder-shell-border-dark );
 	}
@@ -3370,7 +3370,7 @@
 		overflow: hidden;
 		background:
 			radial-gradient(circle at top, rgba(0, 0, 0, 0.06), transparent 40%),
-			linear-gradient( 180deg, var( --builder-shell-gray-850 ) 0%, var( --builder-shell-gray-900 ) 100% );
+			linear-gradient( 180deg, var(--builder-shell-panel-bg-muted) 0%, var(--builder-shell-panel-bg) 100% );
 	}
 
 	.builder-shell__stage-body {
@@ -3441,7 +3441,7 @@
 
 	.builder-shell__panel-footer {
 		border-top: 1px solid var( --builder-shell-border-dark );
-		background: linear-gradient( 180deg, rgba(0, 0, 0, 0.02), rgba( 255, 255, 255, 0 ) ), var( --builder-shell-gray-900 );
+		background: linear-gradient( 180deg, rgba(0, 0, 0, 0.02), rgba( 255, 255, 255, 0 ) ), var(--builder-shell-panel-bg);
 		color: var( --builder-shell-toolbar-text-muted );
 		grid-template-columns: minmax( 0, 1fr ) auto;
 	}

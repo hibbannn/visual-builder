@@ -66,7 +66,7 @@
 	}
 
 	:global(.builder-panel-shell--dark) :global(.builder-panel-tab-switcher) {
-		background: var(--builder-shell-gray-725);
+		background: var(--builder-shell-panel-bg-muted);
 		border-block-end-color: var(--builder-shell-border-dark);
 	}
 
@@ -124,7 +124,7 @@
 	:global(.builder-panel-shell--dark) :global(.builder-panel-tab-switcher__tab.active),
 	:global(.builder-panel-shell--dark) :global(.builder-panel-tab-switcher__tab[data-state='active']) {
 		color: var(--builder-shell-toolbar-text);
-		background: var(--builder-shell-gray-800);
+		background: var(--builder-shell-panel-bg);
 	}
 
 	:global(.builder-panel-tab-switcher__tab:disabled) {
@@ -165,7 +165,7 @@
 
 	:global(.builder-panel-tab-switcher.editor-mode) {
 		min-block-size: 56px;
-		background: var(--builder-shell-gray-800);
+		background: var(--builder-shell-panel-bg);
 		border-block-end-color: var(--builder-shell-border-dark);
 	}
 

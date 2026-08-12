@@ -353,8 +353,8 @@
 		min-inline-size: 0;
 		overflow-x: clip;
 		padding: 0 0 12px;
-		background: var(--builder-shell-gray-800);
-		color: var(--builder-shell-toolbar-text);
+		background: var(--builder-shell-panel-bg);
+		color: var(--builder-shell-text-strong);
 	}
 
 	.elements-panel__header + .elements-panel__search {

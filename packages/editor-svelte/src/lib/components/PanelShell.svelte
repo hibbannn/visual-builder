@@ -64,7 +64,7 @@
 		--builder-panel-shell-border: var(--builder-shell-dark-border);
 		--builder-panel-shell-text: var(--builder-shell-dark-text);
 		--builder-panel-shell-muted: var(--builder-shell-dark-text-muted);
-		color-scheme: dark;
+		color-scheme: light;
 	}
 
 	.builder-panel-shell__appbar:empty,
@@ -119,7 +119,7 @@
 	}
 
 	.builder-panel-shell--dark .builder-panel-shell__body.scrollable {
-		scrollbar-color: rgba(255, 255, 255, 0.22) transparent;
+		scrollbar-color: rgba(0, 0, 0, 0.15) transparent;
 	}
 
 	.builder-panel-shell__body.scrollable::-webkit-scrollbar {
@@ -135,7 +135,7 @@
 	}
 
 	.builder-panel-shell--dark .builder-panel-shell__body.scrollable::-webkit-scrollbar-thumb {
-		background: rgba(255, 255, 255, 0.24);
+		background: rgba(0, 0, 0, 0.18);
 		background-clip: padding-box;
 	}
 

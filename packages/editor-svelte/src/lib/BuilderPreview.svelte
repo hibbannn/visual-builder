@@ -1883,7 +1883,7 @@
 		padding: 0 0.75rem;
 		overflow: hidden;
 		color: var(--builder-shell-gray-200);
-		background: var(--builder-shell-gray-800);
+		background: var(--builder-shell-panel-bg);
 		opacity: 0;
 		border-bottom: 0;
 		box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.33), 0 0 2px 1px rgba(0, 0, 0, 0.25), 0 0 6px -3px rgba(0, 0, 0, 0.20);
