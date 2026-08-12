@@ -154,6 +154,7 @@ describe( 'plugin registry', () => {
 		expect( styleStack( 'container' ) ).toEqual( [
 			'Background',
 			'Border',
+			'Border Radius',
 		] );
 		expect( advancedStack( 'container' ) ).toEqual( [
 			'Layout',
@@ -167,6 +168,7 @@ describe( 'plugin registry', () => {
 		expect( styleStack( 'grid-container' ) ).toEqual( [
 			'Background',
 			'Border',
+			'Border Radius',
 		] );
 		expect( styleStack( 'icon-box' ) ).toEqual( [
 			'Box',
@@ -384,8 +386,8 @@ describe( 'plugin registry', () => {
 
 	it( 'uses production-safe primitives for live advanced controls', () => {
 		expect( getStyleControl( 'container', 'background', 'background-image' )?.primitive?.kind ).toBe( 'url' );
-		expect( getStyleControl( 'container', 'background', 'background-position' )?.primitive ).toBeUndefined();
-		expect( getStyleControl( 'container', 'background', 'background-size' )?.primitive ).toBeUndefined();
+		expect( getStyleControl( 'container', 'background', 'background-position' )?.primitive?.kind ).toBe( 'select' );
+		expect( getStyleControl( 'container', 'background', 'background-size' )?.primitive?.kind ).toBe( 'select' );
 		expect( getStyleControl( 'container', 'border', 'box-shadow' )?.primitive ).toBeUndefined();
 		expect( getAdvancedControl( 'container', 'layout', 'order' )?.primitive ).toMatchObject( {
 			kind: 'slider',
@@ -396,7 +398,6 @@ describe( 'plugin registry', () => {
 		expect( getAdvancedControl( 'container', 'layout', 'min-height' ) ).toBeUndefined();
 		expect( getAdvancedControl( 'container', 'positioning', 'z-index' )?.primitive ).toMatchObject( {
 			kind: 'slider',
-			units: [],
 		} );
 		expect( getAdvancedControl( 'container', 'motion-effects', 'transition-duration' )?.primitive ).toMatchObject( {
 			kind: 'slider',

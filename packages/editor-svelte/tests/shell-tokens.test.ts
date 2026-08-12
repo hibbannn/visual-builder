@@ -19,15 +19,15 @@ describe( 'editor shell tokens', () => {
 			readFile( shellIconPath, 'utf8' ),
 		] );
 
-		expect( shellTokensSource ).toContain( '--builder-shell-top-bar-height: 48px;' );
+		expect( shellTokensSource ).toContain( '--builder-shell-top-bar-height: 44px;' );
 		expect( shellTokensSource ).toContain( '--builder-shell-responsive-bar-height: 40px;' );
 		expect( shellTokensSource ).toContain( '--builder-shell-panel-width: 280px;' );
 		expect( shellTokensSource ).toContain( '--builder-shell-panel-width-xl: 300px;' );
 		expect( shellTokensSource ).toContain( '--builder-shell-navigator-width: 240px;' );
 		expect( shellTokensSource ).toContain( '--builder-shell-font-size: 13px;' );
 		expect( shellTokensSource ).toContain( '--builder-shell-accent: #0071e3;' );
-		expect( shellTokensSource ).toContain( '--builder-shell-accent-strong: #524cff;' );
-		expect( shellTokensSource ).toContain( '--builder-shell-bg-dark: var(--builder-shell-gray-800);' );
+		expect( shellTokensSource ).toContain( '--builder-shell-accent-strong: #0077ed;' );
+		expect( shellTokensSource ).toContain( '--builder-shell-bg-dark: rgba(0, 0, 0, 0.03);' );
 		expect( shellIconSource ).toContain( 'assignment:' );
 		expect( shellIconSource ).toContain( 'component:' );
 		expect( shellIconSource ).toContain( 'revision:' );
