@@ -170,7 +170,7 @@
 								title="Nested links"
 								description="Child links are edited here instead of raw JSON."
 								value={nestedChildren( item )}
-								onChange={(nextChildren) => updateItem( index, { children: nextChildren as JsonValue } )}
+								onChange={(nextChildren: JsonValue) => updateItem( index, { children: nextChildren as JsonValue } )}
 								depth={depth + 1}
 							/>
 						</div>
@@ -183,7 +183,7 @@
 								title="Options"
 								description="Select and radio fields expose their option groups here."
 								value={nestedOptions( item )}
-								onChange={(nextOptions) => updateItem( index, { options: nextOptions as JsonValue } )}
+								onChange={(nextOptions: JsonValue) => updateItem( index, { options: nextOptions as JsonValue } )}
 								depth={depth + 1}
 							/>
 						</div>

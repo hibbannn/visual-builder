@@ -354,7 +354,7 @@
 						data-builder-slot={slotDefinition.id}
 						data-builder-document={documentId}
 						data-builder-multiple={String( slotDefinition.multiple ?? true )}
-						use:bindSlotGeometry={createSlotGeometryMeta( slotDefinition.id, slotDefinition.multiple ?? true, ( node.slots[ slotDefinition.id ] ?? [] ).map( ( child ) => child.id ) )}
+						use:bindSlotGeometry={createSlotGeometryMeta( slotDefinition.id, slotDefinition.multiple ?? true, ( node.slots[ slotDefinition.id ] ?? [] ).map( ( child: BuilderNode ) => child.id ) )}
 					>
 						{#if ( node.slots[ slotDefinition.id ] ?? [] ).length}
 							{#each node.slots[ slotDefinition.id ] ?? [] as slotNode, slotIndex (slotNode.id)}
@@ -518,7 +518,7 @@
 				data-builder-slot="triggers"
 				data-builder-document={documentId}
 				data-builder-multiple="true"
-				use:bindSlotGeometry={createSlotGeometryMeta( 'triggers', true, ( node.slots.triggers ?? [] ).map( ( child ) => child.id ) )}
+				use:bindSlotGeometry={createSlotGeometryMeta( 'triggers', true, ( node.slots.triggers ?? [] ).map( ( child: BuilderNode ) => child.id ) )}
 			>
 				{#each tabItems as item, tabIndex (item.id)}
 					<button
@@ -554,7 +554,7 @@
 			data-builder-slot="panels"
 			data-builder-document={documentId}
 			data-builder-multiple="true"
-			use:bindSlotGeometry={createSlotGeometryMeta( 'panels', true, ( node.slots.panels ?? [] ).map( ( child ) => child.id ) )}
+			use:bindSlotGeometry={createSlotGeometryMeta( 'panels', true, ( node.slots.panels ?? [] ).map( ( child: BuilderNode ) => child.id ) )}
 			>
 				{#each tabItems as item, tabIndex (item.id)}
 					<div class:hidden={tabIndex !== activeTabIndex} class="builder-tabs__panel">
@@ -690,7 +690,7 @@
 				data-builder-slot="item"
 				data-builder-document={documentId}
 				data-builder-multiple="true"
-				use:bindSlotGeometry={createSlotGeometryMeta( 'item', true, ( node.slots.item ?? [] ).map( ( child ) => child.id ) )}
+				use:bindSlotGeometry={createSlotGeometryMeta( 'item', true, ( node.slots.item ?? [] ).map( ( child: BuilderNode ) => child.id ) )}
 			>
 				{#if collectionRecords.length}
 					{#each collectionRecords as collectionRecord, recordIndex (getCollectionRecordKey( collectionRecord, recordIndex ))}
@@ -716,7 +716,7 @@
 						data-builder-slot="empty"
 						data-builder-document={documentId}
 						data-builder-multiple="true"
-						use:bindSlotGeometry={createSlotGeometryMeta( 'empty', true, ( node.slots.empty ?? [] ).map( ( child ) => child.id ) )}
+						use:bindSlotGeometry={createSlotGeometryMeta( 'empty', true, ( node.slots.empty ?? [] ).map( ( child: BuilderNode ) => child.id ) )}
 					>
 						{#if ( node.slots.empty ?? [] ).length}
 							{#each node.slots.empty ?? [] as emptyNode, emptyIndex (emptyNode.id)}
@@ -885,7 +885,7 @@
 					data-builder-slot={slotDefinition.id}
 					data-builder-document={documentId}
 					data-builder-multiple={String( slotDefinition.multiple ?? true )}
-					use:bindSlotGeometry={createSlotGeometryMeta( slotDefinition.id, slotDefinition.multiple ?? true, ( node.slots[ slotDefinition.id ] ?? [] ).map( ( child ) => child.id ) )}
+					use:bindSlotGeometry={createSlotGeometryMeta( slotDefinition.id, slotDefinition.multiple ?? true, ( node.slots[ slotDefinition.id ] ?? [] ).map( ( child: BuilderNode ) => child.id ) )}
 				>
 					{#if ( node.slots[ slotDefinition.id ] ?? [] ).length}
 						{#each node.slots[ slotDefinition.id ] ?? [] as slotNode, slotIndex (slotNode.id)}

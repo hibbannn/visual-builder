@@ -13,7 +13,7 @@
 
 	let contentElement: HTMLDivElement | null = null;
 
-	$: registerElement( open ? contentElement : undefined );
+	$: registerElement( open ? ( contentElement ?? undefined ) : undefined );
 
 	onDestroy( () => {
 		registerElement( undefined );
