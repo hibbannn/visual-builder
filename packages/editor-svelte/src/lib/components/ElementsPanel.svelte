@@ -401,7 +401,7 @@
 	.elements-panel__header p,
 	.elements-panel__group p,
 	.elements-panel__empty p {
-		color: var(--builder-shell-toolbar-text-muted);
+		color: var(--builder-shell-text-muted, #a1a1a6);
 	}
 
 	.elements-panel__group p {
@@ -412,7 +412,7 @@
 		font-size: 14px;
 		font-weight: 600;
 		line-height: 1.2;
-		color: var(--builder-shell-toolbar-text);
+		color: var(--builder-shell-text-strong, #1d1d1f);
 	}
 
 	.elements-panel__header p {
@@ -425,12 +425,18 @@
 		align-items: center;
 		gap: var(--builder-shell-space-8);
 		min-block-size: 36px;
-		padding-inline: 9px;
-		border: 1px solid rgba(0, 0, 0, 0.08);
-		border-radius: 3px;
-		background: rgba(0, 0, 0, 0.03);
+		padding-inline: 10px;
+		border: 1px solid var(--builder-shell-border, rgba(0, 0, 0, 0.12));
+		border-radius: var(--builder-shell-radius, 8px);
+		background: var(--builder-shell-panel-bg-muted, rgba(0, 0, 0, 0.03));
 		box-shadow: none;
-		color: var(--builder-shell-toolbar-text);
+		color: var(--builder-shell-text-strong, #1d1d1f);
+		transition: border-color 0.15s ease, box-shadow 0.15s ease;
+	}
+
+	.elements-panel__search-input:focus-within {
+		border-color: var(--builder-shell-accent, #0071e3);
+		box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.12);
 	}
 
 	.elements-panel__search-input :global(.builder-shell-input) {
@@ -451,27 +457,33 @@
 		display: inline-flex;
 		align-items: center;
 		gap: 6px;
-		min-height: 30px;
+		min-height: 28px;
 		padding: 0 10px;
 		border-radius: 999px;
 		font-size: 11px;
-		font-weight: 600;
+		font-weight: 500;
 		text-transform: none;
 		letter-spacing: 0;
-		border: 1px solid rgba(0, 0, 0, 0.08);
-		background: rgba(0, 0, 0, 0.04);
-		color: var(--builder-shell-toolbar-text-muted);
+		border: 1px solid var(--builder-shell-border, rgba(0, 0, 0, 0.12));
+		background: var(--builder-shell-panel-bg, #ffffff);
+		color: var(--builder-shell-text-muted, #a1a1a6);
 		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;
 		max-inline-size: 100%;
+		transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+	}
+
+	.elements-panel__category:hover {
+		background: var(--builder-shell-bg-hover, rgba(0, 0, 0, 0.04));
+		color: var(--builder-shell-text, #6e6e73);
 	}
 
 	.elements-panel__category.active {
-		border-color: rgba(0, 0, 0, 0.08);
-		background: rgba(0, 0, 0, 0.08);
-		color: var(--builder-shell-toolbar-text);
-		box-shadow: inset 0 -2px 0 var(--builder-shell-accent), inset 0 1px 0 rgba(0, 0, 0, 0.04);
+		border-color: rgba(0, 113, 227, 0.20);
+		background: rgba(0, 113, 227, 0.10);
+		color: var(--builder-shell-accent-text, #005bb5);
+		font-weight: 600;
 	}
 
 	.elements-panel__category-icon {
@@ -492,9 +504,10 @@
 		block-size: 18px;
 		padding: 0 0.35rem;
 		border-radius: 999px;
-		background: rgba(0, 0, 0, 0.08);
+		background: var(--builder-shell-panel-bg-muted, rgba(0, 0, 0, 0.06));
 		font-style: normal;
 		font-size: 10px;
+		font-weight: 500;
 		flex-shrink: 0;
 	}
 
@@ -518,7 +531,7 @@
 		inline-size: 100%;
 		padding: 10px 0 0;
 		border: 0;
-		border-top: 1px solid rgba(0, 0, 0, 0.08);
+		border-top: 1px solid var(--builder-shell-border, rgba(0, 0, 0, 0.12));
 		border-radius: 0;
 		background: transparent;
 		min-inline-size: 0;

@@ -2338,10 +2338,11 @@
 	.builder-shell__panel-kicker,
 		.builder-shell__stack-header p,
 		.builder-shell__menu-label {
-		color: var( --builder-shell-toolbar-text-muted );
+		color: var( --builder-shell-text-muted );
 		font-size: 10px;
+		font-weight: 600;
 		text-transform: uppercase;
-		letter-spacing: 0.12em;
+		letter-spacing: 0.08em;
 	}
 
 	.builder-shell__document-meta strong {
@@ -3112,14 +3113,20 @@
 
 	.builder-shell__panel-header-button--elements {
 		flex: 0 0 auto;
-		border: 1px solid rgba(0, 0, 0, 0.08);
-		background: rgba(0, 0, 0, 0.03);
-		color: var( --builder-shell-toolbar-text-muted );
+		border: 1px solid var( --builder-shell-border );
+		background: var( --builder-shell-panel-bg-muted );
+		color: var( --builder-shell-text-muted );
+		transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+	}
+
+	.builder-shell__panel-header-button--elements:hover {
+		background: var( --builder-shell-bg-hover, rgba(0, 0, 0, 0.04) );
+		color: var( --builder-shell-text-strong );
 	}
 
 	.builder-shell__panel-header-button--elements.active {
-		border-color: rgba(0, 113, 227, 0.30);
-		background: rgba(0, 113, 227, 0.12);
+		border-color: rgba(0, 113, 227, 0.20);
+		background: rgba(0, 113, 227, 0.10);
 		color: var( --builder-shell-accent-text );
 		box-shadow: inset 0 -2px 0 var( --builder-shell-accent );
 	}
@@ -3157,10 +3164,12 @@
 		min-width: 0;
 		min-height: 30px;
 		padding-inline: 0;
-		border-radius: 5px;
+		border-radius: var( --builder-shell-radius-sm, 6px );
 		font-size: 11px;
-		color: var( --builder-shell-toolbar-text-muted );
+		font-weight: 500;
+		color: var( --builder-shell-text-muted );
 		overflow: hidden;
+		transition: background-color 0.15s ease, color 0.15s ease;
 	}
 
 	.builder-shell__panel-pages button :global(svg) {
@@ -3169,8 +3178,8 @@
 	}
 
 	.builder-shell__panel-pages button:hover {
-		background: rgba(0, 0, 0, 0.06);
-		color: var( --builder-shell-toolbar-text );
+		background: var( --builder-shell-bg-hover, rgba(0, 0, 0, 0.04) );
+		color: var( --builder-shell-text-strong );
 	}
 
 	.builder-shell__panel-pages button.active,
@@ -3179,7 +3188,8 @@
 		border-color: transparent;
 		background: rgba(0, 113, 227, 0.10);
 		color: var( --builder-shell-accent-text );
-		box-shadow: inset 0 -2px 0 var( --builder-shell-accent ), inset 0 0 0 1px rgba(0, 0, 0, 0.04);
+		font-weight: 600;
+		box-shadow: inset 0 -2px 0 var( --builder-shell-accent );
 	}
 
 	.builder-shell__panel-body {
