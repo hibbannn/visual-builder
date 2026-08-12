@@ -65,6 +65,7 @@
 	import PrimitiveControl from './components/PrimitiveControl.svelte';
 	import { resolvePrimitiveControl, serializeDimensionsValue, serializeMediaValue, serializeSliderValue, serializeUrlValue } from './components/PrimitiveControl.helpers';
 	import { createAnchorController } from './anchor-controller';
+	import { squircle } from './squircle';
 	import {
 		buildResponsiveStylePatch,
 		buildResponsiveStyleReset,
@@ -2851,7 +2852,7 @@ function onFieldInput( field: BuilderFieldDefinition, value: string ) {
 
 <div class="inspector">
 	{#if state.ui.panel === 'library' || ( state.ui.shell.leftPanelPage === 'globals' && state.ui.managers.libraryManagerOpen )}
-		<section class="inspector__section inspector__section--library">
+		<section class="inspector__section inspector__section--library" use:squircle={{ radius: 8, n: 5 }}>
 			<div class="inspector__section-header">
 				<div>
 					<p class="inspector__eyebrow">Globals</p>
@@ -2932,7 +2933,7 @@ function onFieldInput( field: BuilderFieldDefinition, value: string ) {
 		</section>
 	{:else if ( state.ui.panel === 'design-system' || ( state.ui.shell.leftPanelPage === 'globals' && ( state.ui.managers.classManagerOpen || state.ui.managers.variableManagerOpen ) ) ) && !( state.ui.shell.leftPanelPage === 'globals' && state.ui.managers.componentManagerOpen )}
 		{#if state.ui.managers.variableManagerOpen}
-			<section class="inspector__section inspector__section--globals" data-testid="globals-variables-panel">
+			<section class="inspector__section inspector__section--globals" data-testid="globals-variables-panel" use:squircle={{ radius: 8, n: 5 }}>
 				<div class="inspector__section-header">
 					<div>
 						<p class="inspector__eyebrow">Globals</p>
@@ -2978,7 +2979,7 @@ function onFieldInput( field: BuilderFieldDefinition, value: string ) {
 				</div>
 			</section>
 		{:else}
-			<section class="inspector__section inspector__section--globals" data-testid="globals-classes-panel">
+			<section class="inspector__section inspector__section--globals" data-testid="globals-classes-panel" use:squircle={{ radius: 8, n: 5 }}>
 				<div class="inspector__section-header">
 					<div>
 						<p class="inspector__eyebrow">Globals</p>
@@ -3016,7 +3017,7 @@ function onFieldInput( field: BuilderFieldDefinition, value: string ) {
 			</section>
 		{/if}
 	{:else if state.ui.panel === 'components' || ( state.ui.shell.leftPanelPage === 'globals' && state.ui.managers.componentManagerOpen )}
-		<section class="inspector__section inspector__section--globals" data-testid="globals-components-panel">
+		<section class="inspector__section inspector__section--globals" data-testid="globals-components-panel" use:squircle={{ radius: 8, n: 5 }}>
 			<div class="inspector__section-header">
 				<div>
 					<p class="inspector__eyebrow">Globals</p>
@@ -3059,7 +3060,7 @@ function onFieldInput( field: BuilderFieldDefinition, value: string ) {
 	{:else if isNodeInspectorPanel}
 		{#if selectedNode}
 			{#if state.ui.inlineEditingNodeId === selectedNode.id || state.ui.componentEditing.context}
-				<section class="inspector__section inspector__section--context">
+				<section class="inspector__section inspector__section--context" use:squircle={{ radius: 8, n: 5 }}>
 					<div class="inspector__context-strip">
 						<span class="inspector__selection-badge">{getNodeBadgeLabel( selectedNode, selectedDefinition )}</span>
 						<span class="inspector__pill">{formatInspectorLabel( state.ui.viewport )}</span>
@@ -3074,7 +3075,7 @@ function onFieldInput( field: BuilderFieldDefinition, value: string ) {
 			{/if}
 
 			{#if activeInspectorTab === 'content'}
-				<section class="inspector__section">
+				<section class="inspector__section" use:squircle={{ radius: 8, n: 5 }}>
 					{#if visibleContentSections.length}
 						{#each visibleContentSections as section (section.id)}
 							<div class="inspector__subsection inspector__content-section" data-content-section={section.id}>
@@ -3174,7 +3175,7 @@ function onFieldInput( field: BuilderFieldDefinition, value: string ) {
 					{/if}
 				</section>
 			{:else if activeInspectorTab === 'style'}
-				<section class="inspector__section">
+				<section class="inspector__section" use:squircle={{ radius: 8, n: 5 }}>
 					{#if visibleStyleSections.length}
 						{#each visibleStyleSections as section (section.id)}
 							<div class="inspector__subsection inspector__style-section" data-style-section={section.id}>
@@ -3376,7 +3377,7 @@ function onFieldInput( field: BuilderFieldDefinition, value: string ) {
 					</div>
 				</section>
 			{:else}
-				<section class="inspector__section">
+				<section class="inspector__section" use:squircle={{ radius: 8, n: 5 }}>
 					{#if visibleAdvancedSections.length}
 						{#each visibleAdvancedSections as section (section.id)}
 							<div class="inspector__subsection inspector__advanced-section" data-advanced-section={section.id}>
@@ -3553,14 +3554,14 @@ function onFieldInput( field: BuilderFieldDefinition, value: string ) {
 				</section>
 			{/if}
 		{:else}
-			<section class="inspector__section inspector__section--empty">
+			<section class="inspector__section inspector__section--empty" use:squircle={{ radius: 8, n: 5 }}>
 				<p class="inspector__eyebrow">Editor</p>
 				<h2>Select an element</h2>
 				<p>Click any element on the canvas or in Structure to edit its content, styles, and advanced settings.</p>
 			</section>
 		{/if}
 		{:else}
-			<section class="inspector__section inspector__section--summary">
+			<section class="inspector__section inspector__section--summary" use:squircle={{ radius: 8, n: 5 }}>
 				<p class="inspector__eyebrow">{formatInspectorLabel( activeDocument.kind )}</p>
 				<h2>{activeDocument.title}</h2>
 				<p>Use the shell pages for page settings, history, globals, and site-level workflows.</p>
@@ -3573,7 +3574,7 @@ function onFieldInput( field: BuilderFieldDefinition, value: string ) {
 		{/if}
 
 	{#if state.ui.componentEditing.context === 'master' && activeComponentWorkflow}
-		<section class="inspector__section">
+		<section class="inspector__section" use:squircle={{ radius: 8, n: 5 }}>
 			<div class="inspector__section-header"><div><h3>Component Master</h3><p>Manage instance policy and exposed properties for this master.</p></div><p class="inspector__eyebrow">Usage: {getComponentUsageCount( activeDocument.id )}</p></div>
 			<label><span>Locked Structure</span><input type="checkbox" checked={activeComponentWorkflow.lockedStructure} onchange={(event) => updateComponentWorkflow( { lockedStructure: ( event.currentTarget as HTMLInputElement ).checked } )} /></label>
 			<div class="inspector__subsection">
@@ -3614,9 +3615,10 @@ function onFieldInput( field: BuilderFieldDefinition, value: string ) {
 
 	.inspector__section {
 		padding: 10px 12px 12px;
-		border: 1px solid var( --builder-shell-border );
-		border-radius: 6px;
+		border: none;
+		border-radius: var( --builder-shell-radius, 8px );
 		background: var( --builder-shell-panel-bg-muted );
+		box-shadow: inset 0 0 0 1px var( --builder-shell-border, rgba(0, 0, 0, 0.12) );
 		display: grid;
 		gap: 8px;
 		min-width: 0;

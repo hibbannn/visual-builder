@@ -81,6 +81,7 @@
 	import PreviewRuntimeHost from './components/PreviewRuntimeHost.svelte';
 	import { createBuilderDndData } from './drag-drop';
 	import { createAnchorController } from './anchor-controller';
+	import { squircle } from './squircle';
 	import { normalizeInlineEditingPlainText, serializeInlineEditingValue } from './inline-editing';
 	import { createPreviewHostController, type PreviewHostController } from './preview-host';
 	import {
@@ -1568,6 +1569,7 @@
 						data-inline-edit-preserve-focus="true"
 						aria-label={viewport.label}
 						title={resolveViewportTitle( viewport )}
+							use:squircle={{ radius: 999, n: 5 }}
 						onclick={() => setViewport( viewport.id )}
 					>
 						<EditorShellIcon name={resolveViewportIconName( viewport.id )} title={viewport.label} size={16} />
@@ -1576,10 +1578,10 @@
 			</div>
 
 			<div class="builder-preview__scale-strip" aria-label="Preview scale">
-				<button type="button" class="builder-preview__scale-button" disabled aria-label="Decrease zoom">-</button>
+				<button type="button" class="builder-preview__scale-button" disabled aria-label="Decrease zoom" use:squircle={{ radius: 999, n: 5 }}>-</button>
 				<div class="builder-preview__scale-value">100%</div>
-				<button type="button" class="builder-preview__scale-button" disabled aria-label="Increase zoom">+</button>
-				<button type="button" class="builder-preview__scale-button" data-inline-edit-preserve-focus="true" onclick={() => setViewport( 'desktop' )} aria-label="Reset viewport">
+				<button type="button" class="builder-preview__scale-button" disabled aria-label="Increase zoom" use:squircle={{ radius: 999, n: 5 }}>+</button>
+				<button type="button" class="builder-preview__scale-button" data-inline-edit-preserve-focus="true" use:squircle={{ radius: 999, n: 5 }} onclick={() => setViewport( 'desktop' )} aria-label="Reset viewport">
 					<EditorShellIcon name="revision" title="Reset viewport" size={14} />
 				</button>
 			</div>
@@ -1959,13 +1961,13 @@
 
 	.builder-preview__bar-button:hover,
 	.builder-preview__scale-button:hover {
-		color: var(--builder-shell-gray-50);
-		background: var(--builder-shell-gray-700);
+		color: var(--builder-shell-text-strong);
+		background: var(--builder-shell-bg-hover, rgba(0, 0, 0, 0.04));
 	}
 
 	.builder-preview__bar-button.active {
-		background: var(--builder-shell-gray-700);
-		color: var(--builder-shell-gray-25);
+		background: var(--builder-shell-bg-hover, rgba(0, 0, 0, 0.04));
+		color: var(--builder-shell-text-strong);
 	}
 
 	.builder-preview__bar-button--icon {

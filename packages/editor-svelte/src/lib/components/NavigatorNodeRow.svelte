@@ -420,17 +420,18 @@ import {
 		align-items: center;
 		gap: 0.35rem;
 		padding: 0.34rem 0.55rem;
-		border: 1px solid rgba(152, 166, 187, 0.34);
+		border: none;
 		border-radius: 6px;
-		background: rgba(255, 255, 255, 0.92);
-		color: #2f4059;
+		background: var(--builder-shell-panel-bg, #ffffff);
+		box-shadow: inset 0 0 0 1px var(--builder-shell-border, rgba(0, 0, 0, 0.12));
+		color: var(--builder-shell-text, #6e6e73);
 		font-size: 0.7rem;
 		line-height: 1;
 		cursor: pointer;
 		transition:
 			background 140ms ease,
-			border-color 140ms ease,
 			box-shadow 140ms ease,
+			color 140ms ease,
 			transform 140ms ease;
 	}
 
@@ -470,19 +471,17 @@ import {
 	.navigator__row-handle:hover,
 	.navigator__actions button:hover,
 	.navigator__inline-actions button:hover {
-		border-color: rgba(76, 119, 187, 0.38);
-		background: rgba(248, 251, 255, 0.98);
+		box-shadow: inset 0 0 0 1px var(--builder-shell-border-strong, #d2d2d7);
+		background: var(--builder-shell-bg-hover, rgba(0, 0, 0, 0.04));
 	}
 
 	.navigator__row-handle.armed {
-		border-color: rgba(76, 119, 187, 0.5);
-		box-shadow: 0 0 0 1px rgba(76, 119, 187, 0.25);
+		box-shadow: inset 0 0 0 1px rgba(0, 113, 227, 0.4);
 	}
 
 	.navigator__row-handle.dragging {
-		border-color: rgba(0, 113, 227, 0.5);
-		box-shadow: 0 0 0 1px rgba(0, 113, 227, 0.2);
-		background: rgba(250, 232, 255, 0.98);
+		box-shadow: inset 0 0 0 1px rgba(0, 113, 227, 0.5);
+		background: rgba(0, 113, 227, 0.06);
 	}
 
 	.navigator__row-handle-grip {
