@@ -1864,7 +1864,6 @@
 							onclick={() => openShellPage( page.id )}
 						>
 							<EditorShellIcon name={shellPageIcons[page.id]} title={page.label} />
-							<span class="builder-shell__panel-page-label">{page.label}</span>
 						</button>
 					{/each}
 				</nav>
@@ -3049,7 +3048,7 @@
 
 	.builder-shell__panel-surface {
 		display: grid;
-		grid-template-rows: 48px 40px minmax( 0, 1fr ) 40px;
+		grid-template-rows: 48px 48px minmax( 0, 1fr ) 40px;
 		inline-size: 100%;
 		block-size: 100%;
 		min-width: 0;
@@ -3147,10 +3146,11 @@
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		gap: 5px;
-		flex: 0 0 auto;
-		min-height: 28px;
-		padding: 0 12px;
+		gap: 0;
+		flex: 1 1 0;
+		min-width: 0;
+		min-height: 32px;
+		padding: 0;
 		border: 1px solid var( --builder-shell-border, rgba(0, 0, 0, 0.12) );
 		border-radius: 999px;
 		background: var( --builder-shell-panel-bg, #ffffff );
@@ -3162,15 +3162,9 @@
 	}
 
 	.builder-shell__panel-pages button :global(svg) {
-		inline-size: 14px;
-		block-size: 14px;
+		inline-size: 16px;
+		block-size: 16px;
 		flex-shrink: 0;
-	}
-
-	.builder-shell__panel-page-label {
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
 	}
 
 	.builder-shell__panel-pages button:hover {
