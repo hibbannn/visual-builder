@@ -442,6 +442,11 @@
 		onDelete: ( node ) => editor.dispatch( { type: 'document/elements/delete', nodeId: node.id } ),
 		onInsertNode: insertNode,
 		onOpenMaster: openNodeComponentMaster,
+		onRename: ( node, name ) => editor.dispatch( {
+			type: 'document/elements/update',
+			nodeId: node.id,
+			patch: { name: name || undefined },
+		} ),
 	};
 
 	function getNavigatorVirtualRowStyle( start: number, size: number ) {

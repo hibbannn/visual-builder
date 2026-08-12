@@ -31,6 +31,9 @@ import {
 	let nodeIndicators: ReturnType<typeof getNavigatorNodeIndicators> = [];
 	let isSelected = false;
 	let dropClass = '';
+	let isRenaming = false;
+	let renameValue = '';
+	let renameInput: HTMLInputElement | null = null;
 
 	const draggable = createDraggable( {
 		get id() {
@@ -67,6 +70,34 @@ import {
 
 	$: if ( rowElement && virtualizer ) {
 		virtualizer.measureElement( rowElement );
+	}
+
+	function startRename() {
+		renameValue = row.node.name ?? '';
+		isRenaming = true;
+	}
+
+	function commitRename() {
+		if ( !isRenaming ) return;
+		isRenaming = false;
+		const trimmed = renameValue.trim();
+		if ( trimmed !== ( row.node.name ?? '' ) ) {
+			actions.onRename( row.node, trimmed );
+		}
+	}
+
+	function cancelRename() {
+		isRenaming = false;
+	}
+
+	function handleRenameKeydown( event: KeyboardEvent ) {
+		if ( event.key === 'Enter' ) {
+			event.preventDefault();
+			commitRename();
+		} else if ( event.key === 'Escape' ) {
+			event.preventDefault();
+			cancelRename();
+		}
 	}
 
 	function measureRow( element: HTMLLIElement ) {
@@ -191,14 +222,33 @@ import {
 			type="button"
 			class="navigator__row"
 			class:selected={isSelected}
+			class:renaming={isRenaming}
 			use:squircle={{ radius: 6, n: 5 }}
 			onclick={() => actions.onSelect( row.nodeId )}
 			onkeydown={( event ) => handleNodeKeydown( event, row.node )}
 		>
 			<span class="navigator__row-main">
 				<span class="navigator__row-copy">
-					<span class="navigator__row-title">{nodeLabel}</span>
-					<span class="navigator__row-subtitle" title={row.node.id}>{nodeSubtitle}</span>
+					{#if isRenaming}
+						<input
+							bind:this={renameInput}
+							class="navigator__row-rename"
+							type="text"
+							placeholder={nodeLabel}
+							bind:value={renameValue}
+							onblur={commitRename}
+							onkeydown={handleRenameKeydown}
+							onclick={(e) => e.stopPropagation()}
+							onpointerdown={(e) => e.stopPropagation()}
+						/>
+					{:else}
+						<span
+							class="navigator__row-title"
+							ondblclick={( e ) => { e.stopPropagation(); startRename(); }}
+							title="Double-click to rename"
+						>{nodeLabel}</span>
+						<span class="navigator__row-subtitle" title={row.node.id}>{nodeSubtitle}</span>
+					{/if}
 				</span>
 			</span>
 			<span class="navigator__row-status">
@@ -328,6 +378,30 @@ import {
 		background: rgba(0, 113, 227, 0.10);
 		color: var(--builder-shell-accent-text, #005bb5);
 		box-shadow: inset 0 0 0 1px rgba(0, 113, 227, 0.20);
+	}
+
+	.navigator__row.renaming {
+		background: var(--builder-shell-panel-bg, #ffffff);
+		box-shadow: inset 0 0 0 2px var(--builder-shell-accent, #0071e3);
+	}
+
+	.navigator__row-rename {
+		width: 100%;
+		min-width: 0;
+		padding: 2px 6px;
+		border: none;
+		border-radius: 4px;
+		background: var(--builder-shell-panel-bg-muted, rgba(0, 0, 0, 0.04));
+		color: var(--builder-shell-text-strong, #1d1d1f);
+		font-size: 12px;
+		font-weight: 700;
+		line-height: 1.3;
+		outline: none;
+	}
+
+	.navigator__row-rename:focus {
+		background: #ffffff;
+		box-shadow: inset 0 0 0 1px var(--builder-shell-accent, #0071e3);
 	}
 
 	/* Source row during drag — ghosted + shrunk */

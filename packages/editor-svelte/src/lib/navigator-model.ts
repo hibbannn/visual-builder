@@ -18,6 +18,7 @@ export interface NavigatorNodeRowActions {
 	onDelete: ( node: BuilderNode ) => void;
 	onInsertNode: ( targetParentId?: string, targetSlot?: string ) => void;
 	onOpenMaster: ( node: BuilderNode ) => void;
+	onRename: ( node: BuilderNode, name: string ) => void;
 }
 
 export interface NavigatorNodeRow {
