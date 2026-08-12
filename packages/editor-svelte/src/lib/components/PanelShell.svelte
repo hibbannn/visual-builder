@@ -84,8 +84,9 @@
 
 	.builder-panel-shell__appbar,
 	.builder-panel-shell__header {
-		background: var(--builder-panel-shell-surface-dark);
-		color: var(--builder-shell-toolbar-text);
+		background: var(--builder-panel-shell-surface);
+		color: var(--builder-shell-text-strong);
+		border-block-end: 1px solid var(--builder-panel-shell-border);
 	}
 
 	.builder-panel-shell__tabs {
@@ -146,5 +147,6 @@
 	.builder-panel-shell__footer {
 		border-block-start: 1px solid var(--builder-panel-shell-border);
 		background: var(--builder-panel-shell-surface-muted);
+		color: var(--builder-shell-text-muted);
 	}
 </style>

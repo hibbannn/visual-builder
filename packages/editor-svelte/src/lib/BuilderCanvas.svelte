@@ -3054,8 +3054,8 @@
 		min-width: 0;
 		min-height: 0;
 		overflow: hidden;
-		border-right: 1px solid var( --builder-shell-border-dark );
-		background: var( --builder-shell-dark-panel );
+		border-right: 1px solid var( --builder-shell-border );
+		background: var( --builder-shell-panel-bg );
 	}
 
 	.builder-shell__panel-surface--collapsed {
@@ -3074,9 +3074,9 @@
 	}
 
 	.builder-shell__panel-header {
-		background: linear-gradient( 180deg, rgba(0, 0, 0, 0.02), rgba( 255, 255, 255, 0 ) ), var(--builder-shell-panel-bg);
-		color: var( --builder-shell-toolbar-text );
-		border-bottom: 1px solid var( --builder-shell-border-dark );
+		background: var(--builder-shell-panel-bg);
+		color: var( --builder-shell-text-strong );
+		border-bottom: 1px solid var( --builder-shell-border );
 	}
 
 	.builder-shell__panel-header h2 {
@@ -3126,8 +3126,8 @@
 
 	.builder-shell__panel-pages {
 		padding: 0 10px;
-		border-bottom: 1px solid var( --builder-shell-border-dark );
-		background: var( --builder-shell-dark-panel );
+		border-bottom: 1px solid var( --builder-shell-border );
+		background: var( --builder-shell-panel-bg-muted );
 		overflow: hidden;
 	}
 
@@ -3177,8 +3177,8 @@
 	.builder-shell__preset-button:hover,
 	.builder-shell__entry-card:hover {
 		border-color: transparent;
-		background: rgba(0, 113, 227, 0.08);
-		color: #ffffff;
+		background: rgba(0, 113, 227, 0.10);
+		color: var( --builder-shell-accent-text );
 		box-shadow: inset 0 -2px 0 var( --builder-shell-accent ), inset 0 0 0 1px rgba(0, 0, 0, 0.04);
 	}
 
@@ -3187,7 +3187,7 @@
 		min-width: 0;
 		min-height: 0;
 		overflow: hidden;
-		background: var( --builder-shell-dark-panel );
+		background: var( --builder-shell-panel-bg );
 	}
 
 	.builder-shell__panel-body--editor {
@@ -3212,8 +3212,8 @@
 		block-size: 100%;
 		overflow: auto;
 		overflow-x: hidden;
-		background: var( --builder-shell-dark-panel );
-		color: var( --builder-shell-toolbar-text );
+		background: var( --builder-shell-panel-bg );
+		color: var( --builder-shell-text );
 	}
 
 	.builder-shell__panel-scroll > * {
@@ -3225,8 +3225,8 @@
 		display: grid;
 		gap: 10px;
 		padding: 10px 12px 12px;
-		background: var( --builder-shell-dark-panel );
-		color: var( --builder-shell-toolbar-text );
+		background: var( --builder-shell-panel-bg );
+		color: var( --builder-shell-text );
 	}
 
 	.builder-shell__panel-scroll :global(.builder-shell-lazy-panel__placeholder) {
@@ -3440,9 +3440,9 @@
 	}
 
 	.builder-shell__panel-footer {
-		border-top: 1px solid var( --builder-shell-border-dark );
-		background: linear-gradient( 180deg, rgba(0, 0, 0, 0.02), rgba( 255, 255, 255, 0 ) ), var(--builder-shell-panel-bg);
-		color: var( --builder-shell-toolbar-text-muted );
+		border-top: 1px solid var( --builder-shell-border );
+		background: var(--builder-shell-panel-bg-muted);
+		color: var( --builder-shell-text-muted );
 		grid-template-columns: minmax( 0, 1fr ) auto;
 	}
 
@@ -3455,7 +3455,7 @@
 
 	.builder-shell__panel-tool:hover {
 		background: rgba(0, 0, 0, 0.08);
-		color: #ffffff;
+		color: var( --builder-shell-text-strong );
 	}
 
 	.builder-shell__panel-save {
