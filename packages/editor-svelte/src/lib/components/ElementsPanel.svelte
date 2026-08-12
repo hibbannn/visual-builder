@@ -388,7 +388,7 @@
 	.elements-panel__header-icon {
 		inline-size: 28px;
 		block-size: 28px;
-		color: var(--builder-shell-text-muted, #a1a1a6);
+		color: var(--builder-shell-text, #6e6e73);
 	}
 
 	.elements-panel__header h2,
@@ -404,7 +404,7 @@
 	.elements-panel__header p,
 	.elements-panel__group p,
 	.elements-panel__empty p {
-		color: var(--builder-shell-text-muted, #a1a1a6);
+		color: var(--builder-shell-text, #6e6e73);
 	}
 
 	.elements-panel__group p {
@@ -421,7 +421,7 @@
 	.elements-panel__header p {
 		font-size: 11px;
 		line-height: 1.3;
-		color: var(--builder-shell-text-muted, #a1a1a6);
+		color: var(--builder-shell-text, #6e6e73);
 	}
 
 	.elements-panel__search-input {
@@ -471,7 +471,7 @@
 		letter-spacing: 0;
 		background: transparent;
 		box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
-		color: var(--builder-shell-text-muted, #a1a1a6);
+		color: var(--builder-shell-text, #6e6e73);
 		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;
@@ -569,7 +569,7 @@
 		inline-size: 16px;
 		block-size: 16px;
 		flex-shrink: 0;
-		color: var(--builder-shell-text-muted, #a1a1a6);
+		color: var(--builder-shell-text, #6e6e73);
 	}
 
 	.elements-panel__group-copy {
@@ -581,7 +581,7 @@
 	.elements-panel__group-header h3 {
 		font-size: 11px;
 		font-weight: 600;
-		color: var(--builder-shell-text-muted, #a1a1a6);
+		color: var(--builder-shell-text, #6e6e73);
 		text-transform: none;
 		letter-spacing: 0;
 	}

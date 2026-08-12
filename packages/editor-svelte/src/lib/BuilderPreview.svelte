@@ -1884,7 +1884,7 @@
 		height: 0;
 		padding: 0 0.75rem;
 		overflow: hidden;
-		color: var(--builder-shell-gray-200);
+		color: var(--builder-shell-text, #6e6e73);
 		background: var(--builder-shell-panel-bg);
 		opacity: 0;
 		border-bottom: 0;
@@ -2017,8 +2017,8 @@
 	}
 
 	.builder-preview__device-button.active {
-		background: var(--builder-shell-accent);
-		color: #ffffff;
+		background: rgba(0, 0, 0, 0.06);
+		color: var(--builder-shell-text-strong);
 	}
 
 	.builder-preview__stage {

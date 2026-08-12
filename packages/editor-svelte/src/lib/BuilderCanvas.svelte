@@ -3209,9 +3209,9 @@
 	}
 
 	.builder-shell__panel-header-button--elements.active {
-		box-shadow: inset 0 0 0 1px rgba(0, 113, 227, 0.20);
-		background: rgba(0, 113, 227, 0.10);
-		color: var( --builder-shell-accent-text );
+		box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12);
+		background: rgba(0, 0, 0, 0.06);
+		color: var( --builder-shell-text-strong );
 	}
 
 	.builder-shell__panel-pages {
@@ -3219,7 +3219,7 @@
 		align-items: center;
 		gap: 0;
 		inline-size: 100%;
-		padding: 8px 10px;
+		padding: 8px 14px;
 		border-bottom: 1px solid var( --builder-shell-border );
 		background: var( --builder-shell-panel-bg );
 		overflow: hidden;
@@ -3248,7 +3248,7 @@
 		border: none;
 		border-radius: 999px;
 		background: transparent;
-		color: var( --builder-shell-text-muted, #a1a1a6 );
+		color: var( --builder-shell-text, #6e6e73 );
 		font-size: 11px;
 		font-weight: 500;
 		white-space: nowrap;
@@ -3534,7 +3534,7 @@
 	.builder-shell__panel-footer {
 		border-top: 1px solid var( --builder-shell-border );
 		background: var(--builder-shell-panel-bg-muted);
-		color: var( --builder-shell-text-muted );
+		color: var( --builder-shell-text );
 		grid-template-columns: minmax( 0, 1fr ) auto;
 	}
 
