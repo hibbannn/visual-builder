@@ -248,7 +248,7 @@
 	}
 
 	function getPopupDialogStyle(): string {
-		const overlayColor = renderPlainText( resolvedProps.overlayBackdrop ) || 'rgba(15, 23, 42, 0.45)';
+		const overlayColor = renderPlainText( resolvedProps.overlayBackdrop ) || 'rgba(0, 0, 0, 0.3)';
 		const width = renderPlainText( popupBehavior.width ) || '720px';
 		return [
 			`--builder-popup-prop-width:${ width };`,
@@ -938,7 +938,7 @@
 		display: grid;
 		place-items: center;
 		min-height: 32px;
-		background: rgba(15, 23, 42, 0.14);
+		background: rgba(0, 0, 0, 0.06);
 		color: rgba(255, 255, 255, 0.9);
 		font-size: 10px;
 		font-weight: 800;
@@ -966,11 +966,11 @@
 		border: 1px dashed rgba(148, 163, 184, 0.78);
 		border-radius: 1rem;
 		background: linear-gradient(180deg, rgba(248, 250, 252, 0.95), rgba(241, 245, 249, 0.86));
-		color: #64748b;
+		color: #6e6e73;
 		text-align: center;
 		pointer-events: none;
 		box-sizing: border-box;
-		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.62);
+		box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.04);
 	}
 
 	.builder-empty-view--slot {
@@ -981,8 +981,8 @@
 	.builder-empty-view--container {
 		min-height: 84px;
 		border-radius: 0;
-		border-color: rgba(148, 163, 184, 0.7);
-		background: rgba(148, 163, 184, 0.22);
+		border-color: rgba(148, 163, 184, 0.5);
+		background: rgba(148, 163, 184, 0.08);
 		box-shadow: none;
 	}
 
@@ -996,13 +996,13 @@
 		letter-spacing: 0.08em;
 		text-transform: uppercase;
 		font-style: italic;
-		color: rgba(255, 255, 255, 0.92);
+		color: #6e6e73;
 	}
 
 	.builder-empty-view__context {
 		font-size: 0.81rem;
 		line-height: 1.3;
-		color: #64748b;
+		color: #6e6e73;
 	}
 
 	.builder-component-instance__inner,
@@ -1047,16 +1047,16 @@
 		min-height: 2.5rem;
 		padding: 0.65rem;
 		border-radius: 999px;
-		background: #eff6ff;
-		color: #1d4ed8;
+		background: #e6f0fa;
+		color: #0071e3;
 		font-weight: 700;
 	}
 
 	.builder-node--icon-box .builder-icon-box__icon {
 		order: var(--builder-icon-box-icon-order, 0);
 		font-size: var(--builder-icon-size, inherit);
-		color: var(--builder-icon-color, #1d4ed8);
-		background: var(--builder-icon-background, #eff6ff);
+		color: var(--builder-icon-color, #0071e3);
+		background: var(--builder-icon-background, #e6f0fa);
 		padding: var(--builder-icon-padding, 0.65rem);
 	}
 
@@ -1103,15 +1103,15 @@
 		color: var(--builder-tabs-title-color, inherit);
 		padding: 0.7rem 0.9rem;
 		padding: var(--builder-tabs-title-padding, 0.7rem 0.9rem);
-		border: 1px solid #cbd5e1;
+		border: 1px solid #d2d2d7;
 		border-radius: 999px;
 		background: var(--builder-tabs-title-background-color, white);
 	}
 
 	.builder-tabs__triggers button.active {
-		border-color: #2563eb;
-		background: #eff6ff;
-		color: #1d4ed8;
+		border-color: #0071e3;
+		background: #e6f0fa;
+		color: #0071e3;
 	}
 
 	.builder-tabs__panel.hidden,
@@ -1120,7 +1120,7 @@
 	}
 
 	.builder-accordion__item {
-		border: 1px solid #dbe3f0;
+		border: 1px solid #d2d2d7;
 		border-radius: 1rem;
 		overflow: hidden;
 	}
@@ -1133,7 +1133,7 @@
 		color: var(--builder-accordion-title-color, inherit);
 		padding: var(--builder-accordion-title-padding, 0.95rem 1rem);
 		border: 0;
-		background: var(--builder-accordion-title-background-color, #f8fafc);
+		background: var(--builder-accordion-title-background-color, #f5f5f7);
 	}
 
 	.builder-accordion__body,
@@ -1312,7 +1312,7 @@
 	.builder-popup__overlay {
 		position: absolute;
 		inset: 0;
-		background: var(--builder-overlay-color, var(--builder-popup-overlay, rgba(15, 23, 42, 0.45)));
+		background: var(--builder-overlay-color, var(--builder-popup-overlay, rgba(0, 0, 0, 0.3)));
 		opacity: var(--builder-overlay-opacity, 1);
 		pointer-events: none;
 	}
@@ -1325,7 +1325,7 @@
 		padding: var(--builder-popup-padding, 1.25rem);
 		border-radius: 1.5rem;
 		background: var(--builder-popup-background, white);
-		box-shadow: 0 25px 70px rgba(15, 23, 42, 0.25);
+		box-shadow: 0 25px 70px rgba(0, 0, 0, 0.14);
 		pointer-events: auto;
 	}
 
@@ -1359,8 +1359,8 @@
 		margin: 1rem 0 0;
 		padding: 0.8rem 1rem;
 		border-radius: 0.9rem;
-		background: #ecfdf5;
-		color: #047857;
+		background: #d1f5dc;
+		color: #34c759;
 	}
 
 	.builder-node--form {
@@ -1403,7 +1403,7 @@
 	.builder-node--form-field-select select {
 		background: var(--builder-form-field-background-color, white);
 		color: var(--builder-form-field-color, inherit);
-		border-color: var(--builder-form-field-border-color, #cbd5e1);
+		border-color: var(--builder-form-field-border-color, #d2d2d7);
 		border-radius: var(--builder-form-field-border-radius, 0.85rem);
 		padding: var(--builder-form-field-padding, 0.7rem 0.8rem);
 	}
@@ -1432,7 +1432,7 @@
 	textarea,
 	select {
 		padding: 0.7rem 0.8rem;
-		border: 1px solid #cbd5e1;
+		border: 1px solid #d2d2d7;
 		border-radius: 0.85rem;
 	}
 </style>

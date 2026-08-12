@@ -448,11 +448,11 @@
 			'<head>',
 			'<meta charset="utf-8" />',
 			'<style>',
-			'html,body{margin:0;min-height:360px;font-family:Inter,system-ui,sans-serif;background:#fff;color:#0f172a;}',
+			'html,body{margin:0;min-height:360px;font-family:Inter,system-ui,sans-serif;background:#fff;color:#1d1d1f;}',
 			'body{display:grid;place-items:center;padding:32px;}',
 			'.empty{display:grid;place-items:center;gap:10px;width:min(520px,100%);min-height:220px;border:1px dashed #0071e3;border-radius:12px;background:#fdf4ff;color:#86198f;text-align:center;}',
 			'.empty strong{font-size:14px;text-transform:uppercase;letter-spacing:.08em;}',
-			'.empty span{font-size:13px;color:#64748b;}',
+			'.empty span{font-size:13px;color:#6e6e73;}',
 			'</style>',
 			'</head>',
 			'<body><div class="empty"><strong>HTML preview</strong><span>Waiting for the AI to stream generated HTML...</span></div></body>',
@@ -475,7 +475,7 @@
 				border-radius: 12px;
 				overflow: hidden;
 				background: #ffffff;
-				box-shadow: 0 18px 48px rgba(15, 23, 42, 0.18);
+				box-shadow: 0 18px 48px rgba(0, 0, 0, 0.12);
 			}
 			.builder-ai-standin__header {
 				display: flex;
@@ -484,12 +484,12 @@
 				gap: 12px;
 				padding: 8px 12px;
 				background: linear-gradient(90deg, #111827, #312e81);
-				color: #f8fafc;
+				color: #f5f5f7;
 				font: 800 12px/1.25 Inter, system-ui, sans-serif;
 			}
 			.builder-ai-standin__header small {
 				overflow: hidden;
-				color: #cbd5e1;
+				color: #d2d2d7;
 				font-size: 11px;
 				font-weight: 700;
 				text-overflow: ellipsis;
@@ -1843,12 +1843,12 @@
 
 <style>
 	.builder-preview-shell {
-		--builder-preview-stage: var(--builder-shell-stage-bg, #1d1d1f);
-		--builder-preview-stage-deep: var(--builder-shell-stage-bg-deep, #1d1d1f);
+		--builder-preview-stage: var(--builder-shell-stage-bg, rgba(0, 0, 0, 0.04));
+		--builder-preview-stage-deep: var(--builder-shell-stage-bg-deep, rgba(0, 0, 0, 0.06));
 		--builder-preview-accent: var(--builder-shell-accent, #0071e3);
-		--builder-preview-accent-strong: var(--builder-shell-accent-strong, #524cff);
-		--builder-preview-text: #f4f7fb;
-		--builder-preview-muted: rgba(228, 233, 243, 0.72);
+		--builder-preview-accent-strong: var(--builder-shell-accent-strong, #0077ed);
+		--builder-preview-text: var(--builder-shell-text-strong, #1d1d1f);
+		--builder-preview-muted: var(--builder-shell-text-muted, #6e6e73);
 		--builder-preview-frame-bg: #ffffff;
 		position: relative;
 		display: flex;
@@ -2132,7 +2132,7 @@
 		background: rgba(0, 0, 0, 0.04);
 		border: 1px solid rgba(0, 0, 0, 0.05);
 		font-size: 12px;
-		color: rgba(244, 247, 251, 0.92);
+		color: var(--builder-shell-text-strong);
 	}
 
 	.builder-preview__location-path,
@@ -2257,7 +2257,7 @@
 		border-radius: 6px;
 		overflow: hidden;
 		background: var(--builder-preview-frame-bg);
-		border: 1px solid rgba(15, 23, 42, 0.2);
+		border: 1px solid rgba(0, 0, 0, 0.12);
 		box-shadow: 0 22px 48px rgba(0, 0, 0, 0.28);
 	}
 
@@ -2282,7 +2282,7 @@
 		border-radius: 10px;
 		overflow: hidden;
 		background: #ffffff;
-		box-shadow: 0 18px 50px rgba(15, 23, 42, 0.22);
+		box-shadow: 0 18px 50px rgba(0, 0, 0, 0.14);
 	}
 
 	.builder-preview__ai-standin-header {
@@ -2292,7 +2292,7 @@
 		gap: 12px;
 		padding: 8px 12px;
 		background: linear-gradient(90deg, #111827, #312e81);
-		color: #f8fafc;
+		color: #f5f5f7;
 		font-size: 12px;
 		font-weight: 800;
 		line-height: 1.25;
@@ -2307,7 +2307,7 @@
 	}
 
 	.builder-preview__ai-standin-header small {
-		color: #cbd5e1;
+		color: #d2d2d7;
 		font-size: 11px;
 	}
 
@@ -2345,8 +2345,8 @@
 		padding: 1rem;
 		border-radius: 0.9rem;
 		background: rgba(255, 255, 255, 0.9);
-		border: 1px solid rgba(15, 23, 42, 0.08);
-		box-shadow: 0 18px 36px rgba(15, 23, 42, 0.12);
+		border: 1px solid rgba(0, 0, 0, 0.08);
+		box-shadow: 0 18px 36px rgba(0, 0, 0, 0.10);
 	}
 
 	.builder-preview__loading-badge {
@@ -2518,7 +2518,7 @@
 		border: 1px dashed rgba(0, 113, 227, 0.45 );
 		border-radius: 8px;
 		background: rgba(0, 113, 227, 0.06 );
-		color: rgba( 248, 251, 255, 0.84 );
+		color: var(--builder-shell-text-secondary, #6e6e73);
 		font-size: 11px;
 		font-weight: 700;
 		text-transform: uppercase;
@@ -2616,7 +2616,7 @@
 		font-weight: 700;
 		letter-spacing: 0.03em;
 		text-transform: uppercase;
-		box-shadow: 0 6px 14px rgba(15, 23, 42, 0.18);
+		box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
 	}
 
 	.builder-preview__action-rail--hover {
@@ -2680,7 +2680,7 @@
 		color: white;
 		font-size: 0.8rem;
 		font-weight: 700;
-		box-shadow: 0 20px 42px rgba(15, 23, 42, 0.24);
+		box-shadow: 0 20px 42px rgba(0, 0, 0, 0.14);
 	}
 
 	.builder-preview__inline-editor-shell {

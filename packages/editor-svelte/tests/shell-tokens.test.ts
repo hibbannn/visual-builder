@@ -25,7 +25,7 @@ describe( 'editor shell tokens', () => {
 		expect( shellTokensSource ).toContain( '--builder-shell-panel-width-xl: 300px;' );
 		expect( shellTokensSource ).toContain( '--builder-shell-navigator-width: 240px;' );
 		expect( shellTokensSource ).toContain( '--builder-shell-font-size: 13px;' );
-		expect( shellTokensSource ).toContain( '--builder-shell-accent: #d004d4;' );
+		expect( shellTokensSource ).toContain( '--builder-shell-accent: #0071e3;' );
 		expect( shellTokensSource ).toContain( '--builder-shell-accent-strong: #524cff;' );
 		expect( shellTokensSource ).toContain( '--builder-shell-bg-dark: var(--builder-shell-gray-800);' );
 		expect( shellIconSource ).toContain( 'assignment:' );

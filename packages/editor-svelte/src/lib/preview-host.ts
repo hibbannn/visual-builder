@@ -18,8 +18,8 @@ const PREVIEW_HOST_STYLE = `
 		box-sizing: border-box;
 		margin: 0;
 		background: #ffffff;
-		color: #0f172a;
-		font-family: Roboto, Arial, Helvetica, sans-serif;
+		color: #1d1d1f;
+		font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", "Inter", Roboto, Helvetica, Arial, sans-serif;
 		position: relative;
 	}
 

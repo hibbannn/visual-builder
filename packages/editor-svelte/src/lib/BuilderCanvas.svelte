@@ -2260,14 +2260,14 @@
 		gap: 16px;
 		padding: 8px 14px;
 		border-bottom: 1px solid rgba(0, 0, 0, 0.10);
-		background: #3a1720;
-		color: #ffe7e7;
+		background: var(--status-danger-bg, #ffe0de);
+		color: var(--status-danger, #ff3b30);
 		font-size: 12px;
 	}
 
 	.builder-shell__save-banner--error {
-		background: #3b1f11;
-		color: #ffedd5;
+		background: var(--status-warning-bg, #fff3d6);
+		color: var(--status-warning, #ff9f0a);
 	}
 
 	.builder-shell__save-banner > div:first-child {
@@ -2548,9 +2548,9 @@
 		padding: 12px;
 		border: 1px solid rgba( 148, 163, 184, 0.28 );
 		border-radius: 12px;
-		background: rgba( 15, 23, 42, 0.96 );
+		background: rgba(255, 255, 255, 0.96);
 		box-shadow: 0 18px 40px rgba( 0, 0, 0, 0.32 );
-		color: #f8fafc;
+		color: #f5f5f7;
 	}
 
 	.builder-shell__ai-create-mini > div {
@@ -2567,7 +2567,7 @@
 
 	.builder-shell__ai-create-mini span {
 		overflow: hidden;
-		color: #94a3b8;
+		color: #a1a1a6;
 		font-size: 11px;
 		line-height: 1.35;
 		text-overflow: ellipsis;
@@ -2577,7 +2577,7 @@
 	.builder-shell__ai-settings-dialog,
 	.builder-shell__ai-create-dialog {
 		background: var( --builder-shell-dark-panel-raised );
-		color: #e5e7eb;
+		color: #d2d2d7;
 	}
 
 	.builder-shell__ai-settings-dialog .builder-shell__context-field,
@@ -2588,7 +2588,7 @@
 
 	.builder-shell__ai-settings-dialog .builder-shell__context-field span,
 	.builder-shell__ai-create-dialog .builder-shell__context-field span {
-		color: #cbd5e1;
+		color: #d2d2d7;
 	}
 
 	.builder-shell__ai-settings-dialog :global(input),
@@ -2598,10 +2598,10 @@
 	.builder-shell__ai-create-dialog :global(select),
 	.builder-shell__ai-create-dialog :global(textarea) {
 		width: 100%;
-		border: 1px solid #334155;
+		border: 1px solid #d2d2d7;
 		border-radius: 6px;
-		background: #f8fafc;
-		color: #0f172a;
+		background: #f5f5f7;
+		color: #1d1d1f;
 	}
 
 	.builder-shell__ai-settings-dialog :global(input),
@@ -2647,8 +2647,8 @@
 		padding: 7px 10px;
 		border: 1px solid rgba( 148, 163, 184, 0.22 );
 		border-radius: 999px;
-		background: rgba( 15, 23, 42, 0.62 );
-		color: #94a3b8;
+		background: rgba(255, 255, 255, 0.72);
+		color: #a1a1a6;
 		font-size: 11px;
 		font-weight: 700;
 		text-align: center;
@@ -2656,8 +2656,8 @@
 	}
 
 	.builder-shell__import-steps .builder-shell__import-step--active {
-		border-color: rgba( 217, 70, 239, 0.58 );
-		background: rgba( 217, 70, 239, 0.16 );
+		border-color: rgba(0, 113, 227, 0.58 );
+		background: rgba(0, 113, 227, 0.16 );
 		color: #0071e3;
 	}
 
@@ -2677,7 +2677,7 @@
 	.builder-shell__import-summary-grid span,
 	.builder-shell__import-review h3,
 	.builder-shell__import-details summary {
-		color: #cbd5e1;
+		color: #d2d2d7;
 		font-size: 11px;
 		font-weight: 800;
 		letter-spacing: 0.08em;
@@ -2689,14 +2689,14 @@
 		padding: 10px;
 		border: 1px solid rgba( 148, 163, 184, 0.16 );
 		border-radius: 8px;
-		background: rgba( 15, 23, 42, 0.48 );
+		background: rgba(255, 255, 255, 0.6);
 	}
 
 	.builder-shell__import-options label {
 		display: flex;
 		align-items: center;
 		gap: 8px;
-		color: #cbd5e1;
+		color: #d2d2d7;
 		font-size: 12px;
 	}
 
@@ -2717,7 +2717,7 @@
 
 	.builder-shell__import-summary-grid strong {
 		overflow: hidden;
-		color: #f8fafc;
+		color: #f5f5f7;
 		font-size: 13px;
 		text-overflow: ellipsis;
 		white-space: nowrap;
@@ -2762,7 +2762,7 @@
 
 	.builder-shell__import-tree em {
 		overflow: hidden;
-		color: #cbd5e1;
+		color: #d2d2d7;
 		font-style: normal;
 		text-overflow: ellipsis;
 		white-space: nowrap;
@@ -2778,13 +2778,13 @@
 
 	.builder-shell__import-asset-list span {
 		overflow: hidden;
-		color: #cbd5e1;
+		color: #d2d2d7;
 		text-overflow: ellipsis;
 		white-space: nowrap;
 	}
 
 	.builder-shell__import-muted {
-		color: #94a3b8;
+		color: #a1a1a6;
 	}
 
 	.builder-shell__import-details {
@@ -2798,7 +2798,7 @@
 		border-radius: 6px;
 		padding: 10px;
 		background: #020617;
-		color: #cbd5e1;
+		color: #d2d2d7;
 		font-size: 11px;
 		white-space: pre-wrap;
 	}
@@ -2934,7 +2934,7 @@
 		padding: 10px;
 		border-radius: 6px;
 		background: rgba( 2, 6, 23, 0.62 );
-		color: #dbeafe;
+		color: #e6f0fa;
 		font-size: 11px;
 		line-height: 1.45;
 		white-space: pre-wrap;
@@ -2995,10 +2995,10 @@
 		gap: 8px;
 		padding: 10px 14px;
 		border-radius: 999px;
-		background: rgba( 13, 18, 28, 0.94 );
+		background: rgba( 29, 29, 31, 0.94 );
 		border: 1px solid rgba(0, 0, 0, 0.08);
 		color: #ffffff;
-		box-shadow: 0 18px 40px rgba( 0, 0, 0, 0.28 );
+		box-shadow: 0 18px 40px rgba( 0, 0, 0, 0.18 );
 	}
 
 	.builder-shell__drag-overlay strong {
@@ -3074,7 +3074,7 @@
 	}
 
 	.builder-shell__panel-header {
-		background: linear-gradient( 180deg, rgba( 255, 255, 255, 0.025 ), rgba( 255, 255, 255, 0 ) ), var(--builder-shell-panel-bg);
+		background: linear-gradient( 180deg, rgba(0, 0, 0, 0.02), rgba( 255, 255, 255, 0 ) ), var(--builder-shell-panel-bg);
 		color: var( --builder-shell-toolbar-text );
 		border-bottom: 1px solid var( --builder-shell-border-dark );
 	}
@@ -3259,7 +3259,7 @@
 	.builder-shell__panel-scroll :global(.inspector__section) {
 		border-radius: 6px;
 		border: 1px solid var( --builder-shell-border );
-		box-shadow: inset 0 1px 0 rgba( 255, 255, 255, 0.025 );
+		box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.02);
 	}
 
 	.builder-shell__panel-scroll--menu,
@@ -3348,7 +3348,7 @@
 		border: 0;
 		border-right: 1px solid rgba(0, 0, 0, 0.04);
 		border-left: 1px solid rgba( 0, 0, 0, 0.16 );
-		background: linear-gradient( 180deg, rgba(0, 0, 0, 0.03), rgba( 255, 255, 255, 0.01 ) ), var( --builder-shell-toolbar-bg );
+		background: linear-gradient( 180deg, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.01) ), var( --builder-shell-toolbar-bg );
 		color: var( --builder-shell-toolbar-text-muted );
 		cursor: col-resize;
 		user-select: none;
@@ -3428,7 +3428,7 @@
 		border: 0;
 		border-right: 1px solid rgba(0, 0, 0, 0.04);
 		border-left: 1px solid rgba( 0, 0, 0, 0.16 );
-		background: linear-gradient( 180deg, rgba(0, 0, 0, 0.03), rgba( 255, 255, 255, 0.01 ) ), var( --builder-shell-toolbar-bg );
+		background: linear-gradient( 180deg, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.01) ), var( --builder-shell-toolbar-bg );
 		color: var( --builder-shell-toolbar-text-muted );
 		cursor: col-resize;
 		user-select: none;
@@ -3567,7 +3567,7 @@
 
 	.builder-shell__menu-empty {
 		border-style: dashed;
-		background: rgba( 255, 255, 255, 0.025 );
+		background: rgba(0, 0, 0, 0.02);
 	}
 
 	.builder-shell__search--inline {

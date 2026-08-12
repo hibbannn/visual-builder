@@ -3697,7 +3697,7 @@ function onFieldInput( field: BuilderFieldDefinition, value: string ) {
 		padding: 10px;
 		border: 1px solid var( --builder-shell-border );
 		border-radius: 6px;
-		background: rgba( 255, 255, 255, 0.025 );
+		background: rgba(0, 0, 0, 0.02);
 	}
 
 	.inspector__nested-group {
@@ -3738,8 +3738,8 @@ function onFieldInput( field: BuilderFieldDefinition, value: string ) {
 	}
 
 	.inspector label.inspector__breakpoint-toggle--active {
-		border-color: rgba( 217, 70, 239, 0.75 );
-		background: rgba( 217, 70, 239, 0.16 );
+		border-color: rgba(0, 113, 227, 0.75 );
+		background: rgba(0, 113, 227, 0.16 );
 		color: var( --builder-shell-toolbar-text );
 	}
 
@@ -3808,7 +3808,7 @@ function onFieldInput( field: BuilderFieldDefinition, value: string ) {
 	}
 
 	.inspector select option:checked {
-		background: #2563eb;
+		background: #0071e3;
 		color: #ffffff;
 	}
 

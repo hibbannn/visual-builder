@@ -289,7 +289,7 @@
     gap: 0.45rem;
     width: 100%;
     min-width: 0;
-    color: var(--builder-shell-text, #1e293b);
+    color: var(--builder-shell-text, #1d1d1f);
   }
 
   .inline-rich-text__toolbar {
@@ -327,13 +327,13 @@
   .inline-rich-text__toolbar-button:hover,
   .inline-rich-text__bubble-button:hover {
     border-color: var(--builder-shell-accent, #005bb5);
-    box-shadow: 0 0 0 1px rgba(147, 0, 63, 0.12);
+    box-shadow: 0 0 0 1px rgba(0, 113, 227, 0.12);
   }
 
   .inline-rich-text__toolbar-button--active,
   .inline-rich-text__bubble-button--active {
     border-color: var(--builder-shell-accent, #005bb5);
-    background: var(--builder-shell-accent-soft, rgba(147, 0, 63, 0.12));
+    background: var(--builder-shell-accent-soft, rgba(0, 113, 227, 0.12));
     color: var(--builder-shell-accent, #005bb5);
   }
 
@@ -364,7 +364,7 @@
     border-radius: 999px;
     background: rgba(16, 24, 40, 0.97);
     color: #fff;
-    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.24);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
   }
 
   .inline-rich-text__bubble-button {
@@ -415,7 +415,7 @@
   .inline-rich-text__editor :global(.ProseMirror blockquote) {
     margin: 0 0 0.8em;
     padding-inline-start: 0.85rem;
-    border-inline-start: 3px solid rgba(147, 0, 63, 0.18);
+    border-inline-start: 3px solid rgba(0, 113, 227, 0.18);
     color: var(--builder-shell-text-muted, #687385);
   }
 </style>

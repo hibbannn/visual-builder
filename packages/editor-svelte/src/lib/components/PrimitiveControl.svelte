@@ -1613,7 +1613,7 @@
     border: 1px solid var(--builder-shell-border, #d5dce7);
     border-radius: 7px;
     background: var(--builder-shell-surface, #ffffff);
-    box-shadow: 0 14px 36px rgba(15, 23, 42, 0.18);
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.10);
   }
 
   .primitive-control__chip-button {
@@ -2047,7 +2047,7 @@
     border-radius: 999px;
     background: #fff;
     transition: transform 120ms ease;
-    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.25);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.14);
   }
 
   .primitive-control__switcher--active .primitive-control__switcher-track {
@@ -2120,7 +2120,7 @@
     padding: 7px;
     border-radius: 7px;
     border: 1px solid var(--builder-shell-border-color, rgba(148, 163, 184, 0.18));
-    background: rgba(15, 23, 42, 0.32);
+    background: rgba(0, 0, 0, 0.16);
   }
 
   .primitive-control__media-status,
