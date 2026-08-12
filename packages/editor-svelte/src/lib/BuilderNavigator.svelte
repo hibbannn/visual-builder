@@ -622,8 +622,9 @@
 		display: flex;
 		align-items: stretch;
 		min-height: 35px;
+		padding: 0 14px;
 		border-bottom: 1px solid var(--builder-shell-border);
-		background: linear-gradient(180deg, #ffffff, #f6f8fb);
+		background: var(--builder-shell-panel-bg);
 		color: var(--builder-shell-heading);
 	}
 
@@ -667,7 +668,7 @@
 		flex: 1 1 auto;
 		min-height: 0;
 		overflow: auto;
-		padding: 6px 8px 8px;
+		padding: 8px 14px 12px;
 		background: var(--builder-shell-panel-bg, #ffffff);
 	}
 
@@ -675,7 +676,7 @@
 		width: 100%;
 		text-align: center;
 		border-top: 1px solid var(--builder-shell-border);
-		background: linear-gradient(180deg, rgba(250, 251, 254, 0.95), rgba(245, 247, 250, 0.95));
+		background: var(--builder-shell-panel-bg);
 	}
 
 	.navigator__resize-bar {

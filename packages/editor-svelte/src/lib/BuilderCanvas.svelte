@@ -3130,7 +3130,7 @@
 		justify-content: space-between;
 		gap: 12px;
 		inline-size: 100%;
-		padding: 0 8px;
+		padding: 0 14px;
 		min-width: 0;
 	}
 

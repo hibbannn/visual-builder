@@ -354,7 +354,7 @@
 		inline-size: 100%;
 		min-inline-size: 0;
 		overflow-x: clip;
-		padding: 0 0 12px;
+		padding: 12px 14px 16px;
 		background: var(--builder-shell-panel-bg);
 		color: var(--builder-shell-text-strong);
 	}
