@@ -105,34 +105,34 @@
 		align-items: center;
 		justify-content: center;
 		gap: 10px;
-		min-height: 88px;
-		padding: 14px 12px;
+		min-height: 92px;
+		padding: 16px 12px;
 		text-align: center;
 		border: none;
 		border-radius: var(--builder-shell-radius, 8px);
 		background: var(--builder-shell-panel-bg, #ffffff);
-		box-shadow: inset 0 0 0 1px var(--builder-shell-border, rgba(0, 0, 0, 0.12));
+		box-shadow: inset 0 0 0 1px var(--builder-shell-border, rgba(0, 0, 0, 0.08));
 		min-inline-size: 0;
 		overflow: hidden;
 		color: inherit;
 		cursor: pointer;
 		touch-action: none;
 		user-select: none;
-		transition: background-color 0.15s ease, box-shadow 0.15s ease;
+		transition: background-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
 	}
 
 	.elements-panel__tile.armed,
 	.elements-panel__tile.dragging {
-		background: rgba(0, 113, 227, 0.08);
-		box-shadow: inset 0 0 0 1px rgba(0, 113, 227, 0.14);
+		background: rgba(0, 0, 0, 0.04);
+		box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12);
 		transform: scale(0.95);
 		opacity: 0.5;
 		transition: transform 120ms ease, opacity 120ms ease, background 120ms ease, box-shadow 120ms ease;
 	}
 
 	.elements-panel__tile:hover:not(:disabled) {
-		background: var(--builder-shell-bg-hover, rgba(0, 0, 0, 0.04));
-		box-shadow: inset 0 0 0 1px var(--builder-shell-border-strong, #d2d2d7), 0 1px 3px rgba(0, 0, 0, 0.04);
+		background: var(--builder-shell-bg-hover, rgba(0, 0, 0, 0.035));
+		box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.03);
 	}
 
 	.elements-panel__tile:active:not(:disabled) {
@@ -141,19 +141,19 @@
 
 	.elements-panel__tile:disabled {
 		cursor: not-allowed;
-		opacity: 0.55;
+		opacity: 0.45;
 	}
 
 	.elements-panel__tile-icon {
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		inline-size: 32px;
-		block-size: 32px;
+		inline-size: 36px;
+		block-size: 36px;
 		border: none;
-		border-radius: var(--builder-shell-radius-sm, 6px);
-		background: var(--builder-shell-panel-bg-muted, rgba(0, 0, 0, 0.04));
-		color: var(--builder-shell-text-strong, #1d1d1f);
+		border-radius: var(--builder-shell-radius, 8px);
+		background: rgba(0, 0, 0, 0.04);
+		color: var(--builder-shell-text, #6e6e73);
 		flex-shrink: 0;
 	}
 
@@ -185,9 +185,9 @@
 
 	.elements-panel__tile-title strong {
 		font-size: 11px;
-		font-weight: 600;
+		font-weight: 500;
 		line-height: 1.2;
-		color: var(--builder-shell-text-strong, #1d1d1f);
+		color: var(--builder-shell-text, #6e6e73);
 		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: normal;
