@@ -2183,15 +2183,22 @@
 		/>
 	{/if}
 	</div>
-	<DragOverlay disabled={false} dropAnimation={{ duration: 200, easing: 'cubic-bezier(0.18, 0.89, 0.32, 1.28)' }}>
+	<DragOverlay disabled={false} dropAnimation={{ duration: 250, easing: 'cubic-bezier(0.18, 0.89, 0.32, 1.28)' }}>
 		{#snippet children(source)}
 			{@const dragData = isBuilderDndData( source.data ) ? source.data : undefined}
 			{#if dragData}
-				<div class="builder-shell__drag-overlay" use:squircle={{ radius: 999, n: 5 }}>
-					<span class="builder-shell__drag-overlay-badge" use:squircle={{ radius: 999, n: 5 }}>
-						{dragData.descriptor.kind === 'palette-item' ? 'Add' : 'Move'}
+				<div
+					class="builder-shell__drag-overlay"
+					class:builder-shell__drag-overlay--add={dragData.descriptor.kind === 'palette-item'}
+					use:squircle={{ radius: 12, n: 5 }}
+				>
+					<span class="builder-shell__drag-overlay-icon" use:squircle={{ radius: 6, n: 5 }}>
+						<EditorShellIcon name={dragData.descriptor.kind === 'palette-item' ? 'elements' : 'navigator'} size={16} />
 					</span>
-					<strong>{dragData.label}</strong>
+					<span class="builder-shell__drag-overlay-text">
+						<strong>{dragData.label}</strong>
+						<em>{dragData.descriptor.kind === 'palette-item' ? 'Add to canvas' : 'Move element'}</em>
+					</span>
 				</div>
 			{/if}
 		{/snippet}
@@ -2994,43 +3001,84 @@
 		flex-wrap: wrap;
 	}
 
+	/* Drag overlay — card that follows cursor */
 	.builder-shell__drag-overlay {
 		display: inline-flex;
 		align-items: center;
-		gap: 8px;
-		padding: 10px 14px;
+		gap: 10px;
+		padding: 8px 14px 8px 8px;
 		border: none;
-		border-radius: 999px;
-		background: rgba( 29, 29, 31, 0.96 );
+		border-radius: 12px;
+		background: rgba( 255, 255, 255, 0.98 );
+		box-shadow:
+			0 0 0 1px rgba(0, 0, 0, 0.06),
+			0 1px 3px rgba(0, 0, 0, 0.08),
+			0 12px 28px rgba(0, 0, 0, 0.16),
+			0 24px 48px rgba(0, 0, 0, 0.10);
+		transform: scale(1.04) rotate(-1.5deg);
+		cursor: grabbing;
+		transition: none;
+		animation: builder-drag-pop 180ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+	}
+
+	.builder-shell__drag-overlay--add {
+		background: var( --builder-shell-accent, #0071e3 );
 		color: #ffffff;
 		box-shadow:
-			0 0 0 1px rgba(255, 255, 255, 0.08),
-			0 24px 48px rgba( 0, 0, 0, 0.28 ),
-			0 8px 16px rgba( 0, 0, 0, 0.18 );
-		transform: scale(1.06);
-		cursor: grabbing;
+			0 0 0 1px rgba(0, 113, 227, 0.3),
+			0 12px 28px rgba(0, 113, 227, 0.24),
+			0 24px 48px rgba(0, 113, 227, 0.12);
 	}
 
-	.builder-shell__drag-overlay strong {
-		font-size: 12px;
-		font-weight: 700;
-		letter-spacing: 0.01em;
+	.builder-shell__drag-overlay--add .builder-shell__drag-overlay-icon {
+		background: rgba(255, 255, 255, 0.2);
+		color: #ffffff;
 	}
 
-	.builder-shell__drag-overlay-badge {
+	.builder-shell__drag-overlay--add .builder-shell__drag-overlay-text em {
+		color: rgba(255, 255, 255, 0.7);
+	}
+
+	@keyframes builder-drag-pop {
+		0% { transform: scale(0.9) rotate(0deg); opacity: 0; }
+		60% { transform: scale(1.08) rotate(-2deg); }
+		100% { transform: scale(1.04) rotate(-1.5deg); opacity: 1; }
+	}
+
+	.builder-shell__drag-overlay-icon {
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		height: 22px;
-		padding: 0 10px;
+		width: 32px;
+		height: 32px;
 		border: none;
-		border-radius: 999px;
-		background: var( --builder-shell-accent, #0071e3 );
-		color: #ffffff;
-		font-size: 10px;
+		border-radius: 6px;
+		background: var( --builder-shell-panel-bg-muted, rgba(0, 0, 0, 0.04) );
+		color: var( --builder-shell-text-strong, #1d1d1f );
+		flex-shrink: 0;
+	}
+
+	.builder-shell__drag-overlay-text {
+		display: flex;
+		flex-direction: column;
+		gap: 1px;
+		line-height: 1.2;
+	}
+
+	.builder-shell__drag-overlay-text strong {
+		font-size: 12px;
 		font-weight: 700;
-		letter-spacing: 0.08em;
-		text-transform: uppercase;
+		letter-spacing: 0;
+		white-space: nowrap;
+	}
+
+	.builder-shell__drag-overlay-text em {
+		font-size: 10px;
+		font-weight: 500;
+		font-style: normal;
+		color: var( --builder-shell-text-muted, #a1a1a6 );
+		letter-spacing: 0.02em;
+		white-space: nowrap;
 	}
 
 	:global(.builder-shell__workspace) {

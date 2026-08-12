@@ -125,6 +125,9 @@
 	.elements-panel__tile.dragging {
 		background: rgba(0, 113, 227, 0.08);
 		box-shadow: inset 0 0 0 1px rgba(0, 113, 227, 0.14);
+		transform: scale(0.95);
+		opacity: 0.5;
+		transition: transform 120ms ease, opacity 120ms ease, background 120ms ease, box-shadow 120ms ease;
 	}
 
 	.elements-panel__tile:hover:not(:disabled) {

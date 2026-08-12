@@ -328,13 +328,16 @@ import {
 		box-shadow: inset 0 0 0 1px rgba(0, 113, 227, 0.20);
 	}
 
-	/* Source row during drag — ghosted */
+	/* Source row during drag — ghosted + shrunk */
 	.navigator__item:has(.navigator__row-handle.dragging) .navigator__row {
-		opacity: 0.35;
+		opacity: 0.3;
+		transform: scale(0.96);
 		background: rgba(0, 113, 227, 0.04);
+		box-shadow: inset 0 0 0 1px rgba(0, 113, 227, 0.12);
+		transition: opacity 120ms ease, transform 120ms ease, background 120ms ease, box-shadow 120ms ease;
 	}
 
-	/* Drop target indicator — line before/after */
+	/* Drop target indicator — line before/after + live shift */
 	.navigator__item.drop-before > .navigator__row-shell::before,
 	.navigator__item.drop-after > .navigator__row-shell::after {
 		content: '';
@@ -344,23 +347,45 @@ import {
 		height: 3px;
 		border-radius: 999px;
 		background: var(--builder-shell-accent, #0071e3);
-		box-shadow: 0 0 8px rgba(0, 113, 227, 0.4);
+		box-shadow: 0 0 8px rgba(0, 113, 227, 0.4), 0 0 16px rgba(0, 113, 227, 0.2);
 		pointer-events: none;
 		z-index: 10;
+		animation: navigator-drop-line 200ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+	}
+
+	@keyframes navigator-drop-line {
+		0% { transform: scaleX(0); opacity: 0; }
+		100% { transform: scaleX(1); opacity: 1; }
 	}
 
 	.navigator__item.drop-before > .navigator__row-shell::before {
 		top: -2px;
 	}
 
+	.navigator__item.drop-before > .navigator__row-shell .navigator__row {
+		transform: translateY(4px);
+		transition: transform 180ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+	}
+
 	.navigator__item.drop-after > .navigator__row-shell::after {
 		bottom: -2px;
 	}
 
-	/* Drop into container — highlight row */
+	.navigator__item.drop-after > .navigator__row-shell .navigator__row {
+		transform: translateY(-4px);
+		transition: transform 180ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+	}
+
+	/* Drop into container — highlight + pulse */
 	.navigator__item.drop-into > .navigator__row-shell .navigator__row {
 		background: rgba(0, 113, 227, 0.08);
 		box-shadow: inset 0 0 0 2px rgba(0, 113, 227, 0.30);
+		animation: navigator-drop-pulse 600ms ease-in-out infinite alternate;
+	}
+
+	@keyframes navigator-drop-pulse {
+		0% { box-shadow: inset 0 0 0 2px rgba(0, 113, 227, 0.20); }
+		100% { box-shadow: inset 0 0 0 2px rgba(0, 113, 227, 0.40), 0 0 12px rgba(0, 113, 227, 0.15); }
 	}
 
 	.navigator__row-main {
