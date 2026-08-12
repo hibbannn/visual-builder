@@ -2446,6 +2446,7 @@
 		background:
 			linear-gradient( 90deg, rgba(0, 113, 227, 0.08 ), transparent 26px ),
 			linear-gradient( 180deg, rgba(0, 113, 227, 0.08 ), transparent 26px );
+		backdrop-filter: blur( 2px );
 	}
 
 	.builder-preview__layout-label {
@@ -2517,7 +2518,8 @@
 		place-items: center;
 		border: 1px dashed rgba(0, 113, 227, 0.45 );
 		border-radius: 8px;
-		background: rgba(0, 113, 227, 0.06 );
+		background: rgba(255, 255, 255, 0.92 );
+		backdrop-filter: blur( 4px );
 		color: var(--builder-shell-text-secondary, #6e6e73);
 		font-size: 11px;
 		font-weight: 700;
