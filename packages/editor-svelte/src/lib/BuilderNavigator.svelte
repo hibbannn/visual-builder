@@ -626,7 +626,7 @@
 		flex: 1 1 auto;
 		min-height: 0;
 		overflow: auto;
-		padding: 3px 0 5px;
+		padding: 6px 8px 8px;
 		background: var(--builder-shell-panel-bg, #ffffff);
 	}
 

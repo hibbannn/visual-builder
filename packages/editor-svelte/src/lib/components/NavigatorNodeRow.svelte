@@ -265,22 +265,17 @@ import {
 		display: grid;
 		gap: 0.15rem;
 		padding-left: calc( (var(--depth) - 1) * 0.55rem );
-		border-bottom: 1px solid var(--builder-shell-border, rgba(0, 0, 0, 0.08));
-		background: rgba(0, 0, 0, calc( var(--depth, 1) * 0.015 ));
-	}
-
-	.navigator__item:last-child {
-		border-bottom-color: transparent;
+		background: rgba(0, 0, 0, calc( var(--depth, 1) * 0.012 ));
 	}
 
 	.navigator__item::before {
 		content: '';
 		position: absolute;
-		top: 0;
-		bottom: -0.25rem;
+		top: 2px;
+		bottom: 2px;
 		left: calc( (var(--depth) - 1) * 0.55rem + 0.2rem );
 		width: 1px;
-		background: linear-gradient(180deg, rgba(191, 202, 219, 0.72), rgba(191, 202, 219, 0.12));
+		background: linear-gradient(180deg, rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.04));
 		pointer-events: none;
 	}
 
@@ -306,21 +301,25 @@ import {
 		min-height: 30px;
 		padding: 0 8px 0 9px;
 		border: 0;
-		border-inline-start: 3px solid transparent;
-		border-radius: 0;
+		border-radius: 6px;
 		background: transparent;
 		color: inherit;
 		text-align: left;
 		gap: 0.45rem;
 		justify-content: space-between;
 		overflow: hidden;
+		cursor: pointer;
+		transition: background-color 120ms ease, box-shadow 120ms ease;
+	}
+
+	.navigator__row:hover {
+		background: var(--builder-shell-bg-hover, rgba(0, 0, 0, 0.04));
 	}
 
 	.navigator__row.selected {
-		background: linear-gradient(90deg, rgba(250, 232, 255, 0.9), rgba(232, 238, 247, 0.96));
-		color: var(--builder-shell-heading);
-		border-inline-start-color: var(--builder-shell-accent);
-		box-shadow: inset 3px 0 0 var(--builder-shell-accent), 0 1px 0 rgba(255, 255, 255, 0.6);
+		background: rgba(0, 113, 227, 0.10);
+		color: var(--builder-shell-accent-text, #005bb5);
+		box-shadow: inset 0 0 0 1px rgba(0, 113, 227, 0.20);
 	}
 
 	.navigator__row-main {
