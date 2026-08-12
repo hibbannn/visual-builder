@@ -1629,13 +1629,13 @@
   .primitive-control__toggle,
   .primitive-control__switcher {
     border: 1px solid
-      var(--builder-shell-border-color-bold, rgba(113, 128, 150, 0.42));
-    border-radius: 5px;
-    background: var(--builder-shell-bg-surface, #fff);
-    color: inherit;
+      var(--builder-shell-border-color, rgba(0, 0, 0, 0.12));
+    border-radius: var(--builder-shell-radius, 6px);
+    background: var(--builder-shell-bg-surface, #ffffff);
+    color: var(--builder-shell-text, #6e6e73);
     font: inherit;
-    font-size: 10.5px;
-    line-height: 1.2;
+    font-size: 11px;
+    line-height: 1.3;
     cursor: pointer;
     transition:
       background-color 0.15s ease,
@@ -1654,7 +1654,8 @@
   .primitive-control__field select:hover,
   .primitive-control input:hover,
   .primitive-control textarea:hover {
-    border-color: var(--builder-shell-accent, #005bb5);
+    border-color: var(--builder-shell-border-color-bold, #d2d2d7);
+    background: var(--builder-shell-bg-hover, rgba(0, 0, 0, 0.04));
   }
 
   .primitive-control__state-tab--active,
@@ -1662,10 +1663,10 @@
   .primitive-control__tab--active,
   .primitive-control__switcher--active,
   .primitive-control__toggle[aria-pressed="true"] {
-    background: rgba(0, 113, 227, 0.16);
-    border-color: var(--builder-shell-accent, #005bb5);
-    color: var(--builder-shell-heading, #fff);
-    box-shadow: inset 0 -2px 0 var(--builder-shell-accent, #005bb5);
+    background: rgba(0, 113, 227, 0.12);
+    border-color: var(--builder-shell-accent, #0071e3);
+    color: var(--builder-shell-accent-text, #005bb5);
+    box-shadow: inset 0 -2px 0 var(--builder-shell-accent, #0071e3);
   }
 
   .primitive-control__state-tabs {

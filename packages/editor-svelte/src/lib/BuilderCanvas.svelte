@@ -3107,7 +3107,7 @@
 
 	.builder-shell__panel-header-button:hover {
 		background: rgba(0, 0, 0, 0.08);
-		color: #ffffff;
+		color: var( --builder-shell-text-strong );
 	}
 
 	.builder-shell__panel-header-button--elements {
@@ -3120,7 +3120,7 @@
 	.builder-shell__panel-header-button--elements.active {
 		border-color: rgba(0, 113, 227, 0.30);
 		background: rgba(0, 113, 227, 0.12);
-		color: #ffffff;
+		color: var( --builder-shell-accent-text );
 		box-shadow: inset 0 -2px 0 var( --builder-shell-accent );
 	}
 

@@ -2010,13 +2010,13 @@
 	}
 
 	.builder-preview__device-button:hover {
-		color: var(--builder-shell-gray-50);
-		background: var(--builder-shell-gray-700);
+		color: var(--builder-shell-text-strong);
+		background: var(--builder-shell-bg-hover);
 	}
 
 	.builder-preview__device-button.active {
-		background: var(--builder-shell-gray-700);
-		color: var(--builder-shell-gray-25);
+		background: var(--builder-shell-accent);
+		color: #ffffff;
 	}
 
 	.builder-preview__stage {
