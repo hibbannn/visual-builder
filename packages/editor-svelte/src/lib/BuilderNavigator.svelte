@@ -585,9 +585,10 @@
 		min-height: 0;
 		width: var(--e-editor-navigator-width, 240px);
 		height: 100%;
-		border: 1px solid var(--builder-shell-border);
+		border: none;
 		background: var(--builder-shell-panel-bg, #ffffff);
-		box-shadow: 0 14px 36px rgba(0, 0, 0, 0.18);
+		box-shadow: inset 0 0 0 0.5px rgba(0, 0, 0, 0.08), 0 4px 16px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04);
+		border-radius: 12px;
 		color: var(--builder-shell-heading);
 		user-select: none;
 		overflow: hidden;
@@ -595,15 +596,15 @@
 
 	.navigator--floating {
 		height: min(50vh, 100%);
-		border-radius: 10px;
+		border-radius: 12px;
 	}
 
 	.navigator--dock-right {
 		width: 100%;
 		height: 100%;
 		border-inline: 0;
-		border-radius: 0;
-		box-shadow: none;
+		border-radius: 12px;
+		box-shadow: inset 0 0 0 0.5px rgba(0, 0, 0, 0.08), 0 4px 16px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04);
 	}
 
 	.navigator--dock-right .navigator__footer {
@@ -621,20 +622,20 @@
 	.navigator__header {
 		display: flex;
 		align-items: stretch;
-		min-height: 35px;
-		padding: 0 14px;
-		border-bottom: 1px solid var(--builder-shell-border);
-		background: var(--builder-shell-panel-bg);
+		min-height: 44px;
+		padding: 0 16px;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+		background: transparent;
 		color: var(--builder-shell-heading);
 	}
 
 	.navigator__header h2 {
 		flex: 1;
 		margin: 0;
-		padding: 9px 0;
-		text-align: center;
+		padding: 12px 0;
+		text-align: left;
 		font-size: 13px;
-		font-weight: 700;
+		font-weight: 600;
 		line-height: 1.15;
 		letter-spacing: -0.01em;
 		cursor: move;
@@ -668,15 +669,15 @@
 		flex: 1 1 auto;
 		min-height: 0;
 		overflow: auto;
-		padding: 8px 14px 12px;
-		background: var(--builder-shell-panel-bg, #ffffff);
+		padding: 8px 12px 12px;
+		background: transparent;
 	}
 
 	.navigator__footer {
 		width: 100%;
 		text-align: center;
-		border-top: 1px solid var(--builder-shell-border);
-		background: var(--builder-shell-panel-bg);
+		border-top: 1px solid rgba(0, 0, 0, 0.06);
+		background: transparent;
 	}
 
 	.navigator__resize-bar {

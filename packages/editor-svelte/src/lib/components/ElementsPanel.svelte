@@ -355,7 +355,7 @@
 		min-inline-size: 0;
 		overflow-x: clip;
 		padding: 12px 14px 16px;
-		background: var(--builder-shell-panel-bg);
+		background: transparent;
 		color: var(--builder-shell-text-strong);
 	}
 

@@ -375,14 +375,13 @@ import {
 	}
 
 	.navigator__row.selected {
-		background: rgba(0, 113, 227, 0.10);
-		color: var(--builder-shell-accent-text, #005bb5);
-		box-shadow: inset 0 0 0 1px rgba(0, 113, 227, 0.20);
+		background: rgba(0, 0, 0, 0.06);
+		color: var(--builder-shell-text-strong, #1d1d1f);
 	}
 
 	.navigator__row.renaming {
 		background: var(--builder-shell-panel-bg, #ffffff);
-		box-shadow: inset 0 0 0 2px var(--builder-shell-accent, #0071e3);
+		box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.12);
 	}
 
 	.navigator__row-rename {

@@ -3221,7 +3221,7 @@
 		inline-size: 100%;
 		padding: 8px 14px;
 		border-bottom: 1px solid var( --builder-shell-border );
-		background: var( --builder-shell-panel-bg );
+		background: transparent;
 		overflow: hidden;
 	}
 
@@ -3279,7 +3279,7 @@
 		min-width: 0;
 		min-height: 0;
 		overflow: hidden;
-		background: var( --builder-shell-panel-bg );
+		background: transparent;
 	}
 
 	.builder-shell__panel-body--editor {
@@ -3304,7 +3304,7 @@
 		block-size: 100%;
 		overflow: auto;
 		overflow-x: hidden;
-		background: var( --builder-shell-panel-bg );
+		background: transparent;
 		color: var( --builder-shell-text );
 	}
 
@@ -3497,9 +3497,9 @@
 		height: 100%;
 		min-width: 0;
 		min-height: 0;
-		overflow: hidden;
-		border-left: 1px solid var( --builder-shell-border );
-		background: #ffffff;
+		overflow: visible !important;
+		background: transparent;
+		padding: 12px;
 	}
 
 	:global(.builder-shell__navigator-docked--collapsed) {
