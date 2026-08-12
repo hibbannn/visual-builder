@@ -1864,6 +1864,7 @@
 							onclick={() => openShellPage( page.id )}
 						>
 							<EditorShellIcon name={shellPageIcons[page.id]} title={page.label} />
+							<span class="builder-shell__panel-page-label">{page.label}</span>
 						</button>
 					{/each}
 				</nav>
@@ -2434,7 +2435,6 @@
 		width: 100%;
 	}
 
-	.builder-shell__panel-pages button,
 	.builder-shell__entry-card,
 	.builder-shell__preset-button {
 		border: 1px solid transparent;
@@ -3132,64 +3132,61 @@
 	}
 
 	.builder-shell__panel-pages {
-		padding: 0 10px;
-		border-bottom: 1px solid var( --builder-shell-border );
-		background: var( --builder-shell-panel-bg-muted );
-		overflow: hidden;
-	}
-
-	.builder-shell__panel-pages button {
-		position: relative;
-		height: 32px;
-		padding: 0 11px;
-		white-space: nowrap;
-		font-size: 13px;
-		font-weight: 400;
-	}
-
-	.builder-shell__panel-pages {
-		display: grid;
-		grid-template-columns: repeat( 5, minmax( 0, 1fr ) );
-		gap: 2px;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 6px;
 		inline-size: 100%;
-		padding: 4px 8px;
+		padding: 8px 12px;
+		border-bottom: 1px solid var( --builder-shell-border );
+		background: var( --builder-shell-panel-bg );
+		overflow: hidden;
 	}
 
 	.builder-shell__panel-pages button {
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		gap: 0;
-		inline-size: 100%;
-		min-width: 0;
-		min-height: 30px;
-		padding-inline: 0;
-		border-radius: var( --builder-shell-radius-sm, 6px );
+		gap: 5px;
+		flex: 0 0 auto;
+		min-height: 28px;
+		padding: 0 12px;
+		border: 1px solid var( --builder-shell-border, rgba(0, 0, 0, 0.12) );
+		border-radius: 999px;
+		background: var( --builder-shell-panel-bg, #ffffff );
+		color: var( --builder-shell-text-muted, #a1a1a6 );
 		font-size: 11px;
 		font-weight: 500;
-		color: var( --builder-shell-text-muted );
-		overflow: hidden;
-		transition: background-color 0.15s ease, color 0.15s ease;
+		white-space: nowrap;
+		transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 	}
 
 	.builder-shell__panel-pages button :global(svg) {
 		inline-size: 14px;
 		block-size: 14px;
+		flex-shrink: 0;
+	}
+
+	.builder-shell__panel-page-label {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 
 	.builder-shell__panel-pages button:hover {
 		background: var( --builder-shell-bg-hover, rgba(0, 0, 0, 0.04) );
-		color: var( --builder-shell-text-strong );
+		border-color: var( --builder-shell-border-strong, #d2d2d7 );
+		color: var( --builder-shell-text, #6e6e73 );
 	}
 
 	.builder-shell__panel-pages button.active,
 	.builder-shell__preset-button:hover,
 	.builder-shell__entry-card:hover {
-		border-color: transparent;
+		border-color: rgba(0, 113, 227, 0.20);
 		background: rgba(0, 113, 227, 0.10);
 		color: var( --builder-shell-accent-text );
 		font-weight: 600;
-		box-shadow: inset 0 -2px 0 var( --builder-shell-accent );
+		box-shadow: none;
 	}
 
 	.builder-shell__panel-body {
