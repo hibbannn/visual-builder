@@ -3199,7 +3199,7 @@
 		border: none;
 		background: var( --builder-shell-panel-bg-muted );
 		box-shadow: inset 0 0 0 1px var( --builder-shell-border );
-		color: var( --builder-shell-text-muted );
+		color: var( --builder-shell-text );
 		transition: background-color 0.15s ease, box-shadow 0.15s ease, color 0.15s ease;
 	}
 
