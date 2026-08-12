@@ -119,7 +119,7 @@
 
 	.history-panel-shell__icon {
 		border-color: var(--builder-shell-dark-border-strong);
-		background: rgba(255, 255, 255, 0.06);
+		background: rgba(0, 0, 0, 0.06);
 		color: var(--builder-shell-toolbar-text);
 	}
 
@@ -128,12 +128,12 @@
 		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;
-		background: rgba(255, 255, 255, 0.08);
+		background: rgba(0, 0, 0, 0.08);
 		color: var(--builder-shell-toolbar-text-muted);
 	}
 
 	.history-panel-shell__header-badge.builder-shell-badge--accent {
-		background: rgba(208, 4, 212, 0.18);
+		background: rgba(0, 113, 227, 0.18);
 		color: var(--builder-shell-pink-200);
 	}
 

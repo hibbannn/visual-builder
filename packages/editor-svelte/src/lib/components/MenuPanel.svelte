@@ -121,7 +121,7 @@
 		border: 1px solid var(--builder-shell-dark-border);
 		border-radius: var(--builder-shell-radius-lg);
 		background:
-			linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0)),
+			linear-gradient(180deg, rgba(0, 0, 0, 0.04), rgba(255, 255, 255, 0)),
 			var(--builder-shell-dark-panel-raised);
 	}
 
@@ -159,9 +159,9 @@
 		flex: 0 0 auto;
 		inline-size: 28px;
 		block-size: 28px;
-		border: 1px solid rgba(255, 255, 255, 0.12);
+		border: 1px solid rgba(0, 0, 0, 0.10);
 		border-radius: var(--builder-shell-radius-lg);
-		background: rgba(255, 255, 255, 0.06);
+		background: rgba(0, 0, 0, 0.06);
 		color: #ffffff;
 	}
 

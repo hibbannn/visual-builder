@@ -350,13 +350,13 @@
 		min-inline-size: 0;
 		padding: var(--builder-shell-space-10);
 		border-color: var(--builder-shell-dark-border);
-		background: rgba(255, 255, 255, 0.035);
+		background: rgba(0, 0, 0, 0.03);
 	}
 
 	.assignment-panel__item.active,
 	.assignment-panel__group-item.active {
 		border-color: var(--builder-shell-accent);
-		background: rgba(208, 4, 212, 0.13);
+		background: rgba(0, 113, 227, 0.13);
 	}
 
 	.assignment-panel__item-meta,
@@ -397,25 +397,25 @@
 
 	.assignment-panel :global(.builder-shell-icon-badge) {
 		border-color: var(--builder-shell-dark-border);
-		background: rgba(255, 255, 255, 0.055);
+		background: rgba(0, 0, 0, 0.05);
 		color: var(--builder-shell-toolbar-text);
 	}
 
 	.assignment-panel :global(.builder-shell-badge) {
 		border: 1px solid var(--builder-shell-dark-border);
-		background: rgba(255, 255, 255, 0.055);
+		background: rgba(0, 0, 0, 0.05);
 		color: var(--builder-shell-toolbar-text-muted);
 	}
 
 	.assignment-panel :global(.builder-shell-button) {
 		border-color: var(--builder-shell-dark-border);
-		background: rgba(255, 255, 255, 0.045);
+		background: rgba(0, 0, 0, 0.04);
 		color: var(--builder-shell-toolbar-text);
 	}
 
 	.assignment-panel :global(.builder-shell-button:hover) {
 		border-color: var(--builder-shell-dark-border-strong);
-		background: rgba(255, 255, 255, 0.08);
+		background: rgba(0, 0, 0, 0.08);
 	}
 
 	.assignment-panel :global(.builder-shell-button--primary) {

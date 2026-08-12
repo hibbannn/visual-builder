@@ -1556,7 +1556,7 @@
     border-radius: 999px;
     border: 1px solid
       var(--builder-shell-border-color, rgba(148, 163, 184, 0.18));
-    background: rgba(255, 255, 255, 0.055);
+    background: rgba(0, 0, 0, 0.05);
     color: var(--builder-shell-text-muted, #687385);
     font-size: 9px;
     line-height: 1;
@@ -1654,7 +1654,7 @@
   .primitive-control__field select:hover,
   .primitive-control input:hover,
   .primitive-control textarea:hover {
-    border-color: var(--builder-shell-accent, #93003f);
+    border-color: var(--builder-shell-accent, #005bb5);
   }
 
   .primitive-control__state-tab--active,
@@ -1662,10 +1662,10 @@
   .primitive-control__tab--active,
   .primitive-control__switcher--active,
   .primitive-control__toggle[aria-pressed="true"] {
-    background: rgba(208, 4, 212, 0.16);
-    border-color: var(--builder-shell-accent, #93003f);
+    background: rgba(0, 113, 227, 0.16);
+    border-color: var(--builder-shell-accent, #005bb5);
     color: var(--builder-shell-heading, #fff);
-    box-shadow: inset 0 -2px 0 var(--builder-shell-accent, #93003f);
+    box-shadow: inset 0 -2px 0 var(--builder-shell-accent, #005bb5);
   }
 
   .primitive-control__state-tabs {
@@ -1675,7 +1675,7 @@
     padding: 2px;
     border: 1px solid var(--builder-shell-border-color, rgba(148, 163, 184, 0.18));
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.035);
+    background: rgba(0, 0, 0, 0.03);
     overflow: hidden;
   }
 
@@ -1722,7 +1722,7 @@
   .primitive-control select:focus-visible,
   .primitive-control button:focus-visible {
     outline: none;
-    box-shadow: var(--builder-shell-focus-ring, 0 0 0 2px rgba(208, 4, 212, 0.25));
+    box-shadow: var(--builder-shell-focus-ring, 0 0 0 2px rgba(0, 113, 227, 0.25));
   }
 
   .primitive-control__field {
@@ -1986,19 +1986,19 @@
     padding: 0;
     border: 0;
     background: transparent;
-    accent-color: var(--builder-shell-accent, #93003f);
+    accent-color: var(--builder-shell-accent, #005bb5);
   }
 
   .primitive-control__range::-webkit-slider-runnable-track {
     height: 4px;
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.16);
+    background: rgba(0, 0, 0, 0.10);
   }
 
   .primitive-control__range::-moz-range-track {
     height: 4px;
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.16);
+    background: rgba(0, 0, 0, 0.10);
   }
 
   .primitive-control__dimensions-grid {
@@ -2051,7 +2051,7 @@
   }
 
   .primitive-control__switcher--active .primitive-control__switcher-track {
-    background: var(--builder-shell-accent, #93003f);
+    background: var(--builder-shell-accent, #005bb5);
   }
 
   .primitive-control__switcher--active .primitive-control__switcher-thumb {
@@ -2099,7 +2099,7 @@
     padding: 0 8px;
     border-radius: 6px;
     border: 1px solid var(--builder-shell-border-color, rgba(148, 163, 184, 0.22));
-    background: rgba(255, 255, 255, 0.06);
+    background: rgba(0, 0, 0, 0.06);
     font-size: 10px;
     font-weight: 700;
     cursor: pointer;
@@ -2147,7 +2147,7 @@
     padding: 5px;
     border-radius: 7px;
     border: 1px solid var(--builder-shell-border-color, rgba(148, 163, 184, 0.18));
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(0, 0, 0, 0.04);
   }
 
   .primitive-control__media-card--active {
@@ -2162,7 +2162,7 @@
     overflow: hidden;
     border: 0;
     border-radius: 5px;
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(0, 0, 0, 0.08);
     cursor: pointer;
   }
 
@@ -2206,7 +2206,7 @@
     padding: 0 6px;
     border-radius: 5px;
     border: 1px solid var(--builder-shell-border-color, rgba(148, 163, 184, 0.18));
-    background: rgba(255, 255, 255, 0.06);
+    background: rgba(0, 0, 0, 0.06);
     color: inherit;
     font-size: 9.5px;
     cursor: pointer;
@@ -2223,7 +2223,7 @@
     border: 1px dashed
       var(--builder-shell-border-color, rgba(148, 163, 184, 0.18));
     border-radius: 6px;
-    background: rgba(255, 255, 255, 0.035);
+    background: rgba(0, 0, 0, 0.03);
     overflow: hidden;
     display: grid;
     place-items: center;
@@ -2290,12 +2290,12 @@
   .primitive-control--section
     .primitive-control__section-button:hover
     .primitive-control__section-mark {
-    color: var(--builder-shell-accent, #93003f);
+    color: var(--builder-shell-accent, #005bb5);
   }
 
   .primitive-control--section .primitive-control__section-button:hover {
     border-color: var(--builder-shell-border-color, rgba(148, 163, 184, 0.18));
-    background: rgba(255, 255, 255, 0.035);
+    background: rgba(0, 0, 0, 0.03);
   }
 
   .primitive-control--section

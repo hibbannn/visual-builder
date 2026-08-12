@@ -1001,7 +1001,7 @@
 			return;
 		}
 
-		updateBindings( selectedNode.bindings.map( ( binding ) => binding.id === bindingId ? { ...binding, ...patch } : binding ) );
+		updateBindings( selectedNode.bindings.map( ( binding: Binding ) => binding.id === bindingId ? { ...binding, ...patch } : binding ) );
 	}
 
 	function removeBinding( bindingId: string ) {
@@ -1009,7 +1009,7 @@
 			return;
 		}
 
-		updateBindings( selectedNode.bindings.filter( ( binding ) => binding.id !== bindingId ) );
+		updateBindings( selectedNode.bindings.filter( ( binding: Binding ) => binding.id !== bindingId ) );
 	}
 
 	function addAttribute() {
@@ -1028,7 +1028,7 @@
 			return;
 		}
 
-		updateAttributes( selectedNode.attributes.map( ( attribute ) => attribute.id === attributeId ? { ...attribute, ...patch } : attribute ) );
+		updateAttributes( selectedNode.attributes.map( ( attribute: HtmlAttribute ) => attribute.id === attributeId ? { ...attribute, ...patch } : attribute ) );
 	}
 
 	function removeAttribute( attributeId: string ) {
@@ -1036,11 +1036,11 @@
 			return;
 		}
 
-		updateAttributes( selectedNode.attributes.filter( ( attribute ) => attribute.id !== attributeId ) );
+		updateAttributes( selectedNode.attributes.filter( ( attribute: HtmlAttribute ) => attribute.id !== attributeId ) );
 	}
 
 	function getStaticAttributeValue( name: string ): string {
-		return selectedNode?.attributes.find( ( attribute ) => attribute.kind === 'static' && attribute.name === name )?.value ?? '';
+		return selectedNode?.attributes.find( ( attribute: HtmlAttribute ) => attribute.kind === 'static' && attribute.name === name )?.value ?? '';
 	}
 
 	function updateStaticAttributeValue( name: string, value: string ) {
@@ -1049,15 +1049,15 @@
 		}
 
 		const normalizedValue = value.trim();
-		const existing = selectedNode.attributes.find( ( attribute ) => attribute.kind === 'static' && attribute.name === name );
+		const existing = selectedNode.attributes.find( ( attribute: HtmlAttribute ) => attribute.kind === 'static' && attribute.name === name );
 		if ( !normalizedValue ) {
-			updateAttributes( selectedNode.attributes.filter( ( attribute ) => attribute.id !== existing?.id ) );
+			updateAttributes( selectedNode.attributes.filter( ( attribute: HtmlAttribute ) => attribute.id !== existing?.id ) );
 			return;
 		}
 
 		if ( existing ) {
 			updateAttributes(
-				selectedNode.attributes.map( ( attribute ) => attribute.id === existing.id ? { ...attribute, value: normalizedValue } : attribute ),
+				selectedNode.attributes.map( ( attribute: HtmlAttribute ) => attribute.id === existing.id ? { ...attribute, value: normalizedValue } : attribute ),
 			);
 			return;
 		}
@@ -1125,7 +1125,7 @@
 	}
 
 	function getDynamicBindingForTarget( targetKind: Binding['targetKind'], target: string ): Binding | undefined {
-		return selectedNode?.bindings.find( ( binding ) => binding.targetKind === targetKind && binding.target === target );
+		return selectedNode?.bindings.find( ( binding: Binding ) => binding.targetKind === targetKind && binding.target === target );
 	}
 
 	function getDynamicProviderOptions( category: Binding['category'] | undefined ) {
@@ -2809,7 +2809,7 @@ function onFieldInput( field: BuilderFieldDefinition, value: string ) {
 			.split( ' ' )
 			.filter( Boolean )
 			.slice( 0, 2 )
-			.map( ( segment ) => segment.slice( 0, 1 ).toUpperCase() )
+			.map( ( segment: string ) => segment.slice( 0, 1 ).toUpperCase() )
 			.join( '' );
 		return compact || 'EL';
 	}
@@ -2943,7 +2943,7 @@ function onFieldInput( field: BuilderFieldDefinition, value: string ) {
 				<div class="inspector__subsection inspector__utility-section">
 					<h4>Create Variable</h4>
 					<label><span>Name</span><input bind:value={selectedVariableName} placeholder="brand-primary" /></label>
-					<label><span>Value</span><input bind:value={selectedVariableValue} placeholder="#d004d4" /></label>
+					<label><span>Value</span><input bind:value={selectedVariableValue} placeholder="#0071e3" /></label>
 					<label><span>Kind</span><select bind:value={selectedVariableKind}>{#each variableKinds as kind}<option value={kind}>{formatInspectorLabel( kind )}</option>{/each}</select></label>
 					<label><span>Group</span><input bind:value={selectedVariableGroup} placeholder="Brand" /></label>
 					<label><span>Description</span><textarea rows="2" bind:value={selectedVariableDescription}></textarea></label>
@@ -3614,15 +3614,15 @@ function onFieldInput( field: BuilderFieldDefinition, value: string ) {
 		--builder-shell-text-muted: var( --builder-shell-toolbar-text-muted );
 		--builder-shell-text-strong: var( --builder-shell-toolbar-text );
 		--builder-shell-heading: #ffffff;
-		--builder-shell-border: rgba( 255, 255, 255, 0.08 );
-		--builder-shell-border-strong: rgba( 255, 255, 255, 0.14 );
+		--builder-shell-border: rgba(0, 0, 0, 0.08);
+		--builder-shell-border-strong: rgba(0, 0, 0, 0.10);
 		--builder-shell-panel-bg: var( --builder-shell-gray-800 );
 		--builder-shell-panel-bg-muted: var( --builder-shell-gray-750 );
 		--builder-shell-bg-surface: #2d3037;
 		--builder-shell-bg-subtle: #252932;
-		--builder-shell-border-color: rgba( 255, 255, 255, 0.08 );
+		--builder-shell-border-color: rgba(0, 0, 0, 0.08);
 		--builder-shell-border-color-bold: rgba( 255, 255, 255, 0.15 );
-		--builder-shell-accent-soft: rgba( 208, 4, 212, 0.12 );
+		--builder-shell-accent-soft: rgba(0, 113, 227, 0.12 );
 	}
 
 	.inspector__section {
@@ -3655,8 +3655,8 @@ function onFieldInput( field: BuilderFieldDefinition, value: string ) {
 		inline-size: 24px;
 		block-size: 24px;
 		border-radius: 3px;
-		background: rgba( 255, 255, 255, 0.05 );
-		border: 1px solid rgba( 255, 255, 255, 0.08 );
+		background: rgba(0, 0, 0, 0.05);
+		border: 1px solid rgba(0, 0, 0, 0.08);
 		color: var( --builder-shell-toolbar-text-muted );
 		font-size: 10px;
 		font-weight: 700;
@@ -3705,8 +3705,8 @@ function onFieldInput( field: BuilderFieldDefinition, value: string ) {
 		gap: 10px;
 		padding: 12px;
 		border-radius: 6px;
-		background: rgba( 255, 255, 255, 0.035 );
-		border: 1px solid rgba( 255, 255, 255, 0.08 );
+		background: rgba(0, 0, 0, 0.03);
+		border: 1px solid rgba(0, 0, 0, 0.08);
 	}
 
 	.inspector__breakpoint-toggle-group {
@@ -3723,9 +3723,9 @@ function onFieldInput( field: BuilderFieldDefinition, value: string ) {
 		min-width: 0;
 		min-height: 30px;
 		padding: 0 8px;
-		border: 1px solid rgba( 255, 255, 255, 0.12 );
+		border: 1px solid rgba(0, 0, 0, 0.10);
 		border-radius: 5px;
-		background: rgba( 255, 255, 255, 0.04 );
+		background: rgba(0, 0, 0, 0.04);
 		color: var( --builder-shell-toolbar-text-muted );
 		cursor: pointer;
 		transition: border-color 0.15s ease, background-color 0.15s ease, color 0.15s ease;
@@ -3733,7 +3733,7 @@ function onFieldInput( field: BuilderFieldDefinition, value: string ) {
 
 	.inspector label.inspector__breakpoint-toggle:hover {
 		border-color: rgba( 255, 255, 255, 0.24 );
-		background: rgba( 255, 255, 255, 0.07 );
+		background: rgba(0, 0, 0, 0.06);
 		color: var( --builder-shell-toolbar-text );
 	}
 
@@ -3783,9 +3783,9 @@ function onFieldInput( field: BuilderFieldDefinition, value: string ) {
 		box-sizing: border-box;
 		min-height: var( --builder-shell-control-height );
 		border-radius: 5px;
-		border: 1px solid rgba( 255, 255, 255, 0.14 );
+		border: 1px solid rgba(0, 0, 0, 0.10);
 		padding: 0 10px;
-		background: rgba( 255, 255, 255, 0.055 );
+		background: rgba(0, 0, 0, 0.05);
 		color: var( --builder-shell-toolbar-text );
 	}
 
@@ -3862,7 +3862,7 @@ function onFieldInput( field: BuilderFieldDefinition, value: string ) {
 		padding: 10px;
 		border: 1px solid var( --builder-shell-border );
 		border-radius: 6px;
-		background: rgba( 255, 255, 255, 0.035 );
+		background: rgba(0, 0, 0, 0.03);
 	}
 
 	.inspector__library-card h5,
@@ -3935,8 +3935,8 @@ function onFieldInput( field: BuilderFieldDefinition, value: string ) {
 	}
 
 	.inspector__summary-action--active {
-		border-color: rgba( 208, 4, 212, 0.28 );
-		background: rgba( 208, 4, 212, 0.12 );
+		border-color: rgba(0, 113, 227, 0.28 );
+		background: rgba(0, 113, 227, 0.12 );
 		color: var( --builder-shell-accent );
 	}
 
@@ -3947,8 +3947,8 @@ function onFieldInput( field: BuilderFieldDefinition, value: string ) {
 		inline-size: 18px;
 		block-size: 18px;
 		border-radius: 999px;
-		border: 1px solid rgba( 255, 255, 255, 0.08 );
-		background: rgba( 255, 255, 255, 0.04 );
+		border: 1px solid rgba(0, 0, 0, 0.08);
+		background: rgba(0, 0, 0, 0.04);
 		color: var( --builder-shell-toolbar-text-muted );
 	}
 
@@ -3958,7 +3958,7 @@ function onFieldInput( field: BuilderFieldDefinition, value: string ) {
 		justify-content: center;
 		padding: 2px 6px;
 		border-radius: 999px;
-		background: rgba( 255, 255, 255, 0.08 );
+		background: rgba(0, 0, 0, 0.08);
 		color: var( --builder-shell-toolbar-text-muted );
 		font-size: 10px;
 		font-weight: 600;
@@ -3967,12 +3967,12 @@ function onFieldInput( field: BuilderFieldDefinition, value: string ) {
 	}
 
 	.inspector__pill--accent {
-		background: rgba( 208, 4, 212, 0.08 );
+		background: rgba(0, 113, 227, 0.08 );
 		color: var( --builder-shell-accent );
 	}
 
 	.inspector__pill--muted {
-		background: rgba( 255, 255, 255, 0.05 );
+		background: rgba(0, 0, 0, 0.05);
 	}
 
 	.inspector__state-tabs {
@@ -3981,8 +3981,8 @@ function onFieldInput( field: BuilderFieldDefinition, value: string ) {
 		gap: 2px;
 		padding: 2px;
 		border-radius: 6px;
-		background: rgba( 255, 255, 255, 0.045 );
-		border: 1px solid rgba( 255, 255, 255, 0.08 );
+		background: rgba(0, 0, 0, 0.04);
+		border: 1px solid rgba(0, 0, 0, 0.08);
 	}
 
 	.inspector__state-tabs button {
@@ -4000,9 +4000,9 @@ function onFieldInput( field: BuilderFieldDefinition, value: string ) {
 	}
 
 	.inspector__state-tab--active {
-		background: rgba( 208, 4, 212, 0.18 ) !important;
+		background: rgba(0, 113, 227, 0.18 ) !important;
 		color: var( --builder-shell-toolbar-text ) !important;
-		box-shadow: inset 0 0 0 1px rgba( 255, 255, 255, 0.06 ), inset 0 -2px 0 var( --builder-shell-accent );
+		box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.06), inset 0 -2px 0 var( --builder-shell-accent );
 	}
 
 	.inspector__style-section,
@@ -4032,8 +4032,8 @@ function onFieldInput( field: BuilderFieldDefinition, value: string ) {
 		max-width: 100%;
 		padding: 4px 8px;
 		border-radius: 6px;
-		border: 1px solid rgba( 255, 255, 255, 0.08 );
-		background: rgba( 255, 255, 255, 0.04 );
+		border: 1px solid rgba(0, 0, 0, 0.08);
+		background: rgba(0, 0, 0, 0.04);
 		color: var( --builder-shell-toolbar-text-muted );
 		font-size: 11px;
 		line-height: 1.2;
@@ -4051,7 +4051,7 @@ function onFieldInput( field: BuilderFieldDefinition, value: string ) {
 		block-size: 10px;
 		flex-shrink: 0;
 		border-radius: 999px;
-		border: 1px solid rgba( 255, 255, 255, 0.18 );
+		border: 1px solid rgba(0, 0, 0, 0.12);
 	}
 
 	.inspector__summary-placeholder {
@@ -4069,7 +4069,7 @@ function onFieldInput( field: BuilderFieldDefinition, value: string ) {
 		gap: 10px;
 		padding: 12px;
 		border-radius: 8px;
-		border: 1px solid rgba( 255, 255, 255, 0.1 );
+		border: 1px solid rgba(0, 0, 0, 0.08);
 		background: #1f2024;
 		box-shadow: 0 18px 44px rgba( 0, 0, 0, 0.35 );
 	}
@@ -4112,10 +4112,10 @@ function onFieldInput( field: BuilderFieldDefinition, value: string ) {
 	}
 
 	.inspector__utility-section {
-		background: rgba( 255, 255, 255, 0.03 );
+		background: rgba(0, 0, 0, 0.03);
 		padding: 12px;
 		border-radius: 3px;
-		border: 1px solid rgba( 255, 255, 255, 0.08 );
+		border: 1px solid rgba(0, 0, 0, 0.08);
 	}
 
 	.inspector__empty-state {
@@ -4130,7 +4130,7 @@ function onFieldInput( field: BuilderFieldDefinition, value: string ) {
 		padding: 0 10px;
 		border: 1px solid var( --builder-shell-border-strong );
 		border-radius: 3px;
-		background: rgba( 255, 255, 255, 0.05 );
+		background: rgba(0, 0, 0, 0.05);
 		color: var( --builder-shell-toolbar-text );
 		font-size: 12px;
 		line-height: 1;
@@ -4139,8 +4139,8 @@ function onFieldInput( field: BuilderFieldDefinition, value: string ) {
 	}
 
 	.inspector button:hover {
-		background: rgba( 255, 255, 255, 0.08 );
-		border-color: rgba( 255, 255, 255, 0.2 );
+		background: rgba(0, 0, 0, 0.08);
+		border-color: rgba(0, 0, 0, 0.12);
 	}
 
 	.inspector button:focus-visible {

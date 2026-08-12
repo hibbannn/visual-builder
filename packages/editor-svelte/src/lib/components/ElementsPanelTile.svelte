@@ -106,9 +106,9 @@
 		min-height: 86px;
 		padding: 12px 10px;
 		text-align: center;
-		border: 1px solid rgba( 255, 255, 255, 0.12 );
+		border: 1px solid rgba(0, 0, 0, 0.10);
 		border-radius: 4px;
-		background: rgba( 255, 255, 255, 0.02 );
+		background: rgba(0, 0, 0, 0.02);
 		box-shadow: none;
 		min-inline-size: 0;
 		overflow: hidden;
@@ -120,15 +120,15 @@
 
 	.elements-panel__tile.armed,
 	.elements-panel__tile.dragging {
-		border-color: rgba( 208, 4, 212, 0.55 );
-		background: rgba( 208, 4, 212, 0.1 );
-		box-shadow: inset 0 0 0 1px rgba( 208, 4, 212, 0.14 );
+		border-color: rgba(0, 113, 227, 0.55 );
+		background: rgba(0, 113, 227, 0.1 );
+		box-shadow: inset 0 0 0 1px rgba(0, 113, 227, 0.14 );
 	}
 
 	.elements-panel__tile:hover:not(:disabled) {
-		border-color: rgba( 255, 255, 255, 0.2 );
-		background: rgba( 255, 255, 255, 0.06 );
-		box-shadow: inset 0 0 0 1px rgba( 255, 255, 255, 0.02 );
+		border-color: rgba(0, 0, 0, 0.12);
+		background: rgba(0, 0, 0, 0.06);
+		box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.02);
 	}
 
 	.elements-panel__tile:disabled {

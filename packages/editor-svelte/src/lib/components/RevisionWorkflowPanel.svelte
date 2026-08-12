@@ -169,7 +169,7 @@
 
 	.revision-panel__heading .builder-shell-icon-badge {
 		border-color: var(--builder-shell-dark-border-strong);
-		background: rgba(255, 255, 255, 0.06);
+		background: rgba(0, 0, 0, 0.06);
 		color: var(--builder-shell-toolbar-text);
 	}
 
@@ -301,8 +301,8 @@
 	}
 
 	.revision-panel__action--draft {
-		border-color: rgba(255, 255, 255, 0.14);
-		background: rgba(255, 255, 255, 0.045);
+		border-color: rgba(0, 0, 0, 0.10);
+		background: rgba(0, 0, 0, 0.04);
 		color: var(--builder-shell-toolbar-text);
 	}
 
@@ -357,7 +357,7 @@
 
 	.revision-panel__item.selected {
 		border-color: var(--builder-shell-accent);
-		background: rgba(208, 4, 212, 0.16);
+		background: rgba(0, 113, 227, 0.16);
 		box-shadow: inset 3px 0 0 var(--builder-shell-accent);
 	}
 

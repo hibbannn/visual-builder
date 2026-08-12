@@ -78,7 +78,7 @@
 		padding: var(--builder-shell-space-12);
 		border-color: var(--builder-shell-dark-border);
 		background:
-			linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.02)),
+			linear-gradient(180deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.02)),
 			var(--builder-shell-dark-panel-raised);
 		color: var(--builder-shell-toolbar-text);
 	}
@@ -122,7 +122,7 @@
 
 	.globals-panel-shell :global(.builder-shell-icon-badge) {
 		border-color: var(--builder-shell-dark-border);
-		background: rgba(255, 255, 255, 0.055);
+		background: rgba(0, 0, 0, 0.05);
 		color: var(--builder-shell-toolbar-text);
 	}
 

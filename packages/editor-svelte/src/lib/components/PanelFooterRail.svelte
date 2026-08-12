@@ -112,7 +112,7 @@
 
 	.builder-panel-footer-rail__tool:hover:not(:disabled),
 	.builder-panel-footer-rail__tool.active {
-		background: rgba(255, 255, 255, 0.06);
+		background: rgba(0, 0, 0, 0.06);
 		color: #ffffff;
 	}
 
@@ -236,7 +236,7 @@
 		inline-size: 40px;
 		background: #be2d76;
 		color: #ffffff;
-		border-inline-start: 1px solid rgba(255, 255, 255, 0.18);
+		border-inline-start: 1px solid rgba(0, 0, 0, 0.12);
 	}
 
 	.builder-panel-footer-rail__options:hover:not(:disabled) {

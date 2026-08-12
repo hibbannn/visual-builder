@@ -426,9 +426,9 @@
 		gap: var(--builder-shell-space-8);
 		min-block-size: 36px;
 		padding-inline: 9px;
-		border: 1px solid rgba( 255, 255, 255, 0.08 );
+		border: 1px solid rgba(0, 0, 0, 0.08);
 		border-radius: 3px;
-		background: rgba( 255, 255, 255, 0.03 );
+		background: rgba(0, 0, 0, 0.03);
 		box-shadow: none;
 		color: var(--builder-shell-toolbar-text);
 	}
@@ -458,8 +458,8 @@
 		font-weight: 600;
 		text-transform: none;
 		letter-spacing: 0;
-		border: 1px solid rgba( 255, 255, 255, 0.08 );
-		background: rgba( 255, 255, 255, 0.04 );
+		border: 1px solid rgba(0, 0, 0, 0.08);
+		background: rgba(0, 0, 0, 0.04);
 		color: var(--builder-shell-toolbar-text-muted);
 		overflow: hidden;
 		text-overflow: ellipsis;
@@ -468,10 +468,10 @@
 	}
 
 	.elements-panel__category.active {
-		border-color: rgba( 255, 255, 255, 0.1 );
-		background: rgba( 255, 255, 255, 0.08 );
+		border-color: rgba(0, 0, 0, 0.08);
+		background: rgba(0, 0, 0, 0.08);
 		color: var(--builder-shell-toolbar-text);
-		box-shadow: inset 0 -2px 0 var(--builder-shell-accent), inset 0 1px 0 rgba( 255, 255, 255, 0.04 );
+		box-shadow: inset 0 -2px 0 var(--builder-shell-accent), inset 0 1px 0 rgba(0, 0, 0, 0.04);
 	}
 
 	.elements-panel__category-icon {
@@ -492,7 +492,7 @@
 		block-size: 18px;
 		padding: 0 0.35rem;
 		border-radius: 999px;
-		background: rgba( 255, 255, 255, 0.08 );
+		background: rgba(0, 0, 0, 0.08);
 		font-style: normal;
 		font-size: 10px;
 		flex-shrink: 0;
@@ -518,7 +518,7 @@
 		inline-size: 100%;
 		padding: 10px 0 0;
 		border: 0;
-		border-top: 1px solid rgba( 255, 255, 255, 0.08 );
+		border-top: 1px solid rgba(0, 0, 0, 0.08);
 		border-radius: 0;
 		background: transparent;
 		min-inline-size: 0;
@@ -579,9 +579,9 @@
 		display: grid;
 		gap: var(--builder-shell-space-8);
 		padding: var(--builder-shell-space-12);
-		border: 1px dashed rgba( 255, 255, 255, 0.16 );
+		border: 1px dashed rgba(0, 0, 0, 0.10);
 		border-radius: 4px;
-		background: rgba( 255, 255, 255, 0.03 );
+		background: rgba(0, 0, 0, 0.03);
 	}
 
 	@media (max-width: 900px) {

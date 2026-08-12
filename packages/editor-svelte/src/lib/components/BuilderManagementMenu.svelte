@@ -189,7 +189,7 @@
 	.builder-management-menu--workspace {
 		padding: 12px;
 		background:
-			linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0)),
+			linear-gradient(180deg, rgba(0, 0, 0, 0.03), rgba(255, 255, 255, 0)),
 			var(--builder-shell-gray-900);
 	}
 
@@ -238,7 +238,7 @@
 		border: 1px solid var(--builder-shell-dark-border);
 		border-radius: var(--builder-shell-radius-lg);
 		background:
-			linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0)),
+			linear-gradient(180deg, rgba(0, 0, 0, 0.03), rgba(255, 255, 255, 0)),
 			var(--builder-shell-dark-panel-raised);
 		color: var(--builder-shell-toolbar-text);
 	}
@@ -262,9 +262,9 @@
 		gap: 1px;
 		min-inline-size: 0;
 		padding: 7px 8px;
-		border: 1px solid rgba(255, 255, 255, 0.08);
+		border: 1px solid rgba(0, 0, 0, 0.08);
 		border-radius: var(--builder-shell-radius-lg);
-		background: rgba(255, 255, 255, 0.04);
+		background: rgba(0, 0, 0, 0.04);
 	}
 
 	.builder-management-menu__stat strong {
@@ -327,7 +327,7 @@
 	.builder-management-menu__filter select {
 		inline-size: 100%;
 		min-block-size: 28px;
-		border: 1px solid rgba(255, 255, 255, 0.12);
+		border: 1px solid rgba(0, 0, 0, 0.10);
 		border-radius: var(--builder-shell-radius-lg);
 		background-color: var(--builder-shell-gray-900);
 		color: var(--builder-shell-toolbar-text);
@@ -348,7 +348,7 @@
 		padding: 10px;
 		border: 1px solid var(--builder-shell-dark-border);
 		border-radius: var(--builder-shell-radius-lg);
-		background: rgba(255, 255, 255, 0.035);
+		background: rgba(0, 0, 0, 0.03);
 		color: var(--builder-shell-toolbar-text);
 		text-align: left;
 	}
@@ -356,9 +356,9 @@
 	.builder-management-menu__entry-card:hover,
 	.builder-management-menu__preset-button:hover {
 		border-color: transparent;
-		background: rgba(208, 4, 212, 0.16);
+		background: rgba(0, 113, 227, 0.16);
 		color: #ffffff;
-		box-shadow: inset 0 -2px 0 var(--builder-shell-accent), inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+		box-shadow: inset 0 -2px 0 var(--builder-shell-accent), inset 0 0 0 1px rgba(0, 0, 0, 0.04);
 	}
 
 	.builder-management-menu__entry-card small,
@@ -401,7 +401,7 @@
 	.builder-management-menu :global(.assignment-panel__group-item),
 	.builder-management-menu :global(.component-panel__item) {
 		border-color: var(--builder-shell-dark-border);
-		background: rgba(255, 255, 255, 0.035);
+		background: rgba(0, 0, 0, 0.03);
 		color: var(--builder-shell-toolbar-text);
 	}
 
@@ -412,14 +412,14 @@
 	}
 
 	.builder-management-menu :global(.builder-shell-button) {
-		border-color: rgba(255, 255, 255, 0.1);
-		background: rgba(255, 255, 255, 0.04);
+		border-color: rgba(0, 0, 0, 0.08);
+		background: rgba(0, 0, 0, 0.04);
 		color: var(--builder-shell-toolbar-text);
 	}
 
 	.builder-management-menu :global(.builder-shell-button--primary) {
-		border-color: rgba(208, 4, 212, 0.42);
-		background: rgba(208, 4, 212, 0.18);
+		border-color: rgba(0, 113, 227, 0.42);
+		background: rgba(0, 113, 227, 0.18);
 		color: #ffffff;
 	}
 

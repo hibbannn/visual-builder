@@ -215,7 +215,7 @@
 		padding: var(--builder-shell-space-10);
 		border: 1px solid var(--builder-shell-dark-border);
 		border-radius: var(--builder-shell-radius-lg);
-		background: rgba(255, 255, 255, 0.035);
+		background: rgba(0, 0, 0, 0.03);
 	}
 
 	.document-browser-card__heading {
@@ -258,7 +258,7 @@
 		gap: 2px;
 		padding: var(--builder-shell-space-8) var(--builder-shell-space-10);
 		border-radius: var(--builder-shell-radius-lg);
-		border: 1px solid rgba(255, 255, 255, 0.1);
+		border: 1px solid rgba(0, 0, 0, 0.08);
 		background: rgba(12, 13, 14, 0.72);
 		color: var(--builder-shell-toolbar-text);
 		min-width: 7.5rem;
@@ -305,14 +305,14 @@
 	.document-browser-card__item {
 		align-items: center;
 		padding: var(--builder-shell-space-8);
-		border: 1px solid rgba(255, 255, 255, 0.08);
+		border: 1px solid rgba(0, 0, 0, 0.08);
 		border-radius: var(--builder-shell-radius-lg);
-		background: rgba(255, 255, 255, 0.035);
+		background: rgba(0, 0, 0, 0.03);
 	}
 
 	.document-browser-card__item.active {
-		border-color: rgba(208, 4, 212, 0.7);
-		background: rgba(208, 4, 212, 0.14);
+		border-color: rgba(0, 113, 227, 0.7);
+		background: rgba(0, 113, 227, 0.14);
 	}
 
 	.document-browser-card__meta {
@@ -347,7 +347,7 @@
 		padding: var(--builder-shell-space-12);
 		border: 1px dashed var(--builder-shell-dark-border-strong);
 		border-radius: var(--builder-shell-radius-lg);
-		background: rgba(255, 255, 255, 0.03);
+		background: rgba(0, 0, 0, 0.03);
 		color: var(--builder-shell-toolbar-text-muted);
 	}
 

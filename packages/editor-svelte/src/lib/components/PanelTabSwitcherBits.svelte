@@ -101,7 +101,7 @@
 
 	:global(.builder-panel-shell--dark) :global(.builder-panel-tab-switcher__tab) {
 		color: var(--builder-shell-toolbar-text-muted);
-		box-shadow: inset -1px 0 0 rgba(255, 255, 255, 0.04);
+		box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.04);
 	}
 
 	:global(.builder-panel-tab-switcher__tab:hover:not(:disabled)) {
@@ -110,7 +110,7 @@
 	}
 
 	:global(.builder-panel-shell--dark) :global(.builder-panel-tab-switcher__tab:hover:not(:disabled)) {
-		background: rgba(255, 255, 255, 0.06);
+		background: rgba(0, 0, 0, 0.06);
 		color: var(--builder-shell-toolbar-text);
 	}
 
@@ -152,7 +152,7 @@
 	}
 
 	:global(.builder-panel-shell--dark) :global(.builder-panel-tab-switcher__tab em) {
-		background: rgba(255, 255, 255, 0.08);
+		background: rgba(0, 0, 0, 0.08);
 		color: var(--builder-shell-toolbar-text);
 	}
 
@@ -178,7 +178,7 @@
 		font-size: 10px;
 		font-weight: 500;
 		letter-spacing: 0.01em;
-		box-shadow: inset -1px 0 0 rgba(255, 255, 255, 0.04);
+		box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.04);
 	}
 
 	:global(.builder-panel-tab-switcher.editor-mode .builder-panel-tab-switcher__icon) {
@@ -193,13 +193,13 @@
 	}
 
 	:global(.builder-panel-tab-switcher.editor-mode .builder-panel-tab-switcher__tab:hover:not(:disabled)) {
-		background: rgba(255, 255, 255, 0.04);
+		background: rgba(0, 0, 0, 0.04);
 		color: var(--builder-shell-toolbar-text);
 	}
 
 	:global(.builder-panel-tab-switcher.editor-mode .builder-panel-tab-switcher__tab.active),
 	:global(.builder-panel-tab-switcher.editor-mode .builder-panel-tab-switcher__tab[data-state='active']) {
-		background: rgba(255, 255, 255, 0.03);
+		background: rgba(0, 0, 0, 0.03);
 		color: var(--builder-shell-toolbar-text);
 		border-block-end-color: var(--builder-shell-accent);
 	}

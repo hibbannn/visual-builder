@@ -5,7 +5,8 @@
 <style>
 	:global(:root),
 	:global(.builder-shell-tokens) {
-		--builder-shell-top-bar-height: 48px;
+		/* ── Aitinara Apple Design Tokens ── */
+		--builder-shell-top-bar-height: 44px;
 		--builder-shell-responsive-bar-height: 40px;
 		--builder-shell-panel-width: 280px;
 		--builder-shell-panel-width-xl: 300px;
@@ -13,90 +14,110 @@
 		--builder-shell-panel-header-height: 48px;
 		--builder-shell-panel-footer-height: 40px;
 		--builder-shell-navigator-floating-height: 50vh;
-		--builder-shell-control-height: 27px;
+		--builder-shell-control-height: 28px;
 		--builder-shell-control-height-sm: 22px;
-		--builder-shell-font-family: Roboto, Arial, Helvetica, sans-serif;
+		--builder-shell-font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", "Inter", Roboto, Helvetica, Arial, sans-serif;
 		--builder-shell-font-size: 13px;
 		--builder-shell-line-height: 1.4;
 		--builder-shell-space-5: 5px;
-		--builder-shell-space-6: 6px;
+		--builder-shell-space-6: 8px;
 		--builder-shell-space-8: 8px;
-		--builder-shell-space-10: 10px;
+		--builder-shell-space-10: 12px;
 		--builder-shell-space-12: 12px;
 		--builder-shell-space-16: 16px;
-		--builder-shell-radius: 3px;
-		--builder-shell-radius-lg: 5px;
+		--builder-shell-radius: 6px;
+		--builder-shell-radius-lg: 8px;
 		--builder-shell-radius-pill: 999px;
-		--builder-shell-focus-ring: 0 0 0 1px var(--builder-shell-accent), 0 0 0 3px rgba(208, 4, 212, 0.2);
-		--builder-shell-gray-25: #f9fafa;
-		--builder-shell-gray-50: #f1f2f3;
-		--builder-shell-gray-75: #e6e8ea;
-		--builder-shell-gray-100: #d5d8dc;
-		--builder-shell-gray-200: #babfc5;
-		--builder-shell-gray-300: #9da5ae;
-		--builder-shell-gray-400: #818a96;
-		--builder-shell-gray-500: #69727d;
-		--builder-shell-gray-600: #515962;
-		--builder-shell-gray-700: #3f444b;
-		--builder-shell-gray-725: #333438;
-		--builder-shell-gray-750: #2b2c31;
-		--builder-shell-gray-800: #1f2124;
-		--builder-shell-gray-900: #0c0d0e;
-		--builder-shell-pink-200: #f3bafd;
-		--builder-shell-pink-800: #d004d4;
-		--builder-shell-pink-900: #c00bb9;
-		--builder-shell-rose-800: #93003f;
-		--builder-shell-indigo-600: #524cff;
-		--builder-shell-teal-600: #0a875a;
-		--builder-shell-warning: #f59e0b;
-		--builder-shell-danger: #dc2626;
-		--builder-shell-info: #2563eb;
-		--builder-shell-bg: var(--builder-shell-gray-25);
+		--builder-shell-focus-ring: 0 0 0 1px var(--builder-shell-accent), 0 0 0 3px rgba(0, 113, 227, 0.2);
+
+		/* ── Gray scale → Apple text/border tokens ── */
+		--builder-shell-gray-25: #f5f5f7;
+		--builder-shell-gray-50: #f5f5f7;
+		--builder-shell-gray-75: #e8e8ed;
+		--builder-shell-gray-100: #d2d2d7;
+		--builder-shell-gray-200: #a1a1a6;
+		--builder-shell-gray-300: #a1a1a6;
+		--builder-shell-gray-400: #6e6e73;
+		--builder-shell-gray-500: #6e6e73;
+		--builder-shell-gray-600: #6e6e73;
+		--builder-shell-gray-700: #1d1d1f;
+		--builder-shell-gray-725: #1d1d1f;
+		--builder-shell-gray-750: #1d1d1f;
+		--builder-shell-gray-800: #1d1d1f;
+		--builder-shell-gray-900: #1d1d1f;
+
+		/* ── Accent: Apple Blue (replaces magenta) ── */
+		--builder-shell-pink-200: #7ab8f0;
+		--builder-shell-pink-800: #0071e3;
+		--builder-shell-pink-900: #0077ed;
+		--builder-shell-rose-800: #0071e3;
+		--builder-shell-indigo-600: #5b5bf5;
+		--builder-shell-teal-600: #34c759;
+		--builder-shell-warning: #ff9f0a;
+		--builder-shell-danger: #ff3b30;
+		--builder-shell-info: #0071e3;
+
+		/* ── Surfaces: macOS light ── */
+		--builder-shell-bg: #ebecf0;
 		--builder-shell-panel-bg: #ffffff;
-		--builder-shell-panel-bg-muted: var(--builder-shell-gray-50);
+		--builder-shell-panel-bg-muted: rgba(0, 0, 0, 0.03);
 		--builder-shell-panel-surface: #ffffff;
-		--builder-shell-stage-bg: var(--builder-shell-gray-750);
-		--builder-shell-stage-bg-deep: var(--builder-shell-gray-800);
-		--builder-shell-toolbar-bg: var(--builder-shell-gray-800);
-		--builder-shell-toolbar-bg-subtle: var(--builder-shell-gray-725);
-		--builder-shell-toolbar-text: var(--builder-shell-gray-25);
-		--builder-shell-toolbar-text-muted: var(--builder-shell-gray-200);
-		--builder-shell-text: var(--builder-shell-gray-600);
-		--builder-shell-text-muted: var(--builder-shell-gray-400);
-		--builder-shell-text-strong: var(--builder-shell-gray-900);
-		--builder-shell-heading: var(--builder-shell-gray-800);
-		--builder-shell-border: var(--builder-shell-gray-100);
-		--builder-shell-border-strong: var(--builder-shell-gray-200);
-		--builder-shell-border-dark: rgba(255, 255, 255, 0.08);
-		--builder-shell-bg-surface: var(--builder-shell-panel-bg);
-		--builder-shell-bg-surface-muted: var(--builder-shell-panel-bg-muted);
-		--builder-shell-bg-hover: var(--builder-shell-gray-50);
-		--builder-shell-bg-active: var(--builder-shell-gray-75);
-		--builder-shell-bg-chip: var(--builder-shell-gray-50);
-		--builder-shell-bg-dark: var(--builder-shell-gray-800);
-		--builder-shell-bg-dark-alt: var(--builder-shell-gray-725);
-		--builder-shell-dark-panel: #15171c;
-		--builder-shell-dark-panel-raised: #1d2027;
-		--builder-shell-dark-panel-muted: #242832;
-		--builder-shell-dark-panel-subtle: #191c22;
-		--builder-shell-dark-field: #111318;
-		--builder-shell-dark-field-hover: #171a20;
-		--builder-shell-dark-border: rgba(255, 255, 255, 0.1);
-		--builder-shell-dark-border-strong: rgba(255, 255, 255, 0.18);
-		--builder-shell-dark-text: #f1f2f3;
-		--builder-shell-dark-text-muted: #babfc5;
-		--builder-shell-dark-text-subtle: #818a96;
+		--builder-shell-stage-bg: rgba(0, 0, 0, 0.04);
+		--builder-shell-stage-bg-deep: rgba(0, 0, 0, 0.06);
+		--builder-shell-toolbar-bg: rgba(246, 246, 246, 0.8);
+		--builder-shell-toolbar-bg-subtle: rgba(246, 246, 246, 0.7);
+		--builder-shell-toolbar-text: #1d1d1f;
+		--builder-shell-toolbar-text-muted: #6e6e73;
+
+		/* ── Text ── */
+		--builder-shell-text: #6e6e73;
+		--builder-shell-text-muted: #a1a1a6;
+		--builder-shell-text-strong: #1d1d1f;
+		--builder-shell-heading: #1d1d1f;
+
+		/* ── Borders ── */
+		--builder-shell-border: rgba(0, 0, 0, 0.12);
+		--builder-shell-border-strong: #d2d2d7;
+		--builder-shell-border-dark: rgba(0, 0, 0, 0.12);
+
+		/* ── Hover/active ── */
+		--builder-shell-bg-surface: #ffffff;
+		--builder-shell-bg-surface-muted: rgba(0, 0, 0, 0.03);
+		--builder-shell-bg-hover: rgba(0, 0, 0, 0.04);
+		--builder-shell-bg-active: rgba(0, 0, 0, 0.06);
+		--builder-shell-bg-chip: rgba(0, 0, 0, 0.03);
+		--builder-shell-bg-dark: rgba(0, 0, 0, 0.03);
+		--builder-shell-bg-dark-alt: rgba(0, 0, 0, 0.04);
+
+		/* ── Dark panel → light (Apple sidebar, not dark IDE) ── */
+		--builder-shell-dark-panel: #ffffff;
+		--builder-shell-dark-panel-raised: #ffffff;
+		--builder-shell-dark-panel-muted: rgba(0, 0, 0, 0.03);
+		--builder-shell-dark-panel-subtle: rgba(0, 0, 0, 0.04);
+		--builder-shell-dark-field: rgba(0, 0, 0, 0.03);
+		--builder-shell-dark-field-hover: rgba(0, 0, 0, 0.04);
+		--builder-shell-dark-border: rgba(0, 0, 0, 0.12);
+		--builder-shell-dark-border-strong: #d2d2d7;
+		--builder-shell-dark-text: #1d1d1f;
+		--builder-shell-dark-text-muted: #6e6e73;
+		--builder-shell-dark-text-subtle: #a1a1a6;
+
+		/* ── Accent ── */
 		--builder-shell-border-color: var(--builder-shell-border);
 		--builder-shell-border-color-bold: var(--builder-shell-border-strong);
-		--builder-shell-accent-soft: #f3bafd;
-		--builder-shell-accent: #d004d4;
-		--builder-shell-accent-strong: #524cff;
-		--builder-shell-accent-surface: #fae8ff;
-		--builder-shell-accent-text: var(--builder-shell-rose-800);
-		--builder-shell-shadow-card: 0 0 5px rgba(0, 0, 0, 0.1);
-		--builder-shell-shadow-popover: 0 14px 40px rgba(0, 0, 0, 0.34);
-		--builder-shell-shadow-panel: 0 12px 36px rgba(0, 0, 0, 0.16);
-		--builder-shell-transition-hover: background-color 0.16s ease, border-color 0.16s ease, color 0.16s ease, box-shadow 0.16s ease;
+		--builder-shell-accent-soft: #7ab8f0;
+		--builder-shell-accent: #0071e3;
+		--builder-shell-accent-strong: #0077ed;
+		--builder-shell-accent-surface: #e6f0fa;
+		--builder-shell-accent-text: #005bb5;
+
+		/* ── Shadows: macOS ── */
+		--builder-shell-shadow-card: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+		--builder-shell-shadow-popover: 0 0 0 0.5px rgba(0, 0, 0, 0.08), 0 8px 32px rgba(0, 0, 0, 0.12);
+		--builder-shell-shadow-panel: 0 8px 24px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+
+		/* ── Transition: macOS spring-like ── */
+		--builder-shell-transition-hover: background-color 120ms cubic-bezier(0.25, 0.1, 0.25, 1), border-color 120ms cubic-bezier(0.25, 0.1, 0.25, 1), color 120ms cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 120ms cubic-bezier(0.25, 0.1, 0.25, 1);
 	}
 
 	:global(.builder-shell-tokens) {
@@ -144,7 +165,7 @@
 	:global(.builder-shell-toolbar-button:hover),
 	:global(.builder-shell-button:hover),
 	:global(.builder-shell-icon-button:hover) {
-		background: rgba(255, 255, 255, 0.07);
+		background: rgba(0, 0, 0, 0.04);
 	}
 
 	:global(.builder-shell-icon-button) {
@@ -171,31 +192,31 @@
 	}
 
 	:global(.builder-shell-button--dark) {
-		border-color: rgba(255, 255, 255, 0.1);
-		background: rgba(255, 255, 255, 0.025);
+		border-color: rgba(0, 0, 0, 0.12);
+		background: rgba(0, 0, 0, 0.03);
 		color: var(--builder-shell-toolbar-text-muted);
 	}
 
 	:global(.builder-shell-button--dark:hover) {
-		border-color: rgba(255, 255, 255, 0.18);
-		background: var(--builder-shell-gray-700);
+		border-color: rgba(0, 0, 0, 0.18);
+		background: rgba(0, 0, 0, 0.04);
 		color: var(--builder-shell-toolbar-text);
 	}
 
 	:global(.builder-shell-button--publish) {
-		border-color: var(--builder-shell-rose-800);
-		background: var(--builder-shell-rose-800);
+		border-color: var(--builder-shell-accent);
+		background: var(--builder-shell-accent);
 		color: #ffffff;
 		font-weight: 500;
 	}
 
 	:global(.builder-shell-button--publish:hover) {
-		border-color: var(--builder-shell-pink-900);
-		background: var(--builder-shell-pink-900);
+		border-color: var(--builder-shell-accent-strong);
+		background: var(--builder-shell-accent-strong);
 	}
 
 	:global(.builder-shell-button--publish:focus-visible) {
-		box-shadow: 0 0 0 1px var(--builder-shell-pink-200);
+		box-shadow: 0 0 0 1px var(--builder-shell-accent-soft);
 	}
 
 	:global(.builder-shell-button--ghost) {
@@ -215,7 +236,7 @@
 	}
 
 	:global(.builder-panel-shell--dark .builder-shell-button--ghost:hover) {
-		background: rgba(255, 255, 255, 0.06);
+		background: rgba(0, 0, 0, 0.04);
 		color: var(--builder-shell-dark-text);
 	}
 
@@ -241,20 +262,20 @@
 	:global(.builder-panel-shell--dark .builder-shell-button--primary),
 	:global(.builder-panel-shell--dark .builder-shell-button--danger) {
 		border-color: var(--builder-shell-dark-border);
-		background: rgba(255, 255, 255, 0.055);
+		background: rgba(0, 0, 0, 0.03);
 		color: var(--builder-shell-dark-text);
 	}
 
 	:global(.builder-panel-shell--dark .builder-shell-button--primary:hover) {
-		border-color: rgba(243, 186, 253, 0.46);
-		background: rgba(208, 4, 212, 0.18);
-		color: #ffffff;
+		border-color: rgba(0, 113, 227, 0.46);
+		background: rgba(0, 113, 227, 0.08);
+		color: #1d1d1f;
 	}
 
 	:global(.builder-panel-shell--dark .builder-shell-button--danger:hover) {
-		border-color: rgba(248, 113, 113, 0.38);
-		background: rgba(220, 38, 38, 0.18);
-		color: #fecaca;
+		border-color: rgba(255, 59, 48, 0.38);
+		background: rgba(255, 59, 48, 0.08);
+		color: #ff3b30;
 	}
 
 	:global(.builder-shell-button:disabled),
@@ -275,9 +296,9 @@
 		border: 1px solid var(--builder-shell-border-strong);
 		border-radius: var(--builder-shell-radius-lg);
 		background: var(--builder-shell-panel-bg);
-		color: var(--builder-shell-gray-800);
+		color: var(--builder-shell-text-strong);
 		box-shadow: none;
-		transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+		transition: border-color 120ms cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 120ms cubic-bezier(0.25, 0.1, 0.25, 1), background-color 120ms cubic-bezier(0.25, 0.1, 0.25, 1);
 	}
 
 	:global(.builder-shell-input:hover),
@@ -400,30 +421,30 @@
 	}
 
 	:global(.builder-shell-badge--dark) {
-		background: rgba(255, 255, 255, 0.06);
+		background: rgba(0, 0, 0, 0.04);
 		color: var(--builder-shell-toolbar-text);
 	}
 
 	:global(.builder-panel-shell--dark .builder-shell-badge) {
-		border: 1px solid rgba(255, 255, 255, 0.06);
-		background: rgba(255, 255, 255, 0.07);
+		border: 1px solid rgba(0, 0, 0, 0.06);
+		background: rgba(0, 0, 0, 0.03);
 		color: var(--builder-shell-dark-text-muted);
 	}
 
 	:global(.builder-panel-shell--dark .builder-shell-badge--accent) {
-		border-color: rgba(243, 186, 253, 0.25);
-		background: rgba(208, 4, 212, 0.18);
-		color: #f5d0fe;
+		border-color: rgba(0, 113, 227, 0.25);
+		background: rgba(0, 113, 227, 0.08);
+		color: #0071e3;
 	}
 
 	:global(.builder-panel-shell--dark .builder-shell-badge--neutral) {
-		background: rgba(255, 255, 255, 0.055);
+		background: rgba(0, 0, 0, 0.03);
 		color: var(--builder-shell-dark-text-muted);
 	}
 
 	:global(.builder-panel-shell--dark .builder-shell-badge--dark) {
 		border-color: var(--builder-shell-dark-border-strong);
-		background: rgba(255, 255, 255, 0.11);
+		background: rgba(0, 0, 0, 0.06);
 		color: var(--builder-shell-dark-text);
 	}
 
@@ -451,8 +472,8 @@
 
 	:global(.builder-panel-shell--dark .builder-shell-card.active),
 	:global(.builder-panel-shell--dark .builder-shell-card[aria-selected='true']) {
-		border-color: rgba(243, 186, 253, 0.38);
-		background: #222532;
+		border-color: rgba(0, 113, 227, 0.38);
+		background: #e6f0fa;
 	}
 
 	:global(.builder-shell-empty-state) {
@@ -471,7 +492,7 @@
 	:global(.builder-panel-shell--dark .builder-shell-empty-state),
 	:global(.builder-panel-shell--dark .builder-shell-card--subtle.builder-shell-lazy-panel__placeholder) {
 		border-color: var(--builder-shell-dark-border);
-		background: rgba(255, 255, 255, 0.035);
+		background: rgba(0, 0, 0, 0.02);
 		color: var(--builder-shell-dark-text-muted);
 	}
 
@@ -505,7 +526,7 @@
 
 	:global(.builder-panel-shell--dark .builder-shell-icon-badge) {
 		border-color: var(--builder-shell-dark-border);
-		background: rgba(255, 255, 255, 0.055);
+		background: rgba(0, 0, 0, 0.03);
 		color: var(--builder-shell-dark-text-muted);
 	}
 

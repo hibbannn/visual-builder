@@ -375,7 +375,7 @@ import {
 	}
 
 	.navigator__row-indicator--accent {
-		background: rgba(243, 186, 253, 0.24);
+		background: rgba(122, 184, 240, 0.24);
 		color: var(--builder-shell-pink-900);
 	}
 
@@ -479,8 +479,8 @@ import {
 	}
 
 	.navigator__row-handle.dragging {
-		border-color: rgba(208, 4, 212, 0.5);
-		box-shadow: 0 0 0 1px rgba(208, 4, 212, 0.2);
+		border-color: rgba(0, 113, 227, 0.5);
+		box-shadow: 0 0 0 1px rgba(0, 113, 227, 0.2);
 		background: rgba(250, 232, 255, 0.98);
 	}
 

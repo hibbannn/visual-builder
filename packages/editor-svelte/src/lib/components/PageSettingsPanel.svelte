@@ -86,7 +86,7 @@
 		gap: var(--builder-shell-space-10);
 		padding: var(--builder-shell-space-12);
 		border-color: var(--builder-shell-dark-border);
-		background: linear-gradient( 180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.025) );
+		background: linear-gradient( 180deg, rgba(0, 0, 0, 0.04), rgba(255, 255, 255, 0.025) );
 	}
 
 	.page-settings-panel__summary-heading,
@@ -151,13 +151,13 @@
 
 	.page-settings-panel :global(.builder-shell-icon-badge) {
 		border-color: var(--builder-shell-dark-border);
-		background: rgba(255, 255, 255, 0.055);
+		background: rgba(0, 0, 0, 0.05);
 		color: var(--builder-shell-toolbar-text);
 	}
 
 	.page-settings-panel :global(.builder-shell-badge) {
 		border: 1px solid var(--builder-shell-dark-border);
-		background: rgba(255, 255, 255, 0.055);
+		background: rgba(0, 0, 0, 0.05);
 		color: var(--builder-shell-toolbar-text-muted);
 	}
 

@@ -48,7 +48,7 @@
 		block-size: 100%;
 		background: var(--builder-panel-shell-surface);
 		border-inline-end: 1px solid var(--builder-panel-shell-border);
-		box-shadow: inset -1px 0 0 rgba(255, 255, 255, 0.04);
+		box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.04);
 		color: var(--builder-panel-shell-text);
 		font-family: var(--builder-shell-font-family, inherit);
 		font-size: var(--builder-shell-font-size);

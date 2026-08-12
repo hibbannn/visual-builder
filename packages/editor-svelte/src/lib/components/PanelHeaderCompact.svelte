@@ -148,7 +148,7 @@
 
 	.builder-panel-header-compact__icon-button:hover {
 		color: var(--builder-shell-toolbar-text);
-		background: rgba(255, 255, 255, 0.06);
+		background: rgba(0, 0, 0, 0.06);
 	}
 
 	.builder-panel-header-compact__spacer {
