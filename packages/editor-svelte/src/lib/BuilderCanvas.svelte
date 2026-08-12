@@ -1855,17 +1855,19 @@
 			</header>
 
 				<nav class="builder-shell__panel-pages" aria-label="Panel pages">
-					{#each shellNavigationPages as page (page.id)}
-						<button
-							type="button"
-							class:active={state.ui.shell.leftPanelPage === page.id}
-							aria-label={page.label}
-							title={page.label}
-							onclick={() => openShellPage( page.id )}
-						>
-							<EditorShellIcon name={shellPageIcons[page.id]} title={page.label} />
-						</button>
-					{/each}
+					<div class="builder-shell__panel-pages-segmented">
+						{#each shellNavigationPages as page (page.id)}
+							<button
+								type="button"
+								class:active={state.ui.shell.leftPanelPage === page.id}
+								aria-label={page.label}
+								title={page.label}
+								onclick={() => openShellPage( page.id )}
+							>
+								<EditorShellIcon name={shellPageIcons[page.id]} title={page.label} />
+							</button>
+						{/each}
+					</div>
 				</nav>
 
 			<div class:builder-shell__panel-body--editor={state.ui.shell.leftPanelPage === 'editor' || aiSession.mode === 'edit'} class="builder-shell__panel-body">
@@ -3132,13 +3134,23 @@
 
 	.builder-shell__panel-pages {
 		display: flex;
-		flex-wrap: wrap;
 		align-items: center;
-		gap: 6px;
+		gap: 0;
 		inline-size: 100%;
-		padding: 8px 12px;
+		padding: 8px 10px;
 		border-bottom: 1px solid var( --builder-shell-border );
 		background: var( --builder-shell-panel-bg );
+		overflow: hidden;
+	}
+
+	.builder-shell__panel-pages-segmented {
+		display: inline-flex;
+		align-items: center;
+		gap: 0;
+		inline-size: 100%;
+		padding: 2px;
+		border-radius: 999px;
+		background: var( --builder-shell-panel-bg-muted, rgba(0, 0, 0, 0.04) );
 		overflow: hidden;
 	}
 
@@ -3151,14 +3163,14 @@
 		min-width: 0;
 		min-height: 32px;
 		padding: 0;
-		border: 1px solid var( --builder-shell-border, rgba(0, 0, 0, 0.12) );
+		border: none;
 		border-radius: 999px;
-		background: var( --builder-shell-panel-bg, #ffffff );
+		background: transparent;
 		color: var( --builder-shell-text-muted, #a1a1a6 );
 		font-size: 11px;
 		font-weight: 500;
 		white-space: nowrap;
-		transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+		transition: background-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
 	}
 
 	.builder-shell__panel-pages button :global(svg) {
@@ -3168,19 +3180,16 @@
 	}
 
 	.builder-shell__panel-pages button:hover {
-		background: var( --builder-shell-bg-hover, rgba(0, 0, 0, 0.04) );
-		border-color: var( --builder-shell-border-strong, #d2d2d7 );
-		color: var( --builder-shell-text, #6e6e73 );
+		color: var( --builder-shell-text-strong, #1d1d1f );
 	}
 
 	.builder-shell__panel-pages button.active,
 	.builder-shell__preset-button:hover,
 	.builder-shell__entry-card:hover {
-		border-color: rgba(0, 113, 227, 0.20);
-		background: rgba(0, 113, 227, 0.10);
-		color: var( --builder-shell-accent-text );
+		background: var( --builder-shell-panel-bg, #ffffff );
+		color: var( --builder-shell-text-strong, #1d1d1f );
 		font-weight: 600;
-		box-shadow: none;
+		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
 	}
 
 	.builder-shell__panel-body {
