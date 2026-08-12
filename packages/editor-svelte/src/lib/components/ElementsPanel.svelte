@@ -2,6 +2,7 @@
 	import EditorShellIcon from './EditorShellIcon.svelte';
 	import EditorShellTokens from './EditorShellTokens.svelte';
 	import ElementsPanelTile from './ElementsPanelTile.svelte';
+	import { squircle } from '../squircle';
 	import type { PanelTabItem, PanelTileGroup, PanelTileItem } from './panel-types';
 
 	export let title = 'Elements';
@@ -257,6 +258,7 @@
 						class="elements-panel__category builder-shell-button"
 						disabled={category.disabled}
 						title={category.title ?? category.label}
+						use:squircle={{ radius: 999, n: 5 }}
 						onclick={() => selectCategory( category.id, category.disabled )}
 					>
 						<span class="elements-panel__category-icon">
@@ -459,19 +461,20 @@
 		gap: 6px;
 		min-height: 28px;
 		padding: 0 10px;
+		border: none;
 		border-radius: 999px;
 		font-size: 11px;
 		font-weight: 500;
 		text-transform: none;
 		letter-spacing: 0;
-		border: 1px solid var(--builder-shell-border, rgba(0, 0, 0, 0.12));
 		background: var(--builder-shell-panel-bg, #ffffff);
+		box-shadow: inset 0 0 0 1px var(--builder-shell-border, rgba(0, 0, 0, 0.12));
 		color: var(--builder-shell-text-muted, #a1a1a6);
 		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;
 		max-inline-size: 100%;
-		transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+		transition: background-color 0.15s ease, box-shadow 0.15s ease, color 0.15s ease;
 	}
 
 	.elements-panel__category:hover {
@@ -480,7 +483,7 @@
 	}
 
 	.elements-panel__category.active {
-		border-color: rgba(0, 113, 227, 0.20);
+		box-shadow: inset 0 0 0 1px rgba(0, 113, 227, 0.20);
 		background: rgba(0, 113, 227, 0.10);
 		color: var(--builder-shell-accent-text, #005bb5);
 		font-weight: 600;

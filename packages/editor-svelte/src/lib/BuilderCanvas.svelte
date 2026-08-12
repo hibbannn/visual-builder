@@ -21,6 +21,7 @@
 	import EditorShellIcon from './components/EditorShellIcon.svelte';
 	import EditorShellTokens from './components/EditorShellTokens.svelte';
 	import ElementsPanel from './components/ElementsPanel.svelte';
+	import { squircle } from './squircle';
 	import AssignmentWorkflowPanel from './components/LazyAssignmentWorkflowPanel.svelte';
 	import GlobalsPanelShell from './components/LazyGlobalsPanelShell.svelte';
 	import HistoryPanelShell from './components/LazyHistoryPanelShell.svelte';
@@ -1440,10 +1441,10 @@
 	<div class="builder-shell">
 		<header class="builder-shell__appbar">
 			<div class="builder-shell__appbar-left">
-				<button type="button" class="builder-shell-icon-button builder-shell-button--dark" aria-label="Toggle panel" title="Toggle panel" onclick={() => editor.toggleShellPanel()}>
+				<button type="button" class="builder-shell-icon-button builder-shell-button--dark" aria-label="Toggle panel" title="Toggle panel" use:squircle={{ radius: 8, n: 5 }} onclick={() => editor.toggleShellPanel()}>
 					<EditorShellIcon name="menu" title="Toggle panel" />
 				</button>
-				<button type="button" class="builder-shell__exit">Exit To Dashboard</button>
+				<button type="button" class="builder-shell__exit" use:squircle={{ radius: 8, n: 5 }}>Exit To Dashboard</button>
 				<div class="builder-shell__document-meta">
 					<span class="builder-shell__document-kicker">{describeMode( state.ui.mode )}</span>
 					<strong>{activeDocument.title}</strong>
@@ -1463,16 +1464,16 @@
 			</div>
 
 			<div class="builder-shell__appbar-right">
-				<button type="button" class="builder-shell-icon-button builder-shell-button--dark" aria-label="Responsive" title="Responsive" data-inline-edit-preserve-focus="true" onclick={() => editor.toggleResponsiveBar( !state.ui.shell.responsiveBarVisible )}>
+				<button type="button" class="builder-shell-icon-button builder-shell-button--dark" aria-label="Responsive" title="Responsive" data-inline-edit-preserve-focus="true" use:squircle={{ radius: 8, n: 5 }} onclick={() => editor.toggleResponsiveBar( !state.ui.shell.responsiveBarVisible )}>
 					<EditorShellIcon name="responsive" title="Responsive" />
 				</button>
-				<button type="button" class="builder-shell-icon-button builder-shell-button--dark" aria-label={shellLayout.navigator.open ? 'Hide Structure' : 'Show Structure'} title={shellLayout.navigator.open ? 'Hide Structure' : 'Show Structure'} onclick={() => editor.toggleNavigator()}>
+				<button type="button" class="builder-shell-icon-button builder-shell-button--dark" aria-label={shellLayout.navigator.open ? 'Hide Structure' : 'Show Structure'} title={shellLayout.navigator.open ? 'Hide Structure' : 'Show Structure'} use:squircle={{ radius: 8, n: 5 }} onclick={() => editor.toggleNavigator()}>
 					<EditorShellIcon name="navigator" title={shellLayout.navigator.open ? 'Hide Structure' : 'Show Structure'} />
 				</button>
-				<button type="button" class="builder-shell-toolbar-button builder-shell-button--dark" onclick={openHtmlImportDialog}>Import HTML</button>
+				<button type="button" class="builder-shell-toolbar-button builder-shell-button--dark" use:squircle={{ radius: 8, n: 5 }} onclick={openHtmlImportDialog}>Import HTML</button>
 				{#if canUseAi}
 					<div class="builder-shell__ai-menu-wrap">
-						<button type="button" class="builder-shell-toolbar-button builder-shell-button--dark" aria-haspopup="menu" aria-expanded={aiMenuOpen} onclick={toggleAiMenu}>AI</button>
+						<button type="button" class="builder-shell-toolbar-button builder-shell-button--dark" aria-haspopup="menu" aria-expanded={aiMenuOpen} use:squircle={{ radius: 8, n: 5 }} onclick={toggleAiMenu}>AI</button>
 						{#if aiMenuOpen}
 							<div class="builder-shell__ai-menu" role="menu">
 								<button type="button" role="menuitem" onclick={openAiCreateDialog}>+ Create with AI</button>
@@ -1482,11 +1483,11 @@
 						{/if}
 					</div>
 				{:else}
-					<button type="button" class="builder-shell-toolbar-button builder-shell-button--dark" disabled title={aiPermissionReason}>AI disabled</button>
+					<button type="button" class="builder-shell-toolbar-button builder-shell-button--dark" disabled title={aiPermissionReason} use:squircle={{ radius: 8, n: 5 }}>AI disabled</button>
 				{/if}
-				<button type="button" class="builder-shell-toolbar-button builder-shell-button--dark" onclick={() => editor.toggleAppBarMenu()}>Menu</button>
-				<button type="button" class="builder-shell-toolbar-button builder-shell-button--light" disabled={!canEditProject} title={canEditProject ? getSaveLabel() : editor.getPermission( 'editProject' ).reason ?? 'Editing is disabled by this host.'} onclick={() => editor.saveDraft()}>{getSaveLabel()}</button>
-				<button type="button" class="builder-shell-toolbar-button builder-shell-button--publish" disabled={!canPublish} title={canPublish ? 'Publish' : publishPermissionReason} onclick={() => editor.publish()}>Publish</button>
+				<button type="button" class="builder-shell-toolbar-button builder-shell-button--dark" use:squircle={{ radius: 8, n: 5 }} onclick={() => editor.toggleAppBarMenu()}>Menu</button>
+				<button type="button" class="builder-shell-toolbar-button builder-shell-button--light" disabled={!canEditProject} title={canEditProject ? getSaveLabel() : editor.getPermission( 'editProject' ).reason ?? 'Editing is disabled by this host.'} use:squircle={{ radius: 8, n: 5 }} onclick={() => editor.saveDraft()}>{getSaveLabel()}</button>
+				<button type="button" class="builder-shell-toolbar-button builder-shell-button--publish" disabled={!canPublish} title={canPublish ? 'Publish' : publishPermissionReason} use:squircle={{ radius: 8, n: 5 }} onclick={() => editor.publish()}>Publish</button>
 			</div>
 
 			{#if state.ui.shell.appBarMenuOpen}
@@ -1847,6 +1848,7 @@
 						class="builder-shell__panel-header-button builder-shell__panel-header-button--elements"
 						aria-label="Elements"
 						title="Elements"
+						use:squircle={{ radius: 999, n: 5 }}
 						onclick={() => openShellPage( 'elements' )}
 					>
 						<EditorShellIcon name="elements" title="Elements" />
@@ -1855,13 +1857,14 @@
 			</header>
 
 				<nav class="builder-shell__panel-pages" aria-label="Panel pages">
-					<div class="builder-shell__panel-pages-segmented">
+					<div class="builder-shell__panel-pages-segmented" use:squircle={{ radius: 999, n: 5 }}>
 						{#each shellNavigationPages as page (page.id)}
 							<button
 								type="button"
 								class:active={state.ui.shell.leftPanelPage === page.id}
 								aria-label={page.label}
 								title={page.label}
+								use:squircle={{ radius: 999, n: 5 }}
 								onclick={() => openShellPage( page.id )}
 							>
 								<EditorShellIcon name={shellPageIcons[page.id]} title={page.label} />
@@ -3114,10 +3117,11 @@
 
 	.builder-shell__panel-header-button--elements {
 		flex: 0 0 auto;
-		border: 1px solid var( --builder-shell-border );
+		border: none;
 		background: var( --builder-shell-panel-bg-muted );
+		box-shadow: inset 0 0 0 1px var( --builder-shell-border );
 		color: var( --builder-shell-text-muted );
-		transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+		transition: background-color 0.15s ease, box-shadow 0.15s ease, color 0.15s ease;
 	}
 
 	.builder-shell__panel-header-button--elements:hover {
@@ -3126,10 +3130,9 @@
 	}
 
 	.builder-shell__panel-header-button--elements.active {
-		border-color: rgba(0, 113, 227, 0.20);
+		box-shadow: inset 0 0 0 1px rgba(0, 113, 227, 0.20);
 		background: rgba(0, 113, 227, 0.10);
 		color: var( --builder-shell-accent-text );
-		box-shadow: inset 0 -2px 0 var( --builder-shell-accent );
 	}
 
 	.builder-shell__panel-pages {
@@ -3720,7 +3723,7 @@
 
 	.builder-shell-button--light {
 		background: rgba(0, 0, 0, 0.08);
-		color: #ffffff;
+		color: var( --builder-shell-text-strong, #1d1d1f );
 	}
 
 	.builder-shell-button--publish {

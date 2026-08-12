@@ -2,6 +2,7 @@
 	import { createDraggable } from '@dnd-kit/svelte';
 
 	import { createBuilderDndData } from '../drag-drop';
+	import { squircle } from '../squircle';
 	import EditorShellIcon from './EditorShellIcon.svelte';
 	import type { PanelTileGroup, PanelTileItem } from './panel-types';
 
@@ -63,12 +64,13 @@
 	draggable={!useDnd && tile.draggable !== false}
 	title={tile.title ?? tile.description ?? tile.label}
 	{@attach useDnd ? draggable.attach : undefined}
+	use:squircle={{ radius: 8, n: 5 }}
 	onpointerdown={handlePointerDown}
 	ondragstart={handleDragStart}
 	onclick={( event ) => onClick( group, tile, event )}
 	ondblclick={( event ) => onDoubleClick( group, tile, event )}
 >
-	<div class="elements-panel__tile-icon">
+	<div class="elements-panel__tile-icon" use:squircle={{ radius: 6, n: 5 }}>
 		<EditorShellIcon name={icon} title={tile.label} />
 	</div>
 	<div class="elements-panel__tile-copy">
@@ -106,30 +108,28 @@
 		min-height: 88px;
 		padding: 14px 12px;
 		text-align: center;
-		border: 1px solid var(--builder-shell-border, rgba(0, 0, 0, 0.12));
+		border: none;
 		border-radius: var(--builder-shell-radius, 8px);
 		background: var(--builder-shell-panel-bg, #ffffff);
-		box-shadow: none;
+		box-shadow: inset 0 0 0 1px var(--builder-shell-border, rgba(0, 0, 0, 0.12));
 		min-inline-size: 0;
 		overflow: hidden;
 		color: inherit;
 		cursor: pointer;
 		touch-action: none;
 		user-select: none;
-		transition: border-color 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+		transition: background-color 0.15s ease, box-shadow 0.15s ease;
 	}
 
 	.elements-panel__tile.armed,
 	.elements-panel__tile.dragging {
-		border-color: rgba(0, 113, 227, 0.55);
 		background: rgba(0, 113, 227, 0.08);
 		box-shadow: inset 0 0 0 1px rgba(0, 113, 227, 0.14);
 	}
 
 	.elements-panel__tile:hover:not(:disabled) {
-		border-color: var(--builder-shell-border-strong, #d2d2d7);
 		background: var(--builder-shell-bg-hover, rgba(0, 0, 0, 0.04));
-		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+		box-shadow: inset 0 0 0 1px var(--builder-shell-border-strong, #d2d2d7), 0 1px 3px rgba(0, 0, 0, 0.04);
 	}
 
 	.elements-panel__tile:active:not(:disabled) {
@@ -147,6 +147,7 @@
 		justify-content: center;
 		inline-size: 32px;
 		block-size: 32px;
+		border: none;
 		border-radius: var(--builder-shell-radius-sm, 6px);
 		background: var(--builder-shell-panel-bg-muted, rgba(0, 0, 0, 0.04));
 		color: var(--builder-shell-text-strong, #1d1d1f);
