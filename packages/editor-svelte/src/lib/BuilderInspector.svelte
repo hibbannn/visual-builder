@@ -291,7 +291,11 @@
 	}
 
 	async function refreshMediaAssets() {
-		mediaAssets = await editor.listMediaAssets();
+		try {
+			mediaAssets = await editor.listMediaAssets();
+		} catch {
+			mediaAssets = [];
+		}
 	}
 
 	async function uploadMediaAsset( file: File ) {
