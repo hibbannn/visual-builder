@@ -2,6 +2,7 @@
 	import { onDestroy } from 'svelte';
 
 	import { DropdownMenu } from '../vendor/bits-dropdown-menu';
+	import { squircle } from '../squircle';
 	import type { BuilderContextMenuAction, BuilderContextMenuGroup } from '../context-menu';
 
 	export let open = false;
@@ -12,10 +13,21 @@
 	export let onOpenChange: ( open: boolean ) => void = () => {};
 
 	let contentElement: HTMLDivElement | null = null;
+	let squircleAction: ReturnType<typeof squircle> | null = null;
 
 	$: registerElement( open ? ( contentElement ?? undefined ) : undefined );
 
+	// Apply squircle to context menu container when it mounts
+	$: if ( contentElement && open && !squircleAction ) {
+		squircleAction = squircle( contentElement, { radius: 12, n: 5 } );
+	}
+	$: if ( ( !open || !contentElement ) && squircleAction ) {
+		squircleAction?.destroy?.();
+		squircleAction = null;
+	}
+
 	onDestroy( () => {
+		squircleAction?.destroy?.();
 		registerElement( undefined );
 	} );
 
@@ -78,10 +90,10 @@
 		gap: 0;
 		min-width: 250px;
 		padding: 6px 0;
-		border: 1px solid var(--builder-shell-border);
-		border-radius: 4px;
+		border: none;
+		border-radius: 12px;
 		background: #ffffff;
-		box-shadow: 0 10px 25px rgba(0, 0, 0, 0.16);
+		box-shadow: inset 0 0 0 1px var(--builder-shell-border), 0 10px 25px rgba(0, 0, 0, 0.16);
 		transform: translate(0, 0);
 	}
 

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { Tabs } from '../vendor/bits-tabs';
 
+	import { squircle } from '../squircle';
 	import EditorShellIcon from './EditorShellIcon.svelte';
 	import type { PanelTabItem } from './panel-types';
 
@@ -25,34 +26,68 @@
 			mode === 'editor' ? 'editor-mode' : '',
 		].filter( Boolean ).join( ' ' );
 	}
+
+	// Apply squircle to all tab trigger buttons within the list
+	function squircleTabs( node: HTMLElement ) {
+		const actions: ReturnType<typeof squircle>[] = [];
+		let observer: MutationObserver | null = null;
+
+		function applyToAll() {
+			const buttons = node.querySelectorAll( '.builder-panel-tab-switcher__tab' );
+			for ( const btn of buttons ) {
+				if ( !actions.some( a => ( a as any )._node === btn ) ) {
+					const action = squircle( btn as HTMLElement, { radius: 6, n: 5 } );
+					( action as any )._node = btn;
+					actions.push( action );
+				}
+			}
+		}
+
+		applyToAll();
+
+		// Watch for new buttons being added
+		observer = new MutationObserver( () => applyToAll() );
+		observer.observe( node, { childList: true, subtree: true } );
+
+		return {
+			destroy() {
+				observer?.disconnect();
+				for ( const action of actions ) {
+					action?.destroy?.();
+				}
+			},
+		};
+	}
 </script>
 
 <Tabs.Root value={activeTab} onValueChange={activate} activationMode="manual">
-	<Tabs.List class={getListClass()}>
-		{#each tabs as tab (tab.id)}
-			<Tabs.Trigger
-				value={tab.id}
-				disabled={tab.disabled}
-				class={`builder-panel-tab-switcher__tab${tab.id === activeTab ? ' active' : ''}`}
-				type="button"
-				title={tab.title ?? tab.label}
-				aria-label={tab.title ?? tab.label}
-			>
-				{#if tab.icon}
-					<span class="builder-panel-tab-switcher__icon" aria-hidden="true">
-						<EditorShellIcon name={tab.icon} size={mode === 'editor' ? 17 : 14} />
-					</span>
-				{/if}
-				<span>{tab.label}</span>
-				{#if tab.dirty}
-					<i aria-hidden="true" class="builder-panel-tab-switcher__dot"></i>
-				{/if}
-				{#if tab.badge !== undefined}
-					<em>{tab.badge}</em>
-				{/if}
-			</Tabs.Trigger>
-		{/each}
-	</Tabs.List>
+	<div use:squircleTabs>
+		<Tabs.List class={getListClass()}>
+			{#each tabs as tab (tab.id)}
+				<Tabs.Trigger
+					value={tab.id}
+					disabled={tab.disabled}
+					class={`builder-panel-tab-switcher__tab${tab.id === activeTab ? ' active' : ''}`}
+					type="button"
+					title={tab.title ?? tab.label}
+					aria-label={tab.title ?? tab.label}
+				>
+					{#if tab.icon}
+						<span class="builder-panel-tab-switcher__icon" aria-hidden="true">
+							<EditorShellIcon name={tab.icon} size={mode === 'editor' ? 17 : 14} />
+						</span>
+					{/if}
+					<span>{tab.label}</span>
+					{#if tab.dirty}
+						<i aria-hidden="true" class="builder-panel-tab-switcher__dot"></i>
+					{/if}
+					{#if tab.badge !== undefined}
+						<em>{tab.badge}</em>
+					{/if}
+				</Tabs.Trigger>
+			{/each}
+		</Tabs.List>
+	</div>
 </Tabs.Root>
 
 <style>
