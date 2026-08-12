@@ -649,7 +649,7 @@
 	function resolveInsertionTargetFromContextMenu() {
 		const menuState = state.ui.contextMenu;
 		const target = resolveContextMenuTarget( state, editor.registry );
-		if ( menuState.targetKind === 'canvas-root' ) {
+		if ( menuState.targetKind === 'canvas-root' || menuState.targetKind === 'navigator-root' ) {
 			return {
 				documentId: menuState.documentId ?? state.activeDocumentId,
 				targetParentId: undefined,

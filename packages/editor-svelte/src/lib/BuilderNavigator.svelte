@@ -114,6 +114,26 @@
 		editor.dispatch( { type: 'document/ui/select-node', nodeId } );
 	}
 
+	function deselectNode() {
+		editor.dispatch( { type: 'document/ui/select-node' } );
+	}
+
+	function openRootContextMenu( event: MouseEvent ) {
+		// Only trigger on the empty area, not on a row
+		const target = event.target as HTMLElement | null;
+		if ( target?.closest( '.navigator__item' ) || target?.closest( '.navigator__slot' ) ) {
+			return;
+		}
+		event.preventDefault();
+		deselectNode();
+		editor.openContextMenu( {
+			x: event.clientX,
+			y: event.clientY,
+			targetKind: 'navigator-root',
+			documentId: activeDocument.id,
+		} );
+	}
+
 	function syncNavigatorVirtualizerOptions() {
 		if ( depth > 0 || !navigatorVirtualizer ) {
 			return;
@@ -461,7 +481,17 @@
 			</button>
 		</div>
 
-		<div class="navigator__elements builder-shell-scrollbar" bind:this={navigatorScrollElement}>
+		<div
+			class="navigator__elements builder-shell-scrollbar"
+			bind:this={navigatorScrollElement}
+			onclick={( event ) => {
+				const target = event.target as HTMLElement | null;
+				if ( !target?.closest( '.navigator__item' ) && !target?.closest( '.navigator__slot' ) ) {
+					deselectNode();
+				}
+			}}
+			oncontextmenu={openRootContextMenu}
+		>
 			{#if navigatorVirtualizationEnabled && navigatorVirtualizer}
 				<ul class="navigator__tree navigator__tree--root navigator__tree--virtual" style={`height:${navigatorVirtualizer?.getTotalSize() ?? navigatorVirtualRowsHeight}px;`}>
 					{#each navigatorVirtualizer?.getVirtualItems() ?? [] as virtualItem (virtualItem.key)}

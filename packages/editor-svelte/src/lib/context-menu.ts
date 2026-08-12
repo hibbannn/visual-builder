@@ -69,7 +69,7 @@ export function resolveBuilderContextMenuGroups(
 		return [];
 	}
 
-	if ( menuState.targetKind === 'canvas-root' ) {
+	if ( menuState.targetKind === 'canvas-root' || menuState.targetKind === 'navigator-root' ) {
 		return [
 			{
 				id: 'insert',

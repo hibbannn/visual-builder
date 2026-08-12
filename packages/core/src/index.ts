@@ -166,7 +166,7 @@ export interface ComponentEditingState {
 	nodeId?: string;
 }
 
-export type BuilderContextMenuTargetKind = 'canvas-node' | 'navigator-node' | 'canvas-root';
+export type BuilderContextMenuTargetKind = 'canvas-node' | 'navigator-node' | 'canvas-root' | 'navigator-root';
 
 export interface BuilderContextMenuAnchor {
 	x: number;
