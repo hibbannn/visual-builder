@@ -1,6 +1,7 @@
 ﻿<script lang="ts">
   import { onDestroy } from "svelte";
   import EditorShellIcon from "./EditorShellIcon.svelte";
+  import { squircle } from "../squircle";
   import { createDebouncedPrimitiveCommitController } from "./PrimitiveControl.draft";
   import type { JsonValue } from "@builder/schema";
   import type {
@@ -704,6 +705,7 @@
       class="primitive-control__section-button"
       aria-expanded={sectionExpanded}
       {disabled}
+      use:squircle={{ radius: 6, n: 5 }}
       onclick={toggleSection}
     >
       <span class="primitive-control__section-mark"
@@ -817,6 +819,7 @@
               class:primitive-control__state-tab--active={activeStateTab ===
                 tab}
               class="primitive-control__state-tab"
+              use:squircle={{ radius: 6, n: 5 }}
               onclick={() => onStateTabChange(tab)}>{tab}</button
             >
           {/each}
@@ -918,6 +921,7 @@
               disabled={disabled || option.disabled}
               title={option.label}
               aria-label={option.label}
+              use:squircle={{ radius: 6, n: 5 }}
               onclick={() => toggleChoice(option.value)}
             >
               {#if option.icon && resolved.presentation !== "label-only"}
@@ -953,6 +957,7 @@
               disabled={disabled || tabItem.disabled}
               title={tabItem.label}
               aria-label={tabItem.label}
+              use:squircle={{ radius: 6, n: 5 }}
               onclick={() => commitString(tabItem.id)}
             >
               {#if tabItem.icon}
@@ -1101,6 +1106,7 @@
               class="primitive-control__toggle"
               aria-pressed={Boolean(dimensionsValue.linked)}
               {disabled}
+              use:squircle={{ radius: 6, n: 5 }}
               onclick={() =>
                 updateDimensions({ linked: !dimensionsValue.linked })}
               >{dimensionsValue.linked ? "Linked" : "Unlinked"}</button
@@ -1130,6 +1136,7 @@
           class="primitive-control__switcher"
           class:primitive-control__switcher--active={Boolean(value)}
           {disabled}
+          use:squircle={{ radius: 6, n: 5 }}
           onclick={() =>
             commitBoolean(!(value === true || rawValue === "true"))}
         >
@@ -1224,6 +1231,7 @@
               type="button"
               class="primitive-control__ghost-action"
               disabled={disabled || !mediaValue.src}
+              use:squircle={{ radius: 6, n: 5 }}
               onclick={() => commit(null)}>Remove</button
             >
           </div>
@@ -1235,6 +1243,7 @@
                   class="primitive-control__ghost-action"
                   {disabled}
                   aria-expanded={mediaPickerOpen}
+                  use:squircle={{ radius: 6, n: 5 }}
                   onclick={openMediaPicker}>Media Library</button
                 >
               {/if}
@@ -1628,8 +1637,7 @@
   .primitive-control__section-button,
   .primitive-control__toggle,
   .primitive-control__switcher {
-    border: 1px solid
-      var(--builder-shell-border-color, rgba(0, 0, 0, 0.12));
+    border: none;
     border-radius: var(--builder-shell-radius, 6px);
     background: var(--builder-shell-bg-surface, #ffffff);
     color: var(--builder-shell-text, #6e6e73);
@@ -1637,11 +1645,12 @@
     font-size: 11px;
     line-height: 1.3;
     cursor: pointer;
+    box-shadow: inset 0 0 0 1px
+      var(--builder-shell-border-color, rgba(0, 0, 0, 0.12));
     transition:
       background-color 0.15s ease,
-      border-color 0.15s ease,
-      color 0.15s ease,
-      box-shadow 0.15s ease;
+      box-shadow 0.15s ease,
+      color 0.15s ease;
   }
 
   .primitive-control__state-tab:hover,
@@ -1654,7 +1663,7 @@
   .primitive-control__field select:hover,
   .primitive-control input:hover,
   .primitive-control textarea:hover {
-    border-color: var(--builder-shell-border-color-bold, #d2d2d7);
+    box-shadow: inset 0 0 0 1px var(--builder-shell-border-color-bold, #d2d2d7);
     background: var(--builder-shell-bg-hover, rgba(0, 0, 0, 0.04));
   }
 
@@ -1664,9 +1673,8 @@
   .primitive-control__switcher--active,
   .primitive-control__toggle[aria-pressed="true"] {
     background: rgba(0, 113, 227, 0.12);
-    border-color: var(--builder-shell-accent, #0071e3);
     color: var(--builder-shell-accent-text, #005bb5);
-    box-shadow: inset 0 -2px 0 var(--builder-shell-accent, #0071e3);
+    box-shadow: inset 0 0 0 1px var(--builder-shell-accent, #0071e3), inset 0 -2px 0 var(--builder-shell-accent, #0071e3);
   }
 
   .primitive-control__state-tabs {
