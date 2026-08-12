@@ -2367,9 +2367,10 @@
 		align-items: center;
 		height: 28px;
 		padding: 0 9px;
-		border: 1px solid rgba(0, 0, 0, 0.08);
+		border: none;
 		border-radius: 6px;
 		background: rgba(0, 0, 0, 0.04);
+		box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
 		color: var( --builder-shell-toolbar-text );
 		font-size: 10px;
 		font-weight: 500;
